@@ -1,9 +1,58 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1>{{title}}</h1>
-<img src="assets/responsive.gif" alt="Ignite UI CLI">
+<main>
+  <section>
+    <h2>Lista de decks</h2>
+    <button  igxButton="contained" igxRipple="white" [routerLink]="['/create-deck']">Create a Deck</button>
+    <ng-container *ngFor="let deck of decks">
+      <div style="display: flex">
+        
+        <h4 (click)="previewDeck(deck)">
+          <img [src]="deck.imgUrl" [alt]="deck.name" width="100">
+          {{ deck.name }}
+        </h4>
+        
+      </div>
+    </ng-container>
+  </section>
 
-<div id="linksContainer">
-    <h3 class="links"><a target="_blank" rel="noopener" href="https://github.com/IgniteUI/ignite-ui-cli">Ignite UI CLI </a></h3>
-    <h3 class="links"><a target="_blank" rel="noopener" href="https://www.infragistics.com/products/ignite-ui-angular">Component Demos</a></h3>
-    <h3 class="links"><a target="_blank" rel="noopener" href="https://github.com/IgniteUI/igniteui-angular-ui-kits">Sketch UI Kit</a></h3>
-</div>
+  <aside *ngIf="deckDetails">
+    <h2>{{deckDetails.name}}</h2>
+
+    <div>
+      <img [src]="deckDetails.imgUrl" [alt]="deckDetails.name" width="100">
+      <ng-container>
+        <igx-chip [removeIcon]="myRemoveIcon" [removable]="true">
+          {{deckDetails.pokemons.length}} - 60
+        </igx-chip>
+      </ng-container>
+    </div>
+
+    <div>
+      <button igxButton="contained" igxRipple="white" [routerLink]="['/update-deck/', deckDetails.id]">Edit</button>
+
+      <button igxButton="contained" igxRipple="white" (click)="alert.open()">Delete</button>
+      <igx-dialog #alert
+        title="Delete Deck"
+        message="You are about to delete the {{deckDetails.name}} deck."
+        rightButtonLabel="Delete"
+        (rightButtonSelect)="deleteDeck(deckDetails)"
+        leftButtonLabel="Cancel"
+        (leftButtonSelect)="alert.close()">
+      </igx-dialog>
+
+    </div>
+    
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem">
+      <ng-container *ngFor="let item of deckDetails.pokemons">
+        <img [src]="item.card.images.small" [alt]="item.card.name" width="100">  
+      </ng-container>
+    </div>
+  </aside>
+</main> 
+
+<ng-template #myRemoveIcon>
+  <igx-icon>styles</igx-icon>
+</ng-template>
+
+
+
+

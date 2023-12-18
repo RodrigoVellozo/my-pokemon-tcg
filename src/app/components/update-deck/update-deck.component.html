@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <p>
+    <input type="text" formControlName="name" />
+  </p>
+
+  <p>
+    pokemons:
+    <button (click)="addPokemon()">Add Pokemon</button>
+  </p>
+
+  <div formArrayName="pokemons">
+    <div *ngFor="let control of pokemons.controls; let i = index">
+      <div [formGroupName]="i">
+        <div style="display: flex;">
+          <div style="display: flex">
+            <label for=""> {{ i + 1 }} - Pokemon name</label>
+            <input type="text" formControlName="name" />
+          </div>
+
+          <div style="display: flex">
+            <label for="">Supertype</label>
+            <input type="text" formControlName="supertype" />
+          </div>
+
+          <div>
+            <button (click)="removePokemon(i)">Remove pokemon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button (click)="updateDeck()">Edit</button>
+</form>
+
+<p>form value:</p>
+{{ form.value | json }}
