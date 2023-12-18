@@ -1,3 +1,4 @@
+import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,26 +9,17 @@ import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule,
 import { IgxCategoryChartModule, IgxSparklineCoreModule, IgxSparklineModule } from 'igniteui-angular-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AwesomeGridComponent } from './awesome-grid/awesome-grid.component';
 import { CreateDeckComponent } from './components/create-deck/create-deck.component';
-import { ExpGridComponent } from './components/exp-grid/exp-grid.component';
-import { ExpKanbanComponent } from './components/exp-kanban/exp-kanban.component';
 import { UpdateDeckComponent } from './components/update-deck/update-deck.component';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HomeComponent } from './home/home.component';
-import { CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AwesomeGridComponent,
     CreateDeckComponent,
-    UpdateDeckComponent,
-
-    //TODO - REMOVER
-    ExpGridComponent,
-    ExpKanbanComponent
+    UpdateDeckComponent
   ],
   imports: [
     FormsModule,
