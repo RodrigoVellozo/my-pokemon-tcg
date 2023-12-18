@@ -17,7 +17,7 @@ export class InMemoryDataService implements InMemoryDbService {
   ): {} | Observable<{}> | Promise<{}> {
     const decks = [
       {
-        id: 10,
+        id: 1,
         name: "Arcaine ex",
         imgUrl: "https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png",
         pokemons: [
@@ -390,7 +390,7 @@ export class InMemoryDataService implements InMemoryDbService {
         ]
       },
       {
-        id: 10,
+        id: 2,
         name: "Lua Estrondo ex",
         imgUrl: "https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png",
         pokemons: [
@@ -836,7 +836,7 @@ export class InMemoryDataService implements InMemoryDbService {
         ]
       },
       {
-        id: 10,
+        id: 3,
         name: "Giratina V-ASTRO",
         imgUrl: "https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png",
         pokemons: [

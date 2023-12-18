@@ -1,58 +1,68 @@
 <main>
-  <section>
-    <h2>Lista de decks</h2>
-    <button  igxButton="contained" igxRipple="white" [routerLink]="['/create-deck']">Create a Deck</button>
-    <ng-container *ngFor="let deck of decks">
-      <div style="display: flex">
-        
-        <h4 (click)="previewDeck(deck)">
-          <img [src]="deck.imgUrl" [alt]="deck.name" width="100">
-          {{ deck.name }}
-        </h4>
-        
+  <section class="deck-list-container">
+      <button
+        style="height: 12.938rem;"
+        igxButton="raised"
+        igxRipple="white"
+        [igxRippleCentered]="true"
+        [igxRippleDuration]="2000"
+        [routerLink]="['/create-deck']"
+      >
+        Create a deck
+      </button>
+
+    <!-- card -->
+    <div *ngFor="let deck of decks">
+      <div class="sample-column card-wrapper" (click)="previewDeck(deck)">
+        <igx-card elevated>
+          <igx-card-media height="150px">
+            <img [src]="deck.imgUrl" />
+          </igx-card-media>
+
+          <igx-card-header>
+            <h3 igxCardHeaderTitle>{{ deck.name }}</h3>
+          </igx-card-header>
+        </igx-card>
       </div>
-    </ng-container>
+    </div>
   </section>
 
-  <aside *ngIf="deckDetails">
-    <h2>{{deckDetails.name}}</h2>
+  <aside class="deck-preview" *ngIf="deckDetails">
+    <div class="deck-preview__header">
+      <h4 style="margin-top: 1rem;">
+        {{ deckDetails.name }}
+      </h4>
+      <div class="deck-preview__header__info">
+        <img [src]="deckDetails.imgUrl" [alt]="deckDetails.name" width="100">
 
-    <div>
-      <img [src]="deckDetails.imgUrl" [alt]="deckDetails.name" width="100">
-      <ng-container>
-        <igx-chip [removeIcon]="myRemoveIcon" [removable]="true">
-          {{deckDetails.pokemons.length}} - 60
-        </igx-chip>
-      </ng-container>
+          <igx-chip [removeIcon]="mycardIcon" [removable]="true">
+            {{deckDetails.pokemons.length}} - 60
+          </igx-chip>
+      </div>
     </div>
 
-    <div>
-      <button igxButton="contained" igxRipple="white" [routerLink]="['/update-deck/', deckDetails.id]">Edit</button>
-
-      <button igxButton="contained" igxRipple="white" (click)="alert.open()">Delete</button>
-      <igx-dialog #alert
-        title="Delete Deck"
-        message="You are about to delete the {{deckDetails.name}} deck."
-        rightButtonLabel="Delete"
-        (rightButtonSelect)="deleteDeck(deckDetails)"
-        leftButtonLabel="Cancel"
-        (leftButtonSelect)="alert.close()">
-      </igx-dialog>
-
+    <div class="deck-preview__actions">
+      <button 
+        igxRipple
+        igxButton="outlined" 
+        igxButtonColor="black" 
+        [routerLink]="['/update-deck/', deckDetails.id]">Edit</button>
+      <button 
+        igxButton="outlined"
+        igxButtonColor="black" 
+        igxButtonBackground="#f28482" 
+        igxRipple>Delete</button>
     </div>
-    
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem">
+
+    <div class="deck-preview__cards">
       <ng-container *ngFor="let item of deckDetails.pokemons">
-        <img [src]="item.card.images.small" [alt]="item.card.name" width="100">  
+        <img [src]="item.card.images.small" [alt]="item.card.name" />
       </ng-container>
     </div>
   </aside>
-</main> 
+</main>
 
-<ng-template #myRemoveIcon>
+<ng-template #mycardIcon>
   <igx-icon>styles</igx-icon>
 </ng-template>
-
-
-
 
