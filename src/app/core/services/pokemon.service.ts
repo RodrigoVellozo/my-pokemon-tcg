@@ -8,7 +8,7 @@ import { Pokemons } from '../models/pokemon-model';
 })
 export class PokemonService {
 
-  private readonly URL = 'https://api.pokemontcg.io/v2/cards?pageSize=50';
+  private readonly URL = 'https://api.pokemontcg.io/v2/cards?pageSize=100';
 
   constructor(private _http: HttpClient) { }
 
