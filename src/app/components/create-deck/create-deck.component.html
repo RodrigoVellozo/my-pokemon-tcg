@@ -1,7 +1,5 @@
-<main style="display: flex; justify-content: space-between">
-  <section style="width: 70%">
-    <h2>Lista de Cartas</h2>
-
+<main>
+  <section class="pokemons-list">
     <div
       style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem"
       cdkDropList
@@ -11,39 +9,79 @@
     >
       <ng-container *ngFor="let card of cards$">
         <div cdkDrag>
-          <!-- <p>{{card.name}}</p> -->
           <img [src]="card.images.small" [alt]="card.name" width="200" />
         </div>
       </ng-container>
     </div>
   </section>
 
-  <aside style="width: 30%">
-    <h2>Create a deck</h2>
-
+  <aside class="create-deck" style="width: 34%">
     <form [formGroup]="form">
-      <button (click)="createDeck()">Save</button>
+      
+      <div class="create-deck__header">
+        <h3>Create a deck</h3>
 
-      <input type="text" formControlName="name" />
+        <igx-input-group>
+          <input
+            igxInput
+            type="text"
+            formControlName="name"
+            placeholder="insert name"
+          />
+        </igx-input-group>
+      </div>
 
-      <p>
-        <button (click)="addPokemon()">Add Pokemon</button>
-      </p>
+      <div class="create-deck__cards-amount">
+        <igx-chip [removeIcon]="mycardIcon" [removable]="true">
+          0 - 60
+        </igx-chip>
 
-      <div class="create-deck__choosen-cards" 
-          cdkDropList 
-          [cdkDropListData]="choosenCards" 
-          #choosenCardsList="cdkDropList"
-          (cdkDropListDropped)="drop($event)">
+        <button
+          igxRipple
+          igxButton="outlined"
+          igxButtonColor="black"
+          igxButtonBackground="#48cae4"
+          (click)="createDeck()"
+        >
+          Save
+        </button>
+      </div>
+
+      <div class="create-deck__drop-area">
+      <div
+        class="create-deck__choosen-cards"
+        cdkDropList
+        [cdkDropListData]="choosenCards"
+        #choosenCardsList="cdkDropList"
+        (cdkDropListDropped)="drop($event)"
+      >
         @for (item of choosenCards; track item.card.name) {
-          <div class="create-deck__choosen-card">
-            <img [src]="item.card.images.small" [alt]="item.card.name" width="200" />
-            <div class="create-deck__footer">
-              <div class="create-deck__amount">{{item.amount}}</div>
+        <div class="create-deck__choosen-card">
+          <img
+            [src]="item.card.images.small"
+            [alt]="item.card.name"
+            width="200"
+          />
+          <div class="create-deck__footer">
+            <div class="create-deck__amount">
+              <strong>
+                {{ item.amount }}
+              </strong>
             </div>
           </div>
-        } 
+        </div>
+        }
       </div>
+    </div>
+
     </form>
   </aside>
 </main>
+
+<!-- por as mensagens de validacoes nas cartas -->
+<igx-toast #toast></igx-toast>
+
+<!-- template para por o icone no igx-chip -->
+<ng-template #mycardIcon>
+  <igx-icon>styles</igx-icon>
+</ng-template>

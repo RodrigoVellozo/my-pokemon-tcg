@@ -1,7 +1,7 @@
 import { Data } from "./pokemon-data";
 
 export interface Deck {
-    id: number,
+    id?: number,
     name: string;
     imgUrl: string;
     pokemons: Array<DeckItem>;

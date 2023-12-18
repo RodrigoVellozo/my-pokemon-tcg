@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxChipsModule, IgxDialogModule, IgxDragDropModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxListModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxProgressBarModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSwitchModule, IgxToggleModule } from 'igniteui-angular';
+import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule, IgxCardModule, IgxChipsModule, IgxDialogModule, IgxDragDropModule, IgxExcelExporterService, IgxFocusModule, IgxGridModule, IgxIconModule, IgxInputGroupModule, IgxLayoutModule, IgxListModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxProgressBarModule, IgxRippleModule, IgxSelectModule, IgxSliderModule, IgxSnackbarModule, IgxSwitchModule, IgxToastModule, IgxToggleModule } from 'igniteui-angular';
 import { IgxCategoryChartModule, IgxSparklineCoreModule, IgxSparklineModule } from 'igniteui-angular-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,7 +59,9 @@ import { HomeComponent } from './home/home.component';
     IgxChipsModule,
     IgxListModule,
     CdkDropList,
-    CdkDrag
+    CdkDrag,
+    IgxToastModule,
+    IgxSnackbarModule
   ],
   providers: [IgxExcelExporterService],
   bootstrap: [AppComponent]

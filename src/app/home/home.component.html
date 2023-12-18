@@ -30,7 +30,7 @@
   <aside class="deck-preview" *ngIf="deckDetails">
     <div class="deck-preview__header">
       <h4 style="margin-top: 1rem;">
-        {{ deckDetails.name }}
+        {{ deckDetails.name }} -{{deckDetails.id}}
       </h4>
       <div class="deck-preview__header__info">
         <img [src]="deckDetails.imgUrl" [alt]="deckDetails.name" width="100">
