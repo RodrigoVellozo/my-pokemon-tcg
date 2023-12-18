@@ -32,7 +32,17 @@
 
       <div class="create-deck__cards-amount">
         <igx-chip [removeIcon]="mycardIcon" [removable]="true">
-          0 - 60
+          <span *ngIf="!totalCards" [ngClass]="0 < 24 ? 'red' : 'green' ">
+            0 
+          </span>
+
+          <span [ngClass]="totalCards < 24 ? 'red' : 'green' ">
+            {{totalCards}}
+          </span>
+          
+          <span [ngClass]="60 < 24 ? 'red' : 'green' ">
+            - 60
+          </span>
         </igx-chip>
 
         <button

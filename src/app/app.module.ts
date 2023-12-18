@@ -13,13 +13,15 @@ import { CreateDeckComponent } from './components/create-deck/create-deck.compon
 import { UpdateDeckComponent } from './components/update-deck/update-deck.component';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HomeComponent } from './home/home.component';
+import { DeckManagementFormComponent } from './components/deck-management-form/deck-management-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateDeckComponent,
-    UpdateDeckComponent
+    UpdateDeckComponent,
+    DeckManagementFormComponent
   ],
   imports: [
     FormsModule,
