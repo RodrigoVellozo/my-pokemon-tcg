@@ -47,7 +47,6 @@ export class CreateDeckComponent {
 
   public createDeck() {
     const dataToSend = {
-  
       name: this.form.value.name === null ? 'New Deck' : this.form.value.name,
       imgUrl: this.form.value.imgUrl === null ? defaultImage : this.form.value.imgUrl,
       pokemons: this.choosenCards,

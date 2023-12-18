@@ -30,7 +30,7 @@
   <aside class="deck-preview" *ngIf="deckDetails">
     <div class="deck-preview__header">
       <h4 style="margin-top: 1rem;">
-        {{ deckDetails.name }} -{{deckDetails.id}}
+        {{ deckDetails.name }}
       </h4>
       <div class="deck-preview__header__info">
         <img [src]="deckDetails.imgUrl" [alt]="deckDetails.name" width="100">
@@ -44,14 +44,18 @@
     <div class="deck-preview__actions">
       <button 
         igxRipple
-        igxButton="outlined" 
+        igxButton="outlined"
+        igxButtonBackground="#fdffb6" 
         igxButtonColor="black" 
         [routerLink]="['/update-deck/', deckDetails.id]">Edit</button>
       <button 
+        igxRipple
         igxButton="outlined"
         igxButtonColor="black" 
-        igxButtonBackground="#f28482" 
-        igxRipple>Delete</button>
+        igxButtonBackground="#f28482"
+        (click)="deleteDeck(deckDetails)">
+        Delete
+      </button>
     </div>
 
     <div class="deck-preview__cards">

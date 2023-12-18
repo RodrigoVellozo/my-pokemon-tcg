@@ -1,0 +1,117 @@
+:host {
+    width: 100%;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    height: 86vh;
+    margin: 16px;
+  }
+  
+  .pokemons-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  
+    width: 62%;
+    height: 92vh;
+    overflow-y: scroll;
+  
+    &_img {
+      height: 16vw;
+    }
+  }
+  
+  
+  .create-deck {
+    background: #f8f9fa;
+    border-radius: 2rem;
+    box-shadow: 9px 10px 44px 20px rgba(0,0,0,0.1);
+  
+    &__header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &__cards-amount{
+      display: flex;
+      justify-content: space-around;
+      margin: 1.5rem 0;
+    }
+  
+    //drag and drop 
+    &__drop-area{
+      overflow-y: scroll;
+      height: 25rem;
+      border-radius: 2rem;
+    }
+  
+    &__choosen-cards {
+      margin: 0px 8px;
+      display: grid;
+      grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
+      min-height: 10rem;
+      border: 1px dashed #48cae4;
+      gap: 8px;
+    }
+  
+    &__choosen-card {
+      display: block;
+      position: relative;
+    }
+  
+    &__footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    &__amount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 20px;
+      width: 20px;
+      border-radius: 10px;
+      background: lightgrey;
+    }
+  
+  }
+  
+  
+  .pokemons-list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .pokemons-list::-webkit-scrollbar-track {
+    background: #bdbcba;
+  }
+  
+  .pokemons-list::-webkit-scrollbar-thumb {
+    background-color: hsl(214, 87%, 54%);
+    border-radius: 20px;       
+    border: 3px solid #f5c46a; 
+  }
+  
+  .create-deck__drop-area::-webkit-scrollbar {
+    width: 10px;             
+  }
+  
+  .create-deck__drop-area::-webkit-scrollbar-track {
+    background: #bdbcba;    
+  }
+  
+  .create-deck__drop-area::-webkit-scrollbar-thumb {
+    background-color: hsl(214, 87%, 54%);   
+    border-radius: 20px;      
+    border: 3px solid #f5c46a;  
+  }
