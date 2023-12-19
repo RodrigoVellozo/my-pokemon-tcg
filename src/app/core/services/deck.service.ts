@@ -14,8 +14,6 @@ export class DeckService {
 
   public getDecks(): Observable<Deck[]> {
     return this._http.get<Deck[]>(this.decksUrl).pipe(
-      // TODO remover console.log
-      // tap(decks=> console.log(`number of decks ${decks.length}`)),
       catchError(this.handleError)
     );
   }

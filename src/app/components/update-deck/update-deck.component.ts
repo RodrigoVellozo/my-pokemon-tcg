@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IgxToastComponent } from 'igniteui-angular';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 import { Deck } from 'src/app/core/models/deck';
 import { Data } from 'src/app/core/models/pokemon-data';
 import { DeckService } from 'src/app/core/services/deck.service';
@@ -35,6 +35,14 @@ export class UpdateDeckComponent implements OnInit {
   get imgUrl() {
     return this.form.get('imgUrl')?.value;
   }
+
+  readonly pokemons$ = this.search$.pipe(
+    switchMap((event) => this.getPokemon(event))
+  );
+
+  readonly pokemonNotFound$ = this.pokemons$.pipe(
+    map((movies) => (movies ? '' : this.search$.value))
+  );
 
   constructor(
     private _route: ActivatedRoute,
@@ -115,5 +123,9 @@ if (existingCard) {
 
   search(search: string){
     this.search$.next(search);
+  }
+
+  private getPokemon(event: string): Observable<Array<any>>{
+    return this._pokemonService.getPokemon(event);
   }
 }

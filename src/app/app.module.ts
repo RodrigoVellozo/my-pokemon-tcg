@@ -13,17 +13,16 @@ import { CreateDeckComponent } from './components/create-deck/create-deck.compon
 import { UpdateDeckComponent } from './components/update-deck/update-deck.component';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HomeComponent } from './home/home.component';
-import { DeckManagementFormComponent } from './components/deck-management-form/deck-management-form.component';
-import { SearchComponent } from './ui/components/search/search.component';
 import { LoadingComponent } from './ui/components/loading/loading.component';
+import { SearchComponent } from './ui/components/search/search.component';
+import { ErrorMessageContentComponent } from './ui/components/error-message-content/error-message-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateDeckComponent,
-    UpdateDeckComponent,
-    DeckManagementFormComponent
+    UpdateDeckComponent
   ],
   imports: [
     FormsModule,
@@ -39,6 +38,7 @@ import { LoadingComponent } from './ui/components/loading/loading.component';
 
     SearchComponent,
     LoadingComponent,
+    ErrorMessageContentComponent,
 
     IgxLayoutModule,
     IgxNavbarModule,

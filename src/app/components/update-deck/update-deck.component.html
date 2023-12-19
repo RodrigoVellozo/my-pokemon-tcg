@@ -92,3 +92,10 @@
 <ng-template #mycardIcon>
   <igx-icon>styles</igx-icon>
 </ng-template>
+
+<!-- TODO : exibir mensagem caso nao encontre um pokemon -->
+<ng-template #emptyTemplate>
+  <app-error-message-content
+    [name]="(pokemonNotFound$ | async)!"
+  ></app-error-message-content>
+</ng-template>
