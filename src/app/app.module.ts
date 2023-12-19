@@ -14,6 +14,8 @@ import { UpdateDeckComponent } from './components/update-deck/update-deck.compon
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HomeComponent } from './home/home.component';
 import { DeckManagementFormComponent } from './components/deck-management-form/deck-management-form.component';
+import { SearchComponent } from './ui/components/search/search.component';
+import { LoadingComponent } from './ui/components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,9 @@ import { DeckManagementFormComponent } from './components/deck-management-form/d
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
+
+    SearchComponent,
+    LoadingComponent,
 
     IgxLayoutModule,
     IgxNavbarModule,

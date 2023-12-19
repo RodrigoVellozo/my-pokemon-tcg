@@ -19,15 +19,24 @@
     <form [formGroup]="form">
       <div class="create-deck__header">
         <h3>Update Deck</h3>
-
-        <igx-input-group>
-          <input
-            igxInput
-            type="text"
-            formControlName="name"
-            placeholder="insert name"
-          />
-        </igx-input-group>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 2.2rem;
+          "
+        >
+          <igx-input-group>
+            <input
+              igxInput
+              type="text"
+              formControlName="name"
+              placeholder="insert name"
+            />
+          </igx-input-group>
+          <app-search (searchEvent)="search($event)"></app-search>
+        </div>
       </div>
 
       <div class="create-deck__cards-amount">

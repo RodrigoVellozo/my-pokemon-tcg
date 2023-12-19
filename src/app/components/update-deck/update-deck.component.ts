@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IgxToastComponent } from 'igniteui-angular';
+import { BehaviorSubject } from 'rxjs';
 import { Deck } from 'src/app/core/models/deck';
 import { Data } from 'src/app/core/models/pokemon-data';
 import { DeckService } from 'src/app/core/services/deck.service';
@@ -16,6 +17,8 @@ import { PokemonService } from 'src/app/core/services/pokemon.service';
 export class UpdateDeckComponent implements OnInit {
   @ViewChild('toast', { read: IgxToastComponent }) 
   public toast!: IgxToastComponent;
+  
+  readonly search$ = new BehaviorSubject<string>('');
   
   public form = this._initForm();
 
@@ -108,5 +111,9 @@ if (existingCard) {
     });
   
     this.choosenCards = [...data];
+  }
+
+  search(search: string){
+    this.search$.next(search);
   }
 }

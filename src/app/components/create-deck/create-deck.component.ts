@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IgxSnackbarComponent, IgxToastComponent } from 'igniteui-angular';
 import { CustomContourValueResolverEventArgs } from 'igniteui-angular-charts';
+import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 import { Data } from 'src/app/core/models/pokemon-data';
 import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
@@ -20,6 +21,8 @@ export class CreateDeckComponent {
   // public cards$ = this._pokemonService.getAllPokemons().pipe();
   public cards$: Data[] = [];
 
+  readonly search$ = new BehaviorSubject<string>('');
+
   public form = this._initForm();
 
   choosenCards: { card: Data; amount: number }[] = [];
@@ -28,6 +31,14 @@ export class CreateDeckComponent {
 
   @ViewChild('toast', { read: IgxToastComponent })
   public toast!: IgxToastComponent;
+
+  readonly pokemons$ = this.search$.pipe(
+    switchMap((event) => this.getPokemon(event))
+  );
+
+  readonly titleNotFound$ = this.pokemons$.pipe(
+    map((movies) => (movies ? '' : this.search$.value))
+  );
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -38,6 +49,8 @@ export class CreateDeckComponent {
     // TODO - remover urgente
     this._pokemonService.getPokemons().then((res: any) => {
       this.cards$ = res.data;
+    
+      console.log(this.cards$)
     });
   }
 
@@ -92,4 +105,13 @@ export class CreateDeckComponent {
       return 
     }
   }
+
+  search(search: string){
+    this.search$.next(search);
+  }
+
+  private getPokemon(event: string): Observable<Array<any>>{
+    return this._pokemonService.getPokemon(event);
+  }
+
 }

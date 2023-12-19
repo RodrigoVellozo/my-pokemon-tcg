@@ -19,30 +19,38 @@
     <form [formGroup]="form">
       <div class="create-deck__header">
         <h3>Create a deck</h3>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 2.2rem;
+          "
+        >
+          <igx-input-group>
+            <input
+              igxInput
+              type="text"
+              formControlName="name"
+              placeholder="insert name"
+            />
+          </igx-input-group>
 
-        <igx-input-group>
-          <input
-            igxInput
-            type="text"
-            formControlName="name"
-            placeholder="insert name"
-          />
-        </igx-input-group>
+          <app-search (searchEvent)="search($event)"></app-search>
+        </div>
       </div>
 
       <div class="create-deck__cards-amount">
         <igx-chip [removeIcon]="mycardIcon" [removable]="true">
-          <span *ngIf="!totalCards" [ngClass]="0 < 24 ? 'red' : 'green' ">
-            0 
+          <span *ngIf="!totalCards" [ngClass]="0 < 24 ? 'red' : 'green'">
+            0
           </span>
 
-          <span [ngClass]="totalCards < 24 ? 'red' : 'green' ">
-            {{totalCards}}
+          <span [ngClass]="totalCards < 24 ? 'red' : 'green'">
+            {{ totalCards }}
           </span>
-          
-          <span [ngClass]="60 < 24 ? 'red' : 'green' ">
-            - 60
-          </span>
+
+          <span [ngClass]="60 < 24 ? 'red' : 'green'"> - 60 </span>
         </igx-chip>
 
         <button

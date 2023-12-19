@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { Observable, catchError, map, tap, throwError } from 'rxjs';
 import { Pokemons } from '../models/pokemon-model';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Pokemons } from '../models/pokemon-model';
 })
 export class PokemonService {
 
-  private readonly URL = 'https://api.pokemontcg.io/v2/cards?pageSize=100';
+  private readonly URL = 'https://api.pokemontcg.io/v2/cards?pageSize=1000';
 
   constructor(private _http: HttpClient) { }
 
@@ -16,6 +16,17 @@ export class PokemonService {
   public getPokemons = async ()=>{
     const request = await fetch(this.URL);
     return request.json();
+  }
+
+  public getPokemon(search?: string): Observable<Array<any>> {
+    if (!search) search = 'one piece';
+    return this._http.get<Observable<Array<any>>>(`${this.URL}s=${search}`).pipe(
+      map((res:any) => res.Search),
+      catchError((err) => {
+        console.log('Ocorreu um erro na requisição');
+        return throwError(() => err);
+      })
+    );
   }
 
   //TODO - fazer funcionar
