@@ -1,4 +1,5 @@
-<main>
+<app-loading [isLoading]="false">
+  <main>
   <section class="pokemons-list">
     <div
       style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem"
@@ -92,7 +93,8 @@
       </div>
     </form>
   </aside>
-</main>
+  </main>
+</app-loading>
 
 <!-- por as mensagens de validacoes nas cartas -->
 <igx-toast #toast></igx-toast>

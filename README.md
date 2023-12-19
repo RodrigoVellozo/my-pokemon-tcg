@@ -31,10 +31,8 @@ Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emu
 - [ ] Utilizar o json-server (fake-api) para API de deck
 - [ ] Ajustar request;
 - [ ] refatoração de componentes
-- [ ] Implementar componente de loading;
+- [x] Implementar componente de loading;
 - [ ] Implementar o NGRX para gerenciar o estado global da aplicação
 - [ ] Responsividade do layout
 
 ...entre outras coisas que forem aparecendo. 
-
-
