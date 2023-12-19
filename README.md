@@ -1,9 +1,14 @@
 # my-pokemon-tcg
 
-Aplicação desenvolvida em Angular utilizando a Ignite UI CLI versao 13.0.2.
+Aplicação desenvolvida em Angular utilizando a Ignite UI CLI versão 13.0.2.
 Angular version: 17.0.0
 
-Este projeto utiliza uma API Web em memoria para demonstrações e testes Angular, que emula operações CRUD em uma API REST.
+Este projeto utiliza uma API Web em memória para demonstrações e testes, que emula operações CRUD em uma API REST.
+
+A ideia desse projeto e construir um card game inspirado no TGC Live.
+O objetivo consiste basicamente em consumir a API `https://api.pokemontcg.io` para obter as informações necessárias para se montar os decks de batalha.
+
+Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emula operações CRUD em uma API REST, mas em breve estes recursos serão armazenados em uma 'API FAke'.
 
 #### Libs:
 - [InMemoryDbService](https://www.npmjs.com/package/angular-in-memory-web-api "npm")
@@ -31,3 +36,5 @@ Este projeto utiliza uma API Web em memoria para demonstrações e testes Angula
 - [ ] Responsividade do layout
 
 ...entre outras coisas que forem aparecendo. 
+
+
