@@ -3,7 +3,6 @@ import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
 import { Deck } from '../models/deck';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -18,114 +17,99 @@ export class InMemoryDataService implements InMemoryDbService {
     const decks = [
       {
         id: 1,
-        name: "Arcaine ex",
-        imgUrl: "https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png",
+        name: 'Arcaine ex',
+        imgUrl: 'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png',
         pokemons: [
           {
             card: {
-              id: "pl3-1",
-              name: "Absol G",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic",
-                "SP"
-              ],
-              level: "59",
-              hp: "70",
-              types: [
-                "Darkness"
-              ],
+              id: 'pl3-1',
+              name: 'Absol G',
+              supertype: 'Pokémon',
+              subtypes: ['Basic', 'SP'],
+              level: '59',
+              hp: '70',
+              types: ['Darkness'],
               attacks: [
                 {
-                  name: "Feint Attack",
-                  cost: [
-                    "Darkness"
-                  ],
+                  name: 'Feint Attack',
+                  cost: ['Darkness'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon."
+                  damage: '',
+                  text: "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon.",
                 },
                 {
-                  name: "Doom News",
-                  cost: [
-                    "Darkness",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Doom News',
+                  cost: ['Darkness', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "",
-                  text: "Return all Energy cards attached to Absol G to your hand. The Defending Pokémon is Knocked Out at the end of your opponent's next turn."
-                }
+                  damage: '',
+                  text: "Return all Energy cards attached to Absol G to your hand. The Defending Pokémon is Knocked Out at the end of your opponent's next turn.",
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fighting",
-                  value: "×2"
-                }
+                  type: 'Fighting',
+                  value: '×2',
+                },
               ],
               resistances: [
                 {
-                  type: "Psychic",
-                  value: "-20"
-                }
+                  type: 'Psychic',
+                  value: '-20',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "pl3",
-                name: "Supreme Victors",
-                series: "Platinum",
+                id: 'pl3',
+                name: 'Supreme Victors',
+                series: 'Platinum',
                 printedTotal: 147,
                 total: 153,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "SV",
-                releaseDate: "2009/08/19",
-                updatedAt: "2018/03/07 22:40:00",
+                ptcgoCode: 'SV',
+                releaseDate: '2009/08/19',
+                updatedAt: '2018/03/07 22:40:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/pl3/symbol.png",
-                  logo: "https://images.pokemontcg.io/pl3/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/pl3/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pl3/logo.png',
+                },
               },
-              number: "1",
-              artist: "Yusuke Ishikawa",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                359
-              ],
+              number: '1',
+              artist: 'Yusuke Ishikawa',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [359],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/pl3/1.png",
-                large: "https://images.pokemontcg.io/pl3/1_hires.png"
+                small: 'https://images.pokemontcg.io/pl3/1.png',
+                large: 'https://images.pokemontcg.io/pl3/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/pl3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/pl3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 3,
                     mid: 4.47,
                     high: 14,
                     market: 8.96,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 3.29,
                     mid: 6.09,
                     high: 7.58,
                     market: 7,
-                    directLow: 2.9
-                  }
-                }
+                    directLow: 2.9,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/pl3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/pl3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 5,
                   lowPrice: 1,
@@ -141,104 +125,93 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 5.21,
                   reverseHoloAvg1: 9,
                   reverseHoloAvg7: 5.84,
-                  reverseHoloAvg30: 5.37
-                }
-              }
+                  reverseHoloAvg30: 5.37,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "xy5-1",
-              name: "Weedle",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic"
-              ],
-              hp: "50",
-              types: [
-                "Grass"
-              ],
-              evolvesTo: [
-                "Kakuna"
-              ],
+              id: 'xy5-1',
+              name: 'Weedle',
+              supertype: 'Pokémon',
+              subtypes: ['Basic'],
+              hp: '50',
+              types: ['Grass'],
+              evolvesTo: ['Kakuna'],
               attacks: [
                 {
-                  name: "Multiply",
-                  cost: [
-                    "Grass"
-                  ],
+                  name: 'Multiply',
+                  cost: ['Grass'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "Search your deck for Weedle and put it onto your Bench. Shuffle your deck afterward."
-                }
+                  damage: '',
+                  text: 'Search your deck for Weedle and put it onto your Bench. Shuffle your deck afterward.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "xy5",
-                name: "Primal Clash",
-                series: "XY",
+                id: 'xy5',
+                name: 'Primal Clash',
+                series: 'XY',
                 printedTotal: 160,
                 total: 164,
                 legalities: {
-                  unlimited: "Legal",
-                  expanded: "Legal"
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
                 },
-                ptcgoCode: "PRC",
-                releaseDate: "2015/02/04",
-                updatedAt: "2020/05/01 16:06:00",
+                ptcgoCode: 'PRC',
+                releaseDate: '2015/02/04',
+                updatedAt: '2020/05/01 16:06:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/xy5/symbol.png",
-                  logo: "https://images.pokemontcg.io/xy5/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/xy5/symbol.png',
+                  logo: 'https://images.pokemontcg.io/xy5/logo.png',
+                },
               },
-              number: "1",
-              artist: "Midori Harada",
-              rarity: "Common",
-              flavorText: "Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.",
-              nationalPokedexNumbers: [
-                13
-              ],
+              number: '1',
+              artist: 'Midori Harada',
+              rarity: 'Common',
+              flavorText:
+                'Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.',
+              nationalPokedexNumbers: [13],
               legalities: {
-                unlimited: "Legal",
-                expanded: "Legal"
+                unlimited: 'Legal',
+                expanded: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/xy5/1.png",
-                large: "https://images.pokemontcg.io/xy5/1_hires.png"
+                small: 'https://images.pokemontcg.io/xy5/1.png',
+                large: 'https://images.pokemontcg.io/xy5/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/xy5-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/xy5-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   normal: {
                     low: 0.01,
                     mid: 0.19,
                     high: 2,
                     market: 0.16,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 0.24,
                     mid: 0.37,
                     high: 4.06,
                     market: 0.38,
-                    directLow: 0.38
-                  }
-                }
+                    directLow: 0.38,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/xy5-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/xy5-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 0.03,
                   lowPrice: 0.02,
@@ -254,118 +227,105 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 0.09,
                   reverseHoloAvg1: 0.5,
                   reverseHoloAvg7: 0.73,
-                  reverseHoloAvg30: 0.52
-                }
-              }
+                  reverseHoloAvg30: 0.52,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "dp3-1",
-              name: "Ampharos",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 2"
-              ],
-              level: "52",
-              hp: "130",
-              types: [
-                "Lightning"
-              ],
-              evolvesFrom: "Flaaffy",
+              id: 'dp3-1',
+              name: 'Ampharos',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 2'],
+              level: '52',
+              hp: '130',
+              types: ['Lightning'],
+              evolvesFrom: 'Flaaffy',
               abilities: [
                 {
-                  name: "Jamming",
+                  name: 'Jamming',
                   text: "After your opponent plays a Supporter card from his or her hand, put 1 damage counter on each of your opponent's Pokémon. You can't use more than 1 Jamming Poké-Body each turn.",
-                  type: "Poké-Body"
-                }
+                  type: 'Poké-Body',
+                },
               ],
               attacks: [
                 {
-                  name: "Cluster Bolt",
-                  cost: [
-                    "Lightning",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Cluster Bolt',
+                  cost: ['Lightning', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "70",
-                  text: "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-                }
+                  damage: '70',
+                  text: "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fighting",
-                  value: "+30"
-                }
+                  type: 'Fighting',
+                  value: '+30',
+                },
               ],
               resistances: [
                 {
-                  type: "Metal",
-                  value: "-20"
-                }
+                  type: 'Metal',
+                  value: '-20',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless', 'Colorless'],
               convertedRetreatCost: 3,
               set: {
-                id: "dp3",
-                name: "Secret Wonders",
-                series: "Diamond & Pearl",
+                id: 'dp3',
+                name: 'Secret Wonders',
+                series: 'Diamond & Pearl',
                 printedTotal: 132,
                 total: 132,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "SW",
-                releaseDate: "2007/11/01",
-                updatedAt: "2018/03/04 10:35:00",
+                ptcgoCode: 'SW',
+                releaseDate: '2007/11/01',
+                updatedAt: '2018/03/04 10:35:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/dp3/symbol.png",
-                  logo: "https://images.pokemontcg.io/dp3/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/dp3/symbol.png',
+                  logo: 'https://images.pokemontcg.io/dp3/logo.png',
+                },
               },
-              number: "1",
-              artist: "Kouki Saitou",
-              rarity: "Rare Holo",
-              flavorText: "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
-              nationalPokedexNumbers: [
-                181
-              ],
+              number: '1',
+              artist: 'Kouki Saitou',
+              rarity: 'Rare Holo',
+              flavorText:
+                "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
+              nationalPokedexNumbers: [181],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/dp3/1.png",
-                large: "https://images.pokemontcg.io/dp3/1_hires.png"
+                small: 'https://images.pokemontcg.io/dp3/1.png',
+                large: 'https://images.pokemontcg.io/dp3/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/dp3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/dp3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 4.25,
                     mid: 6.29,
                     high: 29.98,
                     market: 13.7,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 4.15,
                     mid: 5.27,
                     high: 14.99,
                     market: 7.04,
-                    directLow: 4.4
-                  }
-                }
+                    directLow: 4.4,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/dp3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/dp3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 3.22,
                   lowPrice: 0.05,
@@ -381,126 +341,114 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 2.21,
                   reverseHoloAvg1: 4.99,
                   reverseHoloAvg7: 1.94,
-                  reverseHoloAvg30: 2.71
-                }
-              }
+                  reverseHoloAvg30: 2.71,
+                },
+              },
             },
-            amount: 2
-          }
-        ]
+            amount: 2,
+          },
+        ],
       },
       {
         id: 2,
-        name: "Lua Estrondo ex",
-        imgUrl: "https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png",
+        name: 'Lua Estrondo ex',
+        imgUrl: 'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png',
         pokemons: [
           {
             card: {
-              id: "ex12-1",
-              name: "Aerodactyl",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 1"
-              ],
-              hp: "70",
-              types: [
-                "Colorless"
-              ],
-              evolvesFrom: "Mysterious Fossil",
+              id: 'ex12-1',
+              name: 'Aerodactyl',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 1'],
+              hp: '70',
+              types: ['Colorless'],
+              evolvesFrom: 'Mysterious Fossil',
               abilities: [
                 {
-                  name: "Reactive Protection",
+                  name: 'Reactive Protection',
                   text: "Any damage done to Aerodactyl by attacks from your opponent's Pokémon is reduced by 10 for each React Energy card attached to Aerodactyl (after applying Weakness and Resistance).",
-                  type: "Poké-Body"
-                }
+                  type: 'Poké-Body',
+                },
               ],
               attacks: [
                 {
-                  name: "Power Blow",
-                  cost: [
-                    "Colorless"
-                  ],
+                  name: 'Power Blow',
+                  cost: ['Colorless'],
                   convertedEnergyCost: 1,
-                  damage: "10+",
-                  text: "Does 10 damage plus 10 more damage for each Energy attached to Aerodactyl."
+                  damage: '10+',
+                  text: 'Does 10 damage plus 10 more damage for each Energy attached to Aerodactyl.',
                 },
                 {
-                  name: "Speed Stroke",
-                  cost: [
-                    "Colorless",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Speed Stroke',
+                  cost: ['Colorless', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "40",
-                  text: "During your opponent's next turn, prevent all effects, including damage, done to Aerodactyl by attacks from your opponent's Pokémon-ex."
-                }
+                  damage: '40',
+                  text: "During your opponent's next turn, prevent all effects, including damage, done to Aerodactyl by attacks from your opponent's Pokémon-ex.",
+                },
               ],
               weaknesses: [
                 {
-                  type: "Lightning",
-                  value: "×2"
-                }
+                  type: 'Lightning',
+                  value: '×2',
+                },
               ],
               resistances: [
                 {
-                  type: "Fighting",
-                  value: "-30"
-                }
+                  type: 'Fighting',
+                  value: '-30',
+                },
               ],
               set: {
-                id: "ex12",
-                name: "Legend Maker",
-                series: "EX",
+                id: 'ex12',
+                name: 'Legend Maker',
+                series: 'EX',
                 printedTotal: 92,
                 total: 93,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "LM",
-                releaseDate: "2006/02/01",
-                updatedAt: "2018/03/04 10:35:00",
+                ptcgoCode: 'LM',
+                releaseDate: '2006/02/01',
+                updatedAt: '2018/03/04 10:35:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ex12/symbol.png",
-                  logo: "https://images.pokemontcg.io/ex12/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ex12/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ex12/logo.png',
+                },
               },
-              number: "1",
-              artist: "Hajime Kusajima",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                142
-              ],
+              number: '1',
+              artist: 'Hajime Kusajima',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [142],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ex12/1.png",
-                large: "https://images.pokemontcg.io/ex12/1_hires.png"
+                small: 'https://images.pokemontcg.io/ex12/1.png',
+                large: 'https://images.pokemontcg.io/ex12/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/ex12-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/ex12-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 15.79,
                     mid: 17,
                     high: 19.99,
                     market: 16.73,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 17,
                     mid: 18.99,
                     high: 33.24,
                     market: 39.99,
-                    directLow: null
-                  }
-                }
+                    directLow: null,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ex12-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ex12-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 12.46,
                   lowPrice: 0.89,
@@ -516,97 +464,86 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 11.89,
                   reverseHoloAvg1: 21,
                   reverseHoloAvg7: 36.18,
-                  reverseHoloAvg30: 21.66
-                }
-              }
+                  reverseHoloAvg30: 21.66,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "det1-1",
-              name: "Bulbasaur",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic"
-              ],
-              hp: "60",
-              types: [
-                "Grass"
-              ],
-              evolvesTo: [
-                "Ivysaur"
-              ],
+              id: 'det1-1',
+              name: 'Bulbasaur',
+              supertype: 'Pokémon',
+              subtypes: ['Basic'],
+              hp: '60',
+              types: ['Grass'],
+              evolvesTo: ['Ivysaur'],
               attacks: [
                 {
-                  name: "Find a Friend",
-                  cost: [
-                    "Grass"
-                  ],
+                  name: 'Find a Friend',
+                  cost: ['Grass'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
-                }
+                  damage: '',
+                  text: 'Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "det1",
-                name: "Detective Pikachu",
-                series: "Sun & Moon",
+                id: 'det1',
+                name: 'Detective Pikachu',
+                series: 'Sun & Moon',
                 printedTotal: 18,
                 total: 18,
                 legalities: {
-                  unlimited: "Legal",
-                  expanded: "Legal"
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
                 },
-                ptcgoCode: "DET",
-                releaseDate: "2019/04/05",
-                updatedAt: "2021/09/01 05:37:00",
+                ptcgoCode: 'DET',
+                releaseDate: '2019/04/05',
+                updatedAt: '2021/09/01 05:37:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/det1/symbol.png",
-                  logo: "https://images.pokemontcg.io/det1/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/det1/symbol.png',
+                  logo: 'https://images.pokemontcg.io/det1/logo.png',
+                },
               },
-              number: "1",
-              artist: "MPC Film",
-              rarity: "Common",
-              flavorText: "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
-              nationalPokedexNumbers: [
-                1
-              ],
+              number: '1',
+              artist: 'MPC Film',
+              rarity: 'Common',
+              flavorText:
+                'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.',
+              nationalPokedexNumbers: [1],
               legalities: {
-                unlimited: "Legal",
-                expanded: "Legal"
+                unlimited: 'Legal',
+                expanded: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/det1/1.png",
-                large: "https://images.pokemontcg.io/det1/1_hires.png"
+                small: 'https://images.pokemontcg.io/det1/1.png',
+                large: 'https://images.pokemontcg.io/det1/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/det1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/det1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 0.04,
                     mid: 0.39,
                     high: 5.03,
                     market: 0.29,
-                    directLow: null
-                  }
-                }
+                    directLow: null,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/det1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/det1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 0.38,
                   lowPrice: 0.02,
@@ -622,96 +559,80 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 0.41,
                   reverseHoloAvg1: 0.02,
                   reverseHoloAvg7: 0.45,
-                  reverseHoloAvg30: 0.5
-                }
-              }
+                  reverseHoloAvg30: 0.5,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "ru1-1",
-              name: "Venusaur",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 2"
-              ],
-              hp: "140",
-              types: [
-                "Grass"
-              ],
-              evolvesFrom: "Ivysaur",
+              id: 'ru1-1',
+              name: 'Venusaur',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 2'],
+              hp: '140',
+              types: ['Grass'],
+              evolvesFrom: 'Ivysaur',
               attacks: [
                 {
-                  name: "Giga Drain",
-                  cost: [
-                    "Grass",
-                    "Grass",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Giga Drain',
+                  cost: ['Grass', 'Grass', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 4,
-                  damage: "50",
-                  text: "Remove from Venusaur the number of damage counters equal to the damage you did to the Defending Pokémon."
-                }
+                  damage: '50',
+                  text: 'Remove from Venusaur the number of damage counters equal to the damage you did to the Defending Pokémon.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless",
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless', 'Colorless', 'Colorless'],
               convertedRetreatCost: 4,
               set: {
-                id: "ru1",
-                name: "Pokémon Rumble",
-                series: "Other",
+                id: 'ru1',
+                name: 'Pokémon Rumble',
+                series: 'Other',
                 printedTotal: 16,
                 total: 16,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                releaseDate: "2009/12/02",
-                updatedAt: "2019/01/28 16:44:00",
+                releaseDate: '2009/12/02',
+                updatedAt: '2019/01/28 16:44:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ru1/symbol.png",
-                  logo: "https://images.pokemontcg.io/ru1/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ru1/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ru1/logo.png',
+                },
               },
-              number: "1",
-              artist: "Pokemon Rumble",
-              nationalPokedexNumbers: [
-                3
-              ],
+              number: '1',
+              artist: 'Pokemon Rumble',
+              nationalPokedexNumbers: [3],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ru1/1.png",
-                large: "https://images.pokemontcg.io/ru1/1_hires.png"
+                small: 'https://images.pokemontcg.io/ru1/1.png',
+                large: 'https://images.pokemontcg.io/ru1/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/ru1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/ru1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 30.12,
                     mid: 49.99,
                     high: 105.66,
                     market: 35,
-                    directLow: null
-                  }
-                }
+                    directLow: null,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ru1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ru1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 12.99,
                   lowPrice: 20,
@@ -727,91 +648,76 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 35.27,
                   reverseHoloAvg1: 22.84,
                   reverseHoloAvg7: 11.09,
-                  reverseHoloAvg30: 5.39
-                }
-              }
+                  reverseHoloAvg30: 5.39,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "ecard2-H1",
-              name: "Ampharos",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 2"
-              ],
-              hp: "100",
-              types: [
-                "Lightning"
-              ],
-              evolvesFrom: "Flaaffy",
+              id: 'ecard2-H1',
+              name: 'Ampharos',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 2'],
+              hp: '100',
+              types: ['Lightning'],
+              evolvesFrom: 'Flaaffy',
               attacks: [
                 {
-                  name: "Thundershock",
-                  cost: [
-                    "Lightning"
-                  ],
+                  name: 'Thundershock',
+                  cost: ['Lightning'],
                   convertedEnergyCost: 1,
-                  damage: "20",
-                  text: "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+                  damage: '20',
+                  text: 'Flip a coin. If heads, the Defending Pokémon is now Paralyzed.',
                 },
                 {
-                  name: "Reflect Energy",
-                  cost: [
-                    "Lightning",
-                    "Lightning",
-                    "Colorless"
-                  ],
+                  name: 'Reflect Energy',
+                  cost: ['Lightning', 'Lightning', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "50",
-                  text: "If you have any Benched Pokémon and if there are any basic Energy cards attached to Ampharos, take 1 of those Energy cards and attach it to 1 of those Pokémon."
-                }
+                  damage: '50',
+                  text: 'If you have any Benched Pokémon and if there are any basic Energy cards attached to Ampharos, take 1 of those Energy cards and attach it to 1 of those Pokémon.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fighting",
-                  value: "×2"
-                }
+                  type: 'Fighting',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless'],
               convertedRetreatCost: 2,
               set: {
-                id: "ecard2",
-                name: "Aquapolis",
-                series: "E-Card",
+                id: 'ecard2',
+                name: 'Aquapolis',
+                series: 'E-Card',
                 printedTotal: 147,
                 total: 182,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "AQ",
-                releaseDate: "2003/01/15",
-                updatedAt: "2020/08/14 09:35:00",
+                ptcgoCode: 'AQ',
+                releaseDate: '2003/01/15',
+                updatedAt: '2020/08/14 09:35:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ecard2/symbol.png",
-                  logo: "https://images.pokemontcg.io/ecard2/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ecard2/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ecard2/logo.png',
+                },
               },
-              number: "H1",
-              artist: "Shin-ichi Yoshida",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                181
-              ],
+              number: 'H1',
+              artist: 'Shin-ichi Yoshida',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [181],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ecard2/H1.png",
-                large: "https://images.pokemontcg.io/ecard2/H1_hires.png"
+                small: 'https://images.pokemontcg.io/ecard2/H1.png',
+                large: 'https://images.pokemontcg.io/ecard2/H1_hires.png',
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ecard2-H1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ecard2-H1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 12,
                   lowPrice: 8,
@@ -827,105 +733,93 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 25.8,
                   reverseHoloAvg1: 39.99,
                   reverseHoloAvg7: 18.13,
-                  reverseHoloAvg30: 18.1
-                }
-              }
+                  reverseHoloAvg30: 18.1,
+                },
+              },
             },
-            amount: 1
-          }
-        ]
+            amount: 1,
+          },
+        ],
       },
       {
         id: 3,
-        name: "Giratina V-ASTRO",
-        imgUrl: "https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png",
+        name: 'Giratina V-ASTRO',
+        imgUrl: 'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png',
         pokemons: [
           {
             card: {
-              id: "ru1-2",
-              name: "Cherrim",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 1"
-              ],
-              hp: "80",
-              types: [
-                "Grass"
-              ],
-              evolvesFrom: "Cherubi",
+              id: 'ru1-2',
+              name: 'Cherrim',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 1'],
+              hp: '80',
+              types: ['Grass'],
+              evolvesFrom: 'Cherubi',
               attacks: [
                 {
-                  name: "Solarbeam",
-                  cost: [
-                    "Grass",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Solarbeam',
+                  cost: ['Grass', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "60",
-                  text: ""
-                }
+                  damage: '60',
+                  text: '',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
               resistances: [
                 {
-                  type: "Water",
-                  value: "-20"
-                }
+                  type: 'Water',
+                  value: '-20',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "ru1",
-                name: "Pokémon Rumble",
-                series: "Other",
+                id: 'ru1',
+                name: 'Pokémon Rumble',
+                series: 'Other',
                 printedTotal: 16,
                 total: 16,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                releaseDate: "2009/12/02",
-                updatedAt: "2019/01/28 16:44:00",
+                releaseDate: '2009/12/02',
+                updatedAt: '2019/01/28 16:44:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ru1/symbol.png",
-                  logo: "https://images.pokemontcg.io/ru1/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ru1/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ru1/logo.png',
+                },
               },
-              number: "2",
-              artist: "Pokemon Rumble",
-              nationalPokedexNumbers: [
-                421
-              ],
+              number: '2',
+              artist: 'Pokemon Rumble',
+              nationalPokedexNumbers: [421],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ru1/2.png",
-                large: "https://images.pokemontcg.io/ru1/2_hires.png"
+                small: 'https://images.pokemontcg.io/ru1/2.png',
+                large: 'https://images.pokemontcg.io/ru1/2_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/ru1-2",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/ru1-2',
+                updatedAt: '2023/12/17',
                 prices: {
                   normal: {
                     low: 6.5,
                     mid: 12.48,
                     high: 16.49,
                     market: 16.05,
-                    directLow: null
-                  }
-                }
+                    directLow: null,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ru1-2",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ru1-2',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 10.5,
                   lowPrice: 3.95,
@@ -941,90 +835,76 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 6.87,
                   reverseHoloAvg1: 4.99,
                   reverseHoloAvg7: 4.16,
-                  reverseHoloAvg30: 4.16
-                }
-              }
+                  reverseHoloAvg30: 4.16,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "ecard2-H2",
-              name: "Arcanine",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 1"
-              ],
-              hp: "90",
-              types: [
-                "Fire"
-              ],
-              evolvesFrom: "Growlithe",
+              id: 'ecard2-H2',
+              name: 'Arcanine',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 1'],
+              hp: '90',
+              types: ['Fire'],
+              evolvesFrom: 'Growlithe',
               abilities: [
                 {
-                  name: "Extreme Speed",
-                  text: "You pay Colorless less to retreat Arcanine for each Energy attached to it.",
-                  type: "Poké-Body"
-                }
+                  name: 'Extreme Speed',
+                  text: 'You pay Colorless less to retreat Arcanine for each Energy attached to it.',
+                  type: 'Poké-Body',
+                },
               ],
               attacks: [
                 {
-                  name: "Fire Blow",
-                  cost: [
-                    "Colorless",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Fire Blow',
+                  cost: ['Colorless', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "30+",
-                  text: "You may discard any number of Fire Energy cards attached to Arcanine when you use this attack. If you do, flip a number of coins equal to the number of Fire Energy cards you discarded. This attack does 30 damage plus 30 more damage for each heads."
-                }
+                  damage: '30+',
+                  text: 'You may discard any number of Fire Energy cards attached to Arcanine when you use this attack. If you do, flip a number of coins equal to the number of Fire Energy cards you discarded. This attack does 30 damage plus 30 more damage for each heads.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Water",
-                  value: "×2"
-                }
+                  type: 'Water',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless', 'Colorless'],
               convertedRetreatCost: 3,
               set: {
-                id: "ecard2",
-                name: "Aquapolis",
-                series: "E-Card",
+                id: 'ecard2',
+                name: 'Aquapolis',
+                series: 'E-Card',
                 printedTotal: 147,
                 total: 182,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "AQ",
-                releaseDate: "2003/01/15",
-                updatedAt: "2020/08/14 09:35:00",
+                ptcgoCode: 'AQ',
+                releaseDate: '2003/01/15',
+                updatedAt: '2020/08/14 09:35:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ecard2/symbol.png",
-                  logo: "https://images.pokemontcg.io/ecard2/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ecard2/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ecard2/logo.png',
+                },
               },
-              number: "H2",
-              artist: "Kyoko Umemoto",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                59
-              ],
+              number: 'H2',
+              artist: 'Kyoko Umemoto',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [59],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ecard2/H2.png",
-                large: "https://images.pokemontcg.io/ecard2/H2_hires.png"
+                small: 'https://images.pokemontcg.io/ecard2/H2.png',
+                large: 'https://images.pokemontcg.io/ecard2/H2_hires.png',
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ecard2-H2",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ecard2-H2',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 297.47,
                   lowPrice: 13,
@@ -1040,105 +920,92 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 90,
                   reverseHoloAvg1: 10,
                   reverseHoloAvg7: 56.53,
-                  reverseHoloAvg30: 37.03
-                }
-              }
+                  reverseHoloAvg30: 37.03,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "base4-1",
-              name: "Alakazam",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 2"
-              ],
-              level: "42",
-              hp: "80",
-              types: [
-                "Psychic"
-              ],
-              evolvesFrom: "Kadabra",
+              id: 'base4-1',
+              name: 'Alakazam',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 2'],
+              level: '42',
+              hp: '80',
+              types: ['Psychic'],
+              evolvesFrom: 'Kadabra',
               abilities: [
                 {
-                  name: "Damage Swap",
+                  name: 'Damage Swap',
                   text: "As often as you like during your turn (before your attack), you may move 1 damage counter from 1 of your Pokémon to another as long as you don't Knock Out that Pokémon. This power can't be used if Alakazam is Asleep, Confused, or Paralyzed.",
-                  type: "Pokémon Power"
-                }
+                  type: 'Pokémon Power',
+                },
               ],
               attacks: [
                 {
-                  name: "Confuse Ray",
-                  cost: [
-                    "Psychic",
-                    "Psychic",
-                    "Psychic"
-                  ],
+                  name: 'Confuse Ray',
+                  cost: ['Psychic', 'Psychic', 'Psychic'],
                   convertedEnergyCost: 3,
-                  damage: "30",
-                  text: "Flip a coin. If heads, the Defending Pokémon is now Confused."
-                }
+                  damage: '30',
+                  text: 'Flip a coin. If heads, the Defending Pokémon is now Confused.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Psychic",
-                  value: "×2"
-                }
+                  type: 'Psychic',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless', 'Colorless'],
               convertedRetreatCost: 3,
               set: {
-                id: "base4",
-                name: "Base Set 2",
-                series: "Base",
+                id: 'base4',
+                name: 'Base Set 2',
+                series: 'Base',
                 printedTotal: 130,
                 total: 130,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "B2",
-                releaseDate: "2000/02/24",
-                updatedAt: "2022/10/10 15:12:00",
+                ptcgoCode: 'B2',
+                releaseDate: '2000/02/24',
+                updatedAt: '2022/10/10 15:12:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/base4/symbol.png",
-                  logo: "https://images.pokemontcg.io/base4/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/base4/symbol.png',
+                  logo: 'https://images.pokemontcg.io/base4/logo.png',
+                },
               },
-              number: "1",
-              artist: "Ken Sugimori",
-              rarity: "Rare Holo",
-              flavorText: "Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5000.",
-              nationalPokedexNumbers: [
-                65
-              ],
+              number: '1',
+              artist: 'Ken Sugimori',
+              rarity: 'Rare Holo',
+              flavorText:
+                'Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5000.',
+              nationalPokedexNumbers: [65],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/base4/1.png",
-                large: "https://images.pokemontcg.io/base4/1_hires.png"
+                small: 'https://images.pokemontcg.io/base4/1.png',
+                large: 'https://images.pokemontcg.io/base4/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/base4-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/base4-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 14.16,
                     mid: 20.99,
                     high: 159.99,
                     market: 25.18,
-                    directLow: 14.58
-                  }
-                }
+                    directLow: 14.58,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/base4-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/base4-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 15.74,
                   lowPrice: 6.99,
@@ -1154,107 +1021,96 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 21.79,
                   reverseHoloAvg1: 19.95,
                   reverseHoloAvg7: 22.81,
-                  reverseHoloAvg30: 21.3
-                }
-              }
+                  reverseHoloAvg30: 21.3,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "ex7-1",
-              name: "Azumarill",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 1"
-              ],
-              hp: "80",
-              types: [
-                "Water"
-              ],
-              evolvesFrom: "Marill",
+              id: 'ex7-1',
+              name: 'Azumarill',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 1'],
+              hp: '80',
+              types: ['Water'],
+              evolvesFrom: 'Marill',
               abilities: [
                 {
-                  name: "Froth",
-                  text: "Once during your turn, when you play Azumarill from your hand to evolve 1 of your Active Pokémon, you may use this power. Each Defending Pokémon is now Paralyzed.",
-                  type: "Poké-Power"
-                }
+                  name: 'Froth',
+                  text: 'Once during your turn, when you play Azumarill from your hand to evolve 1 of your Active Pokémon, you may use this power. Each Defending Pokémon is now Paralyzed.',
+                  type: 'Poké-Power',
+                },
               ],
               attacks: [
                 {
-                  name: "Water Punch",
-                  cost: [
-                    "Water",
-                    "Colorless"
-                  ],
+                  name: 'Water Punch',
+                  cost: ['Water', 'Colorless'],
                   convertedEnergyCost: 2,
-                  damage: "20+",
-                  text: "Flip a coin for each Water Energy attached to Azumarill. This attack does 20 damage plus 20 more damage for each heads."
-                }
+                  damage: '20+',
+                  text: 'Flip a coin for each Water Energy attached to Azumarill. This attack does 20 damage plus 20 more damage for each heads.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Lightning",
-                  value: "×2"
-                }
+                  type: 'Lightning',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "ex7",
-                name: "Team Rocket Returns",
-                series: "EX",
+                id: 'ex7',
+                name: 'Team Rocket Returns',
+                series: 'EX',
                 printedTotal: 109,
                 total: 111,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "TRR",
-                releaseDate: "2004/11/01",
-                updatedAt: "2019/01/28 16:44:00",
+                ptcgoCode: 'TRR',
+                releaseDate: '2004/11/01',
+                updatedAt: '2019/01/28 16:44:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ex7/symbol.png",
-                  logo: "https://images.pokemontcg.io/ex7/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ex7/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ex7/logo.png',
+                },
               },
-              number: "1",
-              artist: "Sumiyoshi Kizuki",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                184
-              ],
+              number: '1',
+              artist: 'Sumiyoshi Kizuki',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [184],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ex7/1.png",
-                large: "https://images.pokemontcg.io/ex7/1_hires.png"
+                small: 'https://images.pokemontcg.io/ex7/1.png',
+                large: 'https://images.pokemontcg.io/ex7/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/ex7-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/ex7-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 15.11,
                     mid: 19.99,
                     high: 23,
                     market: 16.84,
-                    directLow: 17.68
+                    directLow: 17.68,
                   },
                   reverseHolofoil: {
                     low: 16.51,
                     mid: 25.1,
                     high: 51.98,
                     market: 32.45,
-                    directLow: 17.49
-                  }
-                }
+                    directLow: 17.49,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ex7-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ex7-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 5.53,
                   lowPrice: 0.89,
@@ -1270,114 +1126,101 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 20.57,
                   reverseHoloAvg1: 11,
                   reverseHoloAvg7: 12.78,
-                  reverseHoloAvg30: 9.78
-                }
-              }
+                  reverseHoloAvg30: 9.78,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "ex3-1",
-              name: "Absol",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic"
-              ],
-              hp: "70",
-              types: [
-                "Darkness"
-              ],
+              id: 'ex3-1',
+              name: 'Absol',
+              supertype: 'Pokémon',
+              subtypes: ['Basic'],
+              hp: '70',
+              types: ['Darkness'],
               attacks: [
                 {
-                  name: "Bad News",
-                  cost: [
-                    "Darkness"
-                  ],
+                  name: 'Bad News',
+                  cost: ['Darkness'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "If the number of cards in your opponent's hand is at least 6, choose a number of cards there, without looking, until your opponent has 5 cards left. Have your opponent discard the cards you chose."
+                  damage: '',
+                  text: "If the number of cards in your opponent's hand is at least 6, choose a number of cards there, without looking, until your opponent has 5 cards left. Have your opponent discard the cards you chose.",
                 },
                 {
-                  name: "Prize Count",
-                  cost: [
-                    "Darkness",
-                    "Colorless"
-                  ],
+                  name: 'Prize Count',
+                  cost: ['Darkness', 'Colorless'],
                   convertedEnergyCost: 2,
-                  damage: "20+",
-                  text: "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage."
-                }
+                  damage: '20+',
+                  text: 'If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fighting",
-                  value: "×2"
-                }
+                  type: 'Fighting',
+                  value: '×2',
+                },
               ],
               resistances: [
                 {
-                  type: "Psychic",
-                  value: "-30"
-                }
+                  type: 'Psychic',
+                  value: '-30',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "ex3",
-                name: "Dragon",
-                series: "EX",
+                id: 'ex3',
+                name: 'Dragon',
+                series: 'EX',
                 printedTotal: 97,
                 total: 100,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "DR",
-                releaseDate: "2003/11/24",
-                updatedAt: "2023/02/16 05:47:00",
+                ptcgoCode: 'DR',
+                releaseDate: '2003/11/24',
+                updatedAt: '2023/02/16 05:47:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/ex3/symbol.png",
-                  logo: "https://images.pokemontcg.io/ex3/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/ex3/symbol.png',
+                  logo: 'https://images.pokemontcg.io/ex3/logo.png',
+                },
               },
-              number: "1",
-              artist: "Naoyo Kimura",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                359
-              ],
+              number: '1',
+              artist: 'Naoyo Kimura',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [359],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/ex3/1.png",
-                large: "https://images.pokemontcg.io/ex3/1_hires.png"
+                small: 'https://images.pokemontcg.io/ex3/1.png',
+                large: 'https://images.pokemontcg.io/ex3/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/ex3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/ex3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 31.49,
                     mid: 31.75,
                     high: 45,
                     market: 37.41,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 12,
                     mid: 24.67,
                     high: 57.83,
                     market: 25.31,
-                    directLow: null
-                  }
-                }
+                    directLow: null,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/ex3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/ex3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 9.3,
                   lowPrice: 2,
@@ -1393,117 +1236,102 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 15.59,
                   reverseHoloAvg1: 17.49,
                   reverseHoloAvg7: 24.94,
-                  reverseHoloAvg30: 17.31
-                }
-              }
+                  reverseHoloAvg30: 17.31,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "pl3-1",
-              name: "Absol G",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic",
-                "SP"
-              ],
-              level: "59",
-              hp: "70",
-              types: [
-                "Darkness"
-              ],
+              id: 'pl3-1',
+              name: 'Absol G',
+              supertype: 'Pokémon',
+              subtypes: ['Basic', 'SP'],
+              level: '59',
+              hp: '70',
+              types: ['Darkness'],
               attacks: [
                 {
-                  name: "Feint Attack",
-                  cost: [
-                    "Darkness"
-                  ],
+                  name: 'Feint Attack',
+                  cost: ['Darkness'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon."
+                  damage: '',
+                  text: "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon.",
                 },
                 {
-                  name: "Doom News",
-                  cost: [
-                    "Darkness",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Doom News',
+                  cost: ['Darkness', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "",
-                  text: "Return all Energy cards attached to Absol G to your hand. The Defending Pokémon is Knocked Out at the end of your opponent's next turn."
-                }
+                  damage: '',
+                  text: "Return all Energy cards attached to Absol G to your hand. The Defending Pokémon is Knocked Out at the end of your opponent's next turn.",
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fighting",
-                  value: "×2"
-                }
+                  type: 'Fighting',
+                  value: '×2',
+                },
               ],
               resistances: [
                 {
-                  type: "Psychic",
-                  value: "-20"
-                }
+                  type: 'Psychic',
+                  value: '-20',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "pl3",
-                name: "Supreme Victors",
-                series: "Platinum",
+                id: 'pl3',
+                name: 'Supreme Victors',
+                series: 'Platinum',
                 printedTotal: 147,
                 total: 153,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "SV",
-                releaseDate: "2009/08/19",
-                updatedAt: "2018/03/07 22:40:00",
+                ptcgoCode: 'SV',
+                releaseDate: '2009/08/19',
+                updatedAt: '2018/03/07 22:40:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/pl3/symbol.png",
-                  logo: "https://images.pokemontcg.io/pl3/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/pl3/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pl3/logo.png',
+                },
               },
-              number: "1",
-              artist: "Yusuke Ishikawa",
-              rarity: "Rare Holo",
-              nationalPokedexNumbers: [
-                359
-              ],
+              number: '1',
+              artist: 'Yusuke Ishikawa',
+              rarity: 'Rare Holo',
+              nationalPokedexNumbers: [359],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/pl3/1.png",
-                large: "https://images.pokemontcg.io/pl3/1_hires.png"
+                small: 'https://images.pokemontcg.io/pl3/1.png',
+                large: 'https://images.pokemontcg.io/pl3/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/pl3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/pl3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 3,
                     mid: 4.47,
                     high: 14,
                     market: 8.96,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 3.29,
                     mid: 6.09,
                     high: 7.58,
                     market: 7,
-                    directLow: 2.9
-                  }
-                }
+                    directLow: 2.9,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/pl3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/pl3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 5,
                   lowPrice: 1,
@@ -1519,98 +1347,86 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 5.21,
                   reverseHoloAvg1: 9,
                   reverseHoloAvg7: 5.84,
-                  reverseHoloAvg30: 5.37
-                }
-              }
+                  reverseHoloAvg30: 5.37,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "dv1-1",
-              name: "Dratini",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic"
-              ],
-              hp: "40",
-              types: [
-                "Dragon"
-              ],
-              evolvesTo: [
-                "Dragonair"
-              ],
+              id: 'dv1-1',
+              name: 'Dratini',
+              supertype: 'Pokémon',
+              subtypes: ['Basic'],
+              hp: '40',
+              types: ['Dragon'],
+              evolvesTo: ['Dragonair'],
               attacks: [
                 {
-                  name: "Wrap",
-                  cost: [
-                    "Grass",
-                    "Lightning"
-                  ],
+                  name: 'Wrap',
+                  cost: ['Grass', 'Lightning'],
                   convertedEnergyCost: 2,
-                  damage: "20",
-                  text: "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
-                }
+                  damage: '20',
+                  text: 'Flip a coin. If heads, the Defending Pokémon is now Paralyzed.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Dragon",
-                  value: "×2"
-                }
+                  type: 'Dragon',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "dv1",
-                name: "Dragon Vault",
-                series: "Black & White",
+                id: 'dv1',
+                name: 'Dragon Vault',
+                series: 'Black & White',
                 printedTotal: 20,
                 total: 21,
                 legalities: {
-                  unlimited: "Legal",
-                  expanded: "Legal"
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
                 },
-                ptcgoCode: "DRV",
-                releaseDate: "2012/10/05",
-                updatedAt: "2019/01/28 16:44:00",
+                ptcgoCode: 'DRV',
+                releaseDate: '2012/10/05',
+                updatedAt: '2019/01/28 16:44:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/dv1/symbol.png",
-                  logo: "https://images.pokemontcg.io/dv1/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/dv1/symbol.png',
+                  logo: 'https://images.pokemontcg.io/dv1/logo.png',
+                },
               },
-              number: "1",
-              artist: "Masakazu Fukuda",
-              rarity: "Rare Holo",
-              flavorText: "It is called the \"Mirage Pokémon\" because so few have seen it. Its shed skin has been found.",
-              nationalPokedexNumbers: [
-                147
-              ],
+              number: '1',
+              artist: 'Masakazu Fukuda',
+              rarity: 'Rare Holo',
+              flavorText:
+                'It is called the "Mirage Pokémon" because so few have seen it. Its shed skin has been found.',
+              nationalPokedexNumbers: [147],
               legalities: {
-                unlimited: "Legal",
-                expanded: "Legal"
+                unlimited: 'Legal',
+                expanded: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/dv1/1.png",
-                large: "https://images.pokemontcg.io/dv1/1_hires.png"
+                small: 'https://images.pokemontcg.io/dv1/1.png',
+                large: 'https://images.pokemontcg.io/dv1/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/dv1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/dv1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 0.27,
                     mid: 1.2,
                     high: 6.58,
                     market: 1.29,
-                    directLow: 1.95
-                  }
-                }
+                    directLow: 1.95,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/dv1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/dv1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 2.99,
                   lowPrice: 0.15,
@@ -1626,97 +1442,86 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 2.43,
                   reverseHoloAvg1: 1.5,
                   reverseHoloAvg7: 2.01,
-                  reverseHoloAvg30: 1.28
-                }
-              }
+                  reverseHoloAvg30: 1.28,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "det1-1",
-              name: "Bulbasaur",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic"
-              ],
-              hp: "60",
-              types: [
-                "Grass"
-              ],
-              evolvesTo: [
-                "Ivysaur"
-              ],
+              id: 'det1-1',
+              name: 'Bulbasaur',
+              supertype: 'Pokémon',
+              subtypes: ['Basic'],
+              hp: '60',
+              types: ['Grass'],
+              evolvesTo: ['Ivysaur'],
               attacks: [
                 {
-                  name: "Find a Friend",
-                  cost: [
-                    "Grass"
-                  ],
+                  name: 'Find a Friend',
+                  cost: ['Grass'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
-                }
+                  damage: '',
+                  text: 'Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "det1",
-                name: "Detective Pikachu",
-                series: "Sun & Moon",
+                id: 'det1',
+                name: 'Detective Pikachu',
+                series: 'Sun & Moon',
                 printedTotal: 18,
                 total: 18,
                 legalities: {
-                  unlimited: "Legal",
-                  expanded: "Legal"
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
                 },
-                ptcgoCode: "DET",
-                releaseDate: "2019/04/05",
-                updatedAt: "2021/09/01 05:37:00",
+                ptcgoCode: 'DET',
+                releaseDate: '2019/04/05',
+                updatedAt: '2021/09/01 05:37:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/det1/symbol.png",
-                  logo: "https://images.pokemontcg.io/det1/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/det1/symbol.png',
+                  logo: 'https://images.pokemontcg.io/det1/logo.png',
+                },
               },
-              number: "1",
-              artist: "MPC Film",
-              rarity: "Common",
-              flavorText: "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
-              nationalPokedexNumbers: [
-                1
-              ],
+              number: '1',
+              artist: 'MPC Film',
+              rarity: 'Common',
+              flavorText:
+                'A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.',
+              nationalPokedexNumbers: [1],
               legalities: {
-                unlimited: "Legal",
-                expanded: "Legal"
+                unlimited: 'Legal',
+                expanded: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/det1/1.png",
-                large: "https://images.pokemontcg.io/det1/1_hires.png"
+                small: 'https://images.pokemontcg.io/det1/1.png',
+                large: 'https://images.pokemontcg.io/det1/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/det1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/det1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 0.04,
                     mid: 0.39,
                     high: 5.03,
                     market: 0.29,
-                    directLow: null
-                  }
-                }
+                    directLow: null,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/det1-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/det1-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 0.38,
                   lowPrice: 0.02,
@@ -1732,118 +1537,105 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 0.41,
                   reverseHoloAvg1: 0.02,
                   reverseHoloAvg7: 0.45,
-                  reverseHoloAvg30: 0.5
-                }
-              }
+                  reverseHoloAvg30: 0.5,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "dp3-1",
-              name: "Ampharos",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 2"
-              ],
-              level: "52",
-              hp: "130",
-              types: [
-                "Lightning"
-              ],
-              evolvesFrom: "Flaaffy",
+              id: 'dp3-1',
+              name: 'Ampharos',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 2'],
+              level: '52',
+              hp: '130',
+              types: ['Lightning'],
+              evolvesFrom: 'Flaaffy',
               abilities: [
                 {
-                  name: "Jamming",
+                  name: 'Jamming',
                   text: "After your opponent plays a Supporter card from his or her hand, put 1 damage counter on each of your opponent's Pokémon. You can't use more than 1 Jamming Poké-Body each turn.",
-                  type: "Poké-Body"
-                }
+                  type: 'Poké-Body',
+                },
               ],
               attacks: [
                 {
-                  name: "Cluster Bolt",
-                  cost: [
-                    "Lightning",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Cluster Bolt',
+                  cost: ['Lightning', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "70",
-                  text: "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
-                }
+                  damage: '70',
+                  text: "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fighting",
-                  value: "+30"
-                }
+                  type: 'Fighting',
+                  value: '+30',
+                },
               ],
               resistances: [
                 {
-                  type: "Metal",
-                  value: "-20"
-                }
+                  type: 'Metal',
+                  value: '-20',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless', 'Colorless'],
               convertedRetreatCost: 3,
               set: {
-                id: "dp3",
-                name: "Secret Wonders",
-                series: "Diamond & Pearl",
+                id: 'dp3',
+                name: 'Secret Wonders',
+                series: 'Diamond & Pearl',
                 printedTotal: 132,
                 total: 132,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "SW",
-                releaseDate: "2007/11/01",
-                updatedAt: "2018/03/04 10:35:00",
+                ptcgoCode: 'SW',
+                releaseDate: '2007/11/01',
+                updatedAt: '2018/03/04 10:35:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/dp3/symbol.png",
-                  logo: "https://images.pokemontcg.io/dp3/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/dp3/symbol.png',
+                  logo: 'https://images.pokemontcg.io/dp3/logo.png',
+                },
               },
-              number: "1",
-              artist: "Kouki Saitou",
-              rarity: "Rare Holo",
-              flavorText: "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
-              nationalPokedexNumbers: [
-                181
-              ],
+              number: '1',
+              artist: 'Kouki Saitou',
+              rarity: 'Rare Holo',
+              flavorText:
+                "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
+              nationalPokedexNumbers: [181],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/dp3/1.png",
-                large: "https://images.pokemontcg.io/dp3/1_hires.png"
+                small: 'https://images.pokemontcg.io/dp3/1.png',
+                large: 'https://images.pokemontcg.io/dp3/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/dp3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/dp3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 4.25,
                     mid: 6.29,
                     high: 29.98,
                     market: 13.7,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 4.15,
                     mid: 5.27,
                     high: 14.99,
                     market: 7.04,
-                    directLow: 4.4
-                  }
-                }
+                    directLow: 4.4,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/dp3-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/dp3-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 3.22,
                   lowPrice: 0.05,
@@ -1859,104 +1651,93 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 2.21,
                   reverseHoloAvg1: 4.99,
                   reverseHoloAvg7: 1.94,
-                  reverseHoloAvg30: 2.71
-                }
-              }
+                  reverseHoloAvg30: 2.71,
+                },
+              },
             },
-            amount: 4
+            amount: 4,
           },
           {
             card: {
-              id: "xy5-1",
-              name: "Weedle",
-              supertype: "Pokémon",
-              subtypes: [
-                "Basic"
-              ],
-              hp: "50",
-              types: [
-                "Grass"
-              ],
-              evolvesTo: [
-                "Kakuna"
-              ],
+              id: 'xy5-1',
+              name: 'Weedle',
+              supertype: 'Pokémon',
+              subtypes: ['Basic'],
+              hp: '50',
+              types: ['Grass'],
+              evolvesTo: ['Kakuna'],
               attacks: [
                 {
-                  name: "Multiply",
-                  cost: [
-                    "Grass"
-                  ],
+                  name: 'Multiply',
+                  cost: ['Grass'],
                   convertedEnergyCost: 1,
-                  damage: "",
-                  text: "Search your deck for Weedle and put it onto your Bench. Shuffle your deck afterward."
-                }
+                  damage: '',
+                  text: 'Search your deck for Weedle and put it onto your Bench. Shuffle your deck afterward.',
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
-              retreatCost: [
-                "Colorless"
-              ],
+              retreatCost: ['Colorless'],
               convertedRetreatCost: 1,
               set: {
-                id: "xy5",
-                name: "Primal Clash",
-                series: "XY",
+                id: 'xy5',
+                name: 'Primal Clash',
+                series: 'XY',
                 printedTotal: 160,
                 total: 164,
                 legalities: {
-                  unlimited: "Legal",
-                  expanded: "Legal"
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
                 },
-                ptcgoCode: "PRC",
-                releaseDate: "2015/02/04",
-                updatedAt: "2020/05/01 16:06:00",
+                ptcgoCode: 'PRC',
+                releaseDate: '2015/02/04',
+                updatedAt: '2020/05/01 16:06:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/xy5/symbol.png",
-                  logo: "https://images.pokemontcg.io/xy5/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/xy5/symbol.png',
+                  logo: 'https://images.pokemontcg.io/xy5/logo.png',
+                },
               },
-              number: "1",
-              artist: "Midori Harada",
-              rarity: "Common",
-              flavorText: "Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.",
-              nationalPokedexNumbers: [
-                13
-              ],
+              number: '1',
+              artist: 'Midori Harada',
+              rarity: 'Common',
+              flavorText:
+                'Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.',
+              nationalPokedexNumbers: [13],
               legalities: {
-                unlimited: "Legal",
-                expanded: "Legal"
+                unlimited: 'Legal',
+                expanded: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/xy5/1.png",
-                large: "https://images.pokemontcg.io/xy5/1_hires.png"
+                small: 'https://images.pokemontcg.io/xy5/1.png',
+                large: 'https://images.pokemontcg.io/xy5/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/xy5-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/xy5-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   normal: {
                     low: 0.01,
                     mid: 0.19,
                     high: 2,
                     market: 0.16,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 0.24,
                     mid: 0.37,
                     high: 4.06,
                     market: 0.38,
-                    directLow: 0.38
-                  }
-                }
+                    directLow: 0.38,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/xy5-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/xy5-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 0.03,
                   lowPrice: 0.02,
@@ -1972,123 +1753,104 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 0.09,
                   reverseHoloAvg1: 0.5,
                   reverseHoloAvg7: 0.73,
-                  reverseHoloAvg30: 0.52
-                }
-              }
+                  reverseHoloAvg30: 0.52,
+                },
+              },
             },
-            amount: 1
+            amount: 1,
           },
           {
             card: {
-              id: "hgss4-1",
-              name: "Aggron",
-              supertype: "Pokémon",
-              subtypes: [
-                "Stage 2"
-              ],
-              hp: "140",
-              types: [
-                "Metal"
-              ],
-              evolvesFrom: "Lairon",
+              id: 'hgss4-1',
+              name: 'Aggron',
+              supertype: 'Pokémon',
+              subtypes: ['Stage 2'],
+              hp: '140',
+              types: ['Metal'],
+              evolvesFrom: 'Lairon',
               attacks: [
                 {
-                  name: "Second Strike",
-                  cost: [
-                    "Metal",
-                    "Metal",
-                    "Colorless"
-                  ],
+                  name: 'Second Strike',
+                  cost: ['Metal', 'Metal', 'Colorless'],
                   convertedEnergyCost: 3,
-                  damage: "40",
-                  text: "If the Defending Pokémon already has any damage counters on it, this attack does 40 damage plus 40 more damage."
+                  damage: '40',
+                  text: 'If the Defending Pokémon already has any damage counters on it, this attack does 40 damage plus 40 more damage.',
                 },
                 {
-                  name: "Guard Claw",
-                  cost: [
-                    "Metal",
-                    "Metal",
-                    "Colorless",
-                    "Colorless"
-                  ],
+                  name: 'Guard Claw',
+                  cost: ['Metal', 'Metal', 'Colorless', 'Colorless'],
                   convertedEnergyCost: 4,
-                  damage: "60",
-                  text: "During your opponent's next turn, any damage done to Aggron by attacks is reduced by 20 (after applying Weakness and Resistance)."
-                }
+                  damage: '60',
+                  text: "During your opponent's next turn, any damage done to Aggron by attacks is reduced by 20 (after applying Weakness and Resistance).",
+                },
               ],
               weaknesses: [
                 {
-                  type: "Fire",
-                  value: "×2"
-                }
+                  type: 'Fire',
+                  value: '×2',
+                },
               ],
               resistances: [
                 {
-                  type: "Psychic",
-                  value: "-20"
-                }
+                  type: 'Psychic',
+                  value: '-20',
+                },
               ],
-              retreatCost: [
-                "Colorless",
-                "Colorless",
-                "Colorless",
-                "Colorless"
-              ],
+              retreatCost: ['Colorless', 'Colorless', 'Colorless', 'Colorless'],
               convertedRetreatCost: 4,
               set: {
-                id: "hgss4",
-                name: "HS—Triumphant",
-                series: "HeartGold & SoulSilver",
+                id: 'hgss4',
+                name: 'HS—Triumphant',
+                series: 'HeartGold & SoulSilver',
                 printedTotal: 102,
                 total: 103,
                 legalities: {
-                  unlimited: "Legal"
+                  unlimited: 'Legal',
                 },
-                ptcgoCode: "TM",
-                releaseDate: "2010/11/03",
-                updatedAt: "2018/03/04 10:35:00",
+                ptcgoCode: 'TM',
+                releaseDate: '2010/11/03',
+                updatedAt: '2018/03/04 10:35:00',
                 images: {
-                  symbol: "https://images.pokemontcg.io/hgss4/symbol.png",
-                  logo: "https://images.pokemontcg.io/hgss4/logo.png"
-                }
+                  symbol: 'https://images.pokemontcg.io/hgss4/symbol.png',
+                  logo: 'https://images.pokemontcg.io/hgss4/logo.png',
+                },
               },
-              number: "1",
-              artist: "Kagemaru Himeno",
-              rarity: "Rare Holo",
-              flavorText: "You can tell its age by the length of its iron horns. It claims an entire mountain as its territory.",
-              nationalPokedexNumbers: [
-                306
-              ],
+              number: '1',
+              artist: 'Kagemaru Himeno',
+              rarity: 'Rare Holo',
+              flavorText:
+                'You can tell its age by the length of its iron horns. It claims an entire mountain as its territory.',
+              nationalPokedexNumbers: [306],
               legalities: {
-                unlimited: "Legal"
+                unlimited: 'Legal',
               },
               images: {
-                small: "https://images.pokemontcg.io/hgss4/1.png",
-                large: "https://images.pokemontcg.io/hgss4/1_hires.png"
+                small: 'https://images.pokemontcg.io/hgss4/1.png',
+                large: 'https://images.pokemontcg.io/hgss4/1_hires.png',
               },
               tcgplayer: {
-                url: "https://prices.pokemontcg.io/tcgplayer/hgss4-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/tcgplayer/hgss4-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   holofoil: {
                     low: 1.33,
                     mid: 1.8,
                     high: 5.1,
                     market: 1.68,
-                    directLow: null
+                    directLow: null,
                   },
                   reverseHolofoil: {
                     low: 1.99,
                     mid: 3.78,
                     high: 6.24,
                     market: 4.8,
-                    directLow: 2.42
-                  }
-                }
+                    directLow: 2.42,
+                  },
+                },
               },
               cardmarket: {
-                url: "https://prices.pokemontcg.io/cardmarket/hgss4-1",
-                updatedAt: "2023/12/17",
+                url: 'https://prices.pokemontcg.io/cardmarket/hgss4-1',
+                updatedAt: '2023/12/17',
                 prices: {
                   averageSellPrice: 3.99,
                   lowPrice: 0.4,
@@ -2104,15 +1866,707 @@ export class InMemoryDataService implements InMemoryDbService {
                   avg30: 3.58,
                   reverseHoloAvg1: 1,
                   reverseHoloAvg7: 2.63,
-                  reverseHoloAvg30: 3.02
-                }
-              }
+                  reverseHoloAvg30: 3.02,
+                },
+              },
             },
-            amount: 1
-          }
-        ]
-      }
-    ]
+            amount: 1,
+          },
+
+          // trainers
+          {
+            card: {
+              id: 'xy7-69',
+              name: 'Ace Trainer',
+              supertype: 'Trainer',
+              subtypes: ['Supporter'],
+              rules: [
+                'You can play this card only if you have more Prize cards left than your opponent.',
+                'Each player shuffles his or her hand into his or her deck. Then, draw 6 cards. Your opponent draws 3 cards.',
+                'You may play only 1 Supporter card during your turn (before your attack).',
+              ],
+              set: {
+                id: 'xy7',
+                name: 'Ancient Origins',
+                series: 'XY',
+                printedTotal: 98,
+                total: 100,
+                legalities: {
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
+                },
+                ptcgoCode: 'AOR',
+                releaseDate: '2015/08/12',
+                updatedAt: '2020/08/14 09:35:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/xy7/symbol.png',
+                  logo: 'https://images.pokemontcg.io/xy7/logo.png',
+                },
+              },
+              number: '69',
+              artist: 'Ken Sugimori',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+                expanded: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/xy7/69.png',
+                large: 'https://images.pokemontcg.io/xy7/69_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/xy7-69',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 0.05,
+                    mid: 0.24,
+                    high: 1.99,
+                    market: 0.2,
+                    directLow: null,
+                  },
+                  reverseHolofoil: {
+                    low: 0.09,
+                    mid: 0.34,
+                    high: 3.99,
+                    market: 0.34,
+                    directLow: null,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/xy7-69',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 0.99,
+                  lowPrice: 2.3,
+                  trendPrice: 8.24,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 2.09,
+                  lowPriceExPlus: 3,
+                  avg1: 0.99,
+                  avg7: 7.92,
+                  avg30: 4.83,
+                  reverseHoloAvg1: 2,
+                  reverseHoloAvg7: 1.12,
+                  reverseHoloAvg30: 1.07,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'sm11-192',
+              name: 'Coach Trainer',
+              supertype: 'Trainer',
+              subtypes: ['Supporter'],
+              rules: [
+                'Draw 2 cards. If your Active Pokémon is a TAG TEAM Pokémon, draw 2 more cards.',
+                'You may play only 1 Supporter card during your turn (before your attack).',
+              ],
+              set: {
+                id: 'sm11',
+                name: 'Unified Minds',
+                series: 'Sun & Moon',
+                printedTotal: 236,
+                total: 260,
+                legalities: {
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
+                },
+                ptcgoCode: 'UNM',
+                releaseDate: '2019/08/02',
+                updatedAt: '2021/09/01 05:37:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/sm11/symbol.png',
+                  logo: 'https://images.pokemontcg.io/sm11/logo.png',
+                },
+              },
+              number: '192',
+              artist: 'nagimiso',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+                expanded: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/sm11/192.png',
+                large: 'https://images.pokemontcg.io/sm11/192_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/sm11-192',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 0.1,
+                    mid: 0.25,
+                    high: 1.94,
+                    market: 0.18,
+                    directLow: 0.24,
+                  },
+                  reverseHolofoil: {
+                    low: 0.24,
+                    mid: 0.42,
+                    high: 2.99,
+                    market: 0.41,
+                    directLow: 0.41,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/sm11-192',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 0.17,
+                  lowPrice: 0.02,
+                  trendPrice: 0.16,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0.47,
+                  reverseHoloLow: 0.3,
+                  reverseHoloTrend: 0.37,
+                  lowPriceExPlus: 0.02,
+                  avg1: 0.08,
+                  avg7: 0.16,
+                  avg30: 0.15,
+                  reverseHoloAvg1: 0.45,
+                  reverseHoloAvg7: 0.42,
+                  reverseHoloAvg30: 0.54,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'sm11-233',
+              name: 'Coach Trainer',
+              supertype: 'Trainer',
+              subtypes: ['Supporter'],
+              rules: [
+                'Draw 2 cards. If your Active Pokémon is a TAG TEAM Pokémon, draw 2 more cards.',
+                'You may play only 1 Supporter card during your turn (before your attack).',
+              ],
+              set: {
+                id: 'sm11',
+                name: 'Unified Minds',
+                series: 'Sun & Moon',
+                printedTotal: 236,
+                total: 260,
+                legalities: {
+                  unlimited: 'Legal',
+                  expanded: 'Legal',
+                },
+                ptcgoCode: 'UNM',
+                releaseDate: '2019/08/02',
+                updatedAt: '2021/09/01 05:37:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/sm11/symbol.png',
+                  logo: 'https://images.pokemontcg.io/sm11/logo.png',
+                },
+              },
+              number: '233',
+              artist: 'nagimiso',
+              rarity: 'Rare Ultra',
+              legalities: {
+                unlimited: 'Legal',
+                expanded: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/sm11/233.png',
+                large: 'https://images.pokemontcg.io/sm11/233_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/sm11-233',
+                updatedAt: '2023/12/19',
+                prices: {
+                  holofoil: {
+                    low: 9,
+                    mid: 11.99,
+                    high: 22,
+                    market: 11.5,
+                    directLow: 13,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/sm11-233',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 11.71,
+                  lowPrice: 4.95,
+                  trendPrice: 11.23,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 12.54,
+                  lowPriceExPlus: 6.3,
+                  avg1: 13.89,
+                  avg7: 11.33,
+                  avg30: 10.23,
+                  reverseHoloAvg1: 9.99,
+                  reverseHoloAvg7: 13.36,
+                  reverseHoloAvg30: 10.79,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'swsh45-59',
+              name: 'Gym Trainer',
+              supertype: 'Trainer',
+              subtypes: ['Supporter'],
+              rules: [
+                "Draw 2 cards. If any of your Pokémon were Knocked Out during your opponent's last turn, draw 2 more cards.",
+                'You may play only 1 Supporter card during your turn.',
+              ],
+              set: {
+                id: 'swsh45',
+                name: 'Shining Fates',
+                series: 'Sword & Shield',
+                printedTotal: 72,
+                total: 73,
+                legalities: {
+                  unlimited: 'Legal',
+                  standard: 'Legal',
+                  expanded: 'Legal',
+                },
+                ptcgoCode: 'SHF',
+                releaseDate: '2021/02/19',
+                updatedAt: '2021/02/24 16:17:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/swsh45/symbol.png',
+                  logo: 'https://images.pokemontcg.io/swsh45/logo.png',
+                },
+              },
+              number: '59',
+              artist: 'Ryuta Fuse',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+                expanded: 'Legal',
+              },
+              regulationMark: 'D',
+              images: {
+                small: 'https://images.pokemontcg.io/swsh45/59.png',
+                large: 'https://images.pokemontcg.io/swsh45/59_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/swsh45-59',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 0.01,
+                    mid: 0.09,
+                    high: 2,
+                    market: 0.03,
+                    directLow: 0.02,
+                  },
+                  reverseHolofoil: {
+                    low: 0.05,
+                    mid: 0.15,
+                    high: 2.03,
+                    market: 0.13,
+                    directLow: 0.09,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/swsh45-59',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 0.03,
+                  lowPrice: 0.01,
+                  trendPrice: 0.03,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0.13,
+                  reverseHoloLow: 0.02,
+                  reverseHoloTrend: 0.14,
+                  lowPriceExPlus: 0.01,
+                  avg1: 0.05,
+                  avg7: 0.03,
+                  avg30: 0.03,
+                  reverseHoloAvg1: 0.15,
+                  reverseHoloAvg7: 0.12,
+                  reverseHoloAvg30: 0.17,
+                },
+              },
+            },
+            amount: 1,
+          },
+
+          // ENERGY
+          {
+            card: {
+              id: 'pop5-4',
+              name: 'Double Rainbow Energy',
+              supertype: 'Energy',
+              subtypes: ['Special'],
+              rules: [
+                "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy.",
+              ],
+              set: {
+                id: 'pop5',
+                name: 'POP Series 5',
+                series: 'POP',
+                printedTotal: 17,
+                total: 17,
+                legalities: {
+                  unlimited: 'Legal',
+                },
+                releaseDate: '2007/03/01',
+                updatedAt: '2020/08/14 09:35:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/pop5/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pop5/logo.png',
+                },
+              },
+              number: '4',
+              artist: 'Takumi Akabane',
+              rarity: 'Rare',
+              legalities: {
+                unlimited: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/pop5/4.png',
+                large: 'https://images.pokemontcg.io/pop5/4_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/pop5-4',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 18,
+                    mid: 18.95,
+                    high: 39.99,
+                    market: null,
+                    directLow: null,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/pop5-4',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 5.5,
+                  lowPrice: 4.95,
+                  trendPrice: 7.3,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 0,
+                  lowPriceExPlus: 7,
+                  avg1: 8.99,
+                  avg7: 7.25,
+                  avg30: 6.31,
+                  reverseHoloAvg1: 0,
+                  reverseHoloAvg7: 0,
+                  reverseHoloAvg30: 0,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'pop4-8',
+              name: 'Heal Energy',
+              supertype: 'Energy',
+              subtypes: ['Special'],
+              rules: [
+                'Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy.',
+              ],
+              set: {
+                id: 'pop4',
+                name: 'POP Series 4',
+                series: 'POP',
+                printedTotal: 17,
+                total: 17,
+                legalities: {
+                  unlimited: 'Legal',
+                },
+                releaseDate: '2006/08/01',
+                updatedAt: '2020/08/14 09:35:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/pop4/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pop4/logo.png',
+                },
+              },
+              number: '8',
+              artist: 'Takumi Akabane',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/pop4/8.png',
+                large: 'https://images.pokemontcg.io/pop4/8_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/pop4-8',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 4.64,
+                    mid: 5.99,
+                    high: 9.89,
+                    market: 4.99,
+                    directLow: null,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/pop4-8',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 5.47,
+                  lowPrice: 3.95,
+                  trendPrice: 6.42,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 0,
+                  lowPriceExPlus: 4.5,
+                  avg1: 6.99,
+                  avg7: 4.43,
+                  avg30: 1.95,
+                  reverseHoloAvg1: 0,
+                  reverseHoloAvg7: 0,
+                  reverseHoloAvg30: 0,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'pop4-10',
+              name: 'Scramble Energy',
+              supertype: 'Energy',
+              subtypes: ['Special'],
+              rules: [
+                "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy.",
+              ],
+              set: {
+                id: 'pop4',
+                name: 'POP Series 4',
+                series: 'POP',
+                printedTotal: 17,
+                total: 17,
+                legalities: {
+                  unlimited: 'Legal',
+                },
+                releaseDate: '2006/08/01',
+                updatedAt: '2020/08/14 09:35:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/pop4/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pop4/logo.png',
+                },
+              },
+              number: '10',
+              artist: 'Takumi Akabane',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/pop4/10.png',
+                large: 'https://images.pokemontcg.io/pop4/10_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/pop4-10',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 4.79,
+                    mid: 7.5,
+                    high: 9,
+                    market: 4.9,
+                    directLow: null,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/pop4-10',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 3.09,
+                  lowPrice: 2.49,
+                  trendPrice: 3.91,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 0,
+                  lowPriceExPlus: 2.74,
+                  avg1: 2.69,
+                  avg7: 2.98,
+                  avg30: 3.63,
+                  reverseHoloAvg1: 0,
+                  reverseHoloAvg7: 0,
+                  reverseHoloAvg30: 0,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'pop5-8',
+              name: 'Boost Energy',
+              supertype: 'Energy',
+              subtypes: ['Special'],
+              rules: [
+                "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy.",
+              ],
+              set: {
+                id: 'pop5',
+                name: 'POP Series 5',
+                series: 'POP',
+                printedTotal: 17,
+                total: 17,
+                legalities: {
+                  unlimited: 'Legal',
+                },
+                releaseDate: '2007/03/01',
+                updatedAt: '2020/08/14 09:35:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/pop5/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pop5/logo.png',
+                },
+              },
+              number: '8',
+              artist: 'Shin-ichi Yoshikawa',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/pop5/8.png',
+                large: 'https://images.pokemontcg.io/pop5/8_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/pop5-8',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 1.49,
+                    mid: 2,
+                    high: 3.62,
+                    market: 3.62,
+                    directLow: null,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/pop5-8',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 1.4,
+                  lowPrice: 0.7,
+                  trendPrice: 2.03,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 1.48,
+                  lowPriceExPlus: 1.99,
+                  avg1: 0.8,
+                  avg7: 1.7,
+                  avg30: 1.92,
+                  reverseHoloAvg1: 1.48,
+                  reverseHoloAvg7: 2.08,
+                  reverseHoloAvg30: 2.08,
+                },
+              },
+            },
+            amount: 1,
+          },
+          {
+            card: {
+              id: 'pop5-9',
+              name: 'δ Rainbow Energy',
+              supertype: 'Energy',
+              subtypes: ['Special'],
+              rules: [
+                'δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)',
+              ],
+              set: {
+                id: 'pop5',
+                name: 'POP Series 5',
+                series: 'POP',
+                printedTotal: 17,
+                total: 17,
+                legalities: {
+                  unlimited: 'Legal',
+                },
+                releaseDate: '2007/03/01',
+                updatedAt: '2020/08/14 09:35:00',
+                images: {
+                  symbol: 'https://images.pokemontcg.io/pop5/symbol.png',
+                  logo: 'https://images.pokemontcg.io/pop5/logo.png',
+                },
+              },
+              number: '9',
+              artist: 'Takumi Akabane',
+              rarity: 'Uncommon',
+              legalities: {
+                unlimited: 'Legal',
+              },
+              images: {
+                small: 'https://images.pokemontcg.io/pop5/9.png',
+                large: 'https://images.pokemontcg.io/pop5/9_hires.png',
+              },
+              tcgplayer: {
+                url: 'https://prices.pokemontcg.io/tcgplayer/pop5-9',
+                updatedAt: '2023/12/19',
+                prices: {
+                  normal: {
+                    low: 2.59,
+                    mid: 4.71,
+                    high: 7.75,
+                    market: 4.99,
+                    directLow: 2.6,
+                  },
+                },
+              },
+              cardmarket: {
+                url: 'https://prices.pokemontcg.io/cardmarket/pop5-9',
+                updatedAt: '2023/12/19',
+                prices: {
+                  averageSellPrice: 0.99,
+                  lowPrice: 1,
+                  trendPrice: 3.63,
+                  germanProLow: 0,
+                  suggestedPrice: 0,
+                  reverseHoloSell: 0,
+                  reverseHoloLow: 0,
+                  reverseHoloTrend: 0.83,
+                  lowPriceExPlus: 2.99,
+                  avg1: 0.99,
+                  avg7: 3.4,
+                  avg30: 2.4,
+                  reverseHoloAvg1: 0.83,
+                  reverseHoloAvg7: 0.83,
+                  reverseHoloAvg30: 0.83,
+                },
+              },
+            },
+            amount: 1,
+          },
+        ],
+      },
+    ];
     return { decks };
   }
 

@@ -29,6 +29,9 @@ export class UpdateDeckComponent implements OnInit {
   public cards: Data[] = [];
   
   public choosenCards: { card: Data, amount: number }[]  = [];
+  public supertypePokemon: { card: Data, amount: number }[]  = [];
+  public supertypeTrainer: { card: Data, amount: number }[]  = [];
+  public supertypeEnergy: { card: Data, amount: number }[]  = [];
 
   get name() {
     return this.form.get('name')?.value;
@@ -57,6 +60,7 @@ export class UpdateDeckComponent implements OnInit {
       this.cards = res.data;
       this.isLoading = false;
     });
+
   }
 
   ngOnInit(): void {
@@ -80,7 +84,11 @@ export class UpdateDeckComponent implements OnInit {
   }
 
    private _patchForm(deck: Deck) {
-    this.choosenCards = deck.pokemons;    
+    this.choosenCards = deck.pokemons;
+    this.supertypePokemon = deck.pokemons.filter(p=> p.card.supertype === 'Pokémon');
+    this.supertypeTrainer = deck.pokemons.filter(p=> p.card.supertype === 'Trainer');
+    this.supertypeEnergy = deck.pokemons.filter(p=> p.card.supertype === 'Energy');
+
     this.form.patchValue({
       id: this.deckId,
       name: deck.name,
