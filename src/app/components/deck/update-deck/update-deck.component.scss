@@ -1,5 +1,23 @@
+@use "igniteui-angular/theming" as *;
+
+$dark-tabs: tabs-theme(
+    $item-text-color: #F4D45C,
+    $item-background: #292826,
+    $item-hover-background: #F4D45C,
+    $item-hover-color: #292826,
+    $item-active-color: #F4D45C,
+    $item-active-icon-color: #F4D45C,
+    $indicator-color: #F4D45C,
+    $tab-ripple-color: #F4D45C
+);
+
+@include css-vars($dark-tabs);
+
 :host {
     width: 100%;
+    ::ng-deep {
+      @include tabs($dark-tabs);
+    }
   }
   
   main {
@@ -11,7 +29,7 @@
   }
 
   igx-tabs{
-    align-items: center;
+    background: #f8f9fa;
   }
   
   .pokemons-list {
