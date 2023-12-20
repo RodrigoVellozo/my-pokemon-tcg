@@ -62,7 +62,6 @@
         </div>
 
         <igx-tabs tabAlignment="justify">
-          
           <igx-tab-item>
             <igx-tab-header>
               <span igxTabHeaderLabel>Pokémon</span>
@@ -72,7 +71,7 @@
                 <div
                   class="create-deck__choosen-cards"
                   cdkDropList
-                  [cdkDropListData]="choosenCards"
+                  [cdkDropListData]="supertypePokemon"
                   #choosenCardsList="cdkDropList"
                   (cdkDropListDropped)="drop($event)"
                 >
@@ -101,12 +100,12 @@
             <igx-tab-header>
               <span igxTabHeaderLabel>Trainers</span>
             </igx-tab-header>
-            <igx-tab-content> 
+            <igx-tab-content>
               <div class="create-deck__drop-area">
                 <div
                   class="create-deck__choosen-cards"
                   cdkDropList
-                  [cdkDropListData]="choosenCards"
+                  [cdkDropListData]="supertypeTrainer"
                   #choosenCardsList="cdkDropList"
                   (cdkDropListDropped)="drop($event)"
                 >
@@ -130,17 +129,17 @@
               </div>
             </igx-tab-content>
           </igx-tab-item>
-          
+
           <igx-tab-item>
             <igx-tab-header>
               <span igxTabHeaderLabel>Energy</span>
             </igx-tab-header>
-            <igx-tab-content> 
+            <igx-tab-content>
               <div class="create-deck__drop-area">
                 <div
                   class="create-deck__choosen-cards"
                   cdkDropList
-                  [cdkDropListData]="choosenCards"
+                  [cdkDropListData]="supertypeEnergy"
                   #choosenCardsList="cdkDropList"
                   (cdkDropListDropped)="drop($event)"
                 >
@@ -165,8 +164,6 @@
             </igx-tab-content>
           </igx-tab-item>
         </igx-tabs>
-
-      
       </form>
     </aside>
   </main>
@@ -185,4 +182,10 @@
   <app-error-message-content
     [name]="(pokemonNotFound$ | async)!"
   ></app-error-message-content>
+</ng-template>
+
+<ng-template #emptyCards>
+  <div>
+    <span>There are no cards.</span>
+  </div>
 </ng-template>
