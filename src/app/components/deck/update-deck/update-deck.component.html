@@ -24,7 +24,7 @@
     <aside class="create-deck" style="width: 34%">
       <form [formGroup]="form">
         <div class="create-deck__header">
-          <h3>Update Deck</h3>
+          <h4>Update Deck</h4>
           <div
             style="
               display: flex;
@@ -61,32 +61,62 @@
           </button>
         </div>
 
-        <div class="create-deck__drop-area">
-          <div
-            class="create-deck__choosen-cards"
-            cdkDropList
-            [cdkDropListData]="choosenCards"
-            #choosenCardsList="cdkDropList"
-            (cdkDropListDropped)="drop($event)"
-          >
-            @for (item of choosenCards; track item.card.name) {
-            <div class="create-deck__choosen-card">
-              <img
-                [src]="item.card.images.small"
-                [alt]="item.card.name"
-                width="200"
-              />
-              <div class="create-deck__footer">
-                <div class="create-deck__amount">
-                  <strong>
-                    {{ item.amount }}
-                  </strong>
+        <igx-tabs>
+          
+          <igx-tab-item>
+            <igx-tab-header>
+              <span igxTabHeaderLabel>Pokémon</span>
+            </igx-tab-header>
+            <igx-tab-content>
+              <div class="create-deck__drop-area">
+                <div
+                  class="create-deck__choosen-cards"
+                  cdkDropList
+                  [cdkDropListData]="choosenCards"
+                  #choosenCardsList="cdkDropList"
+                  (cdkDropListDropped)="drop($event)"
+                >
+                  @for (item of choosenCards; track item.card.name) {
+                  <div class="create-deck__choosen-card">
+                    <img
+                      [src]="item.card.images.small"
+                      [alt]="item.card.name"
+                      width="200"
+                    />
+                    <div class="create-deck__footer">
+                      <div class="create-deck__amount">
+                        <strong>
+                          {{ item.amount }}
+                        </strong>
+                      </div>
+                    </div>
+                  </div>
+                  }
                 </div>
               </div>
-            </div>
-            }
-          </div>
-        </div>
+            </igx-tab-content>
+          </igx-tab-item>
+
+          <igx-tab-item>
+            <igx-tab-header>
+              <span igxTabHeaderLabel>Trainers</span>
+            </igx-tab-header>
+            <igx-tab-content> 
+              Trainers 
+            </igx-tab-content>
+          </igx-tab-item>
+          
+          <igx-tab-item>
+            <igx-tab-header>
+              <span igxTabHeaderLabel>Energy</span>
+            </igx-tab-header>
+            <igx-tab-content> 
+              Energy 
+            </igx-tab-content>
+          </igx-tab-item>
+        </igx-tabs>
+
+      
       </form>
     </aside>
   </main>

@@ -9,6 +9,10 @@
     height: 86vh;
     margin: 16px;
   }
+
+  igx-tabs{
+    align-items: center;
+  }
   
   .pokemons-list {
     display: flex;
@@ -47,7 +51,7 @@
     //drag and drop 
     &__drop-area{
       overflow-y: scroll;
-      height: 25rem;
+      height: 24rem;
       border-radius: 2rem;
     }
   
