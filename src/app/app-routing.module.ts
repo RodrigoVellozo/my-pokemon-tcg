@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
-import { CreateDeckComponent } from './components/create-deck/create-deck.component';
-import { UpdateDeckComponent } from './components/update-deck/update-deck.component';
 import { ErrorRoutingModule } from './error-routing/error-routing.module';
 import { UncaughtErrorComponent } from './error-routing/error/uncaught-error.component';
 import { PageNotFoundComponent } from './error-routing/not-found/not-found.component';
+import { CreateDeckComponent } from './components/deck/create-deck/create-deck.component';
+import { UpdateDeckComponent } from './components/deck/update-deck/update-deck.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

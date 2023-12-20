@@ -15,6 +15,9 @@ const defaultImage ='https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.pn
   styleUrl: './create-deck.component.scss',
 })
 export class CreateDeckComponent {
+
+  public isLoading = true;
+
   // TODO - resolver a questao dos requests InMemory/externo para o search funcionar
   // public cards$ = this._pokemonService.getAllPokemons().pipe();
   public cards$: Data[] = [];
@@ -23,9 +26,9 @@ export class CreateDeckComponent {
 
   public form = this._initForm();
 
-  choosenCards: { card: Data; amount: number }[] = [];
+  public choosenCards: { card: Data; amount: number }[] = [];
 
-  totalCards: any;
+  public totalCards: any;
 
   @ViewChild('toast', { read: IgxToastComponent })
   public toast!: IgxToastComponent;
@@ -35,7 +38,7 @@ export class CreateDeckComponent {
   );
 
   readonly pokemonNotFound$ = this.pokemons$.pipe(
-    map((movies) => (movies ? '' : this.search$.value))
+    map((pokemons) => (pokemons ? '' : this.search$.value))
   );
 
   constructor(
@@ -47,6 +50,7 @@ export class CreateDeckComponent {
     // TODO - remover urgente para o search funcionar
     this._pokemonService.getPokemons().then((res: any) => {
       this.cards$ = res.data;
+      this.isLoading = false;
     });
 
   }

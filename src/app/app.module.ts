@@ -1,4 +1,3 @@
-import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,20 +8,17 @@ import { IgxAvatarModule, IgxBadgeModule, IgxButtonGroupModule, IgxButtonModule,
 import { IgxCategoryChartModule, IgxSparklineCoreModule, IgxSparklineModule } from 'igniteui-angular-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateDeckComponent } from './components/create-deck/create-deck.component';
-import { UpdateDeckComponent } from './components/update-deck/update-deck.component';
+import { DeckModule } from './components/deck/deck.module';
 import { InMemoryDataService } from './core/services/in-memory-data.service';
 import { HomeComponent } from './home/home.component';
+import { ErrorMessageContentComponent } from './ui/components/error-message-content/error-message-content.component';
 import { LoadingComponent } from './ui/components/loading/loading.component';
 import { SearchComponent } from './ui/components/search/search.component';
-import { ErrorMessageContentComponent } from './ui/components/error-message-content/error-message-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CreateDeckComponent,
-    UpdateDeckComponent
+    HomeComponent
   ],
   imports: [
     FormsModule,
@@ -36,6 +32,7 @@ import { ErrorMessageContentComponent } from './ui/components/error-message-cont
       InMemoryDataService, { dataEncapsulation: false }
     ),
 
+    DeckModule,
     SearchComponent,
     LoadingComponent,
     ErrorMessageContentComponent,
@@ -65,8 +62,7 @@ import { ErrorMessageContentComponent } from './ui/components/error-message-cont
     IgxDragDropModule,
     IgxChipsModule,
     IgxListModule,
-    CdkDropList,
-    CdkDrag,
+    
     IgxToastModule,
     IgxSnackbarModule
   ],

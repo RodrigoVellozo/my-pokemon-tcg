@@ -1,6 +1,6 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IgxToastComponent } from 'igniteui-angular';
 import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
@@ -17,6 +17,8 @@ import { PokemonService } from 'src/app/core/services/pokemon.service';
 export class UpdateDeckComponent implements OnInit {
   @ViewChild('toast', { read: IgxToastComponent }) 
   public toast!: IgxToastComponent;
+
+  public isLoading = true;
   
   readonly search$ = new BehaviorSubject<string>('');
   
@@ -41,7 +43,7 @@ export class UpdateDeckComponent implements OnInit {
   );
 
   readonly pokemonNotFound$ = this.pokemons$.pipe(
-    map((movies) => (movies ? '' : this.search$.value))
+    map((pokemons) => (pokemons ? '' : this.search$.value))
   );
 
   constructor(
@@ -52,7 +54,8 @@ export class UpdateDeckComponent implements OnInit {
     private _formBuilder: FormBuilder
   ) {
     this._pokemonService.getPokemons().then((res: any) =>{
-      this.cards = res.data
+      this.cards = res.data;
+      this.isLoading = false;
     });
   }
 
