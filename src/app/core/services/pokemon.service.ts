@@ -8,7 +8,7 @@ import { Pokemons } from '../models/pokemon-model';
 })
 export class PokemonService {
 
-  private readonly URL = 'https://api.pokemontcg.io/v2/cards?pageSize=1000';
+  private readonly URL = 'https://api.pokemontcg.io/v2/cards';
 
   constructor(private _http: HttpClient) { }
 
@@ -19,8 +19,14 @@ export class PokemonService {
   }
 
   public getPokemon(search?: string): Observable<Array<any>> {
-    if (!search) search = 'one piece';
-    return this._http.get<Observable<Array<any>>>(`${this.URL}s=${search}`).pipe(
+    console.log('aqui')
+    let endpoint = '';
+    if(!search){
+      endpoint = `${this.URL}?pageSize=1000`;
+    }else{
+      endpoint = `${this.URL}?q=name:${search}`;
+    }
+    return this._http.get<Observable<Array<any>>>(endpoint).pipe(
       map((res:any) => res.Search),
       catchError((err) => {
         console.log('Ocorreu um erro na requisição');

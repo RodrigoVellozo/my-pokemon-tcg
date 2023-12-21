@@ -1,139 +1,146 @@
 @use "igniteui-angular/theming" as *;
 
 $dark-tabs: tabs-theme(
-    $item-text-color: #F4D45C,
-    $item-background: #292826,
-    $item-hover-background: #F4D45C,
-    $item-hover-color: #292826,
-    $item-active-color: #09f,
-    $item-active-icon-color: #F4D45C,
-    $indicator-color: #09f,
-    $tab-ripple-color: #F4D45C
+  $item-text-color: #f4d45c,
+  $item-background: #292826,
+  $item-hover-background: #f4d45c,
+  $item-hover-color: #292826,
+  $item-active-color: #09f,
+  $item-active-icon-color: #f4d45c,
+  $indicator-color: #09f,
+  $tab-ripple-color: #f4d45c,
 );
 
 @include css-vars($dark-tabs);
 
 :host {
-    width: 100%;
-    ::ng-deep {
-      @include tabs($dark-tabs);
-    }
+  width: 100%;
+  ::ng-deep {
+    @include tabs($dark-tabs);
   }
-  
-  main {
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  height: 86vh;
+  margin: 16px;
+}
+
+igx-tabs {
+  background: #f8f9fa;
+}
+
+.pokemons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  width: 62%;
+  height: 92vh;
+  overflow-y: scroll;
+
+  &_img {
+    height: 16vw;
+  }
+}
+
+.update-deck {
+  background: #f8f9fa;
+  border-radius: 2rem;
+  box-shadow: 9px 10px 44px 20px rgba(0, 0, 0, 0.1);
+  width: 34%;
+  text-align: center;
+
+  &__input {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    height: 86vh;
-    margin: 16px;
   }
 
-  igx-tabs{
-    background: #f8f9fa;
-  }
-  
-  .pokemons-list {
+  &__header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  
-    width: 62%;
-    height: 92vh;
+  }
+
+  &__cards-amount {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+  }
+
+  //drag and drop
+  &__drop-area {
     overflow-y: scroll;
-  
-    &_img {
-      height: 16vw;
-    }
-  }
-  
-  
-  .create-deck {
-    background: #f8f9fa;
+    height: 24rem;
     border-radius: 2rem;
-    box-shadow: 9px 10px 44px 20px rgba(0,0,0,0.1);
-  
-    &__header{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    &__cards-amount{
-      display: flex;
-      justify-content: space-around;
-      margin: 1.5rem 0;
-    }
-  
-    //drag and drop 
-    &__drop-area{
-      overflow-y: scroll;
-      height: 24rem;
-      border-radius: 2rem;
-    }
-  
-    &__choosen-cards {
-      margin: 0px 8px;
-      display: grid;
-      grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
-      min-height: 10rem;
-      border: 1px dashed #48cae4;
-      gap: 8px;
-    }
-  
-    &__choosen-card {
-      display: block;
-      position: relative;
-    }
-  
-    &__footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-  
-    &__amount {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 20px;
-      width: 20px;
-      border-radius: 10px;
-      background: lightgrey;
-    }
-  
   }
-  
-  
-  .pokemons-list::-webkit-scrollbar {
-    width: 10px;
+
+  &__choosen-cards {
+    margin: 0px 8px;
+    display: grid;
+    grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr) minmax(
+        0px,
+        1fr
+      );
+    min-height: 10rem;
+    border: 1px dashed #48cae4;
+    gap: 8px;
   }
-  
-  .pokemons-list::-webkit-scrollbar-track {
-    background: #bdbcba;
+
+  &__choosen-card {
+    display: block;
+    position: relative;
   }
-  
-  .pokemons-list::-webkit-scrollbar-thumb {
-    background-color: hsl(214, 87%, 54%);
-    border-radius: 20px;       
-    border: 3px solid #f5c46a; 
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
-  
-  .create-deck__drop-area::-webkit-scrollbar {
-    width: 10px;             
+
+  &__amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background: lightgrey;
   }
-  
-  .create-deck__drop-area::-webkit-scrollbar-track {
-    background: #bdbcba;    
-  }
-  
-  .create-deck__drop-area::-webkit-scrollbar-thumb {
-    background-color: hsl(214, 87%, 54%);   
-    border-radius: 20px;      
-    border: 3px solid #f5c46a;  
-  }
+}
+
+.pokemons-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.pokemons-list::-webkit-scrollbar-track {
+  background: #bdbcba;
+}
+
+.pokemons-list::-webkit-scrollbar-thumb {
+  background-color: hsl(214, 87%, 54%);
+  border-radius: 20px;
+  border: 3px solid #f5c46a;
+}
+
+.update-deck__drop-area::-webkit-scrollbar {
+  width: 10px;
+}
+
+.update-deck__drop-area::-webkit-scrollbar-track {
+  background: #bdbcba;
+}
+
+.update-deck__drop-area::-webkit-scrollbar-thumb {
+  background-color: hsl(214, 87%, 54%);
+  border-radius: 20px;
+  border: 3px solid #f5c46a;
+}

@@ -21,18 +21,16 @@
       </div>
     </section>
 
-    <aside class="create-deck" style="width: 34%">
+    <aside class="update-deck">
+      <h4>Update Deck</h4>
+      
+      <div class="update-deck__input">
+        <app-search (searchEvent)="search($event)"></app-search> 
+      </div>
+      
       <form [formGroup]="form">
-        <div class="create-deck__header">
-          <h4>Update Deck</h4>
-          <div
-            style="
-              display: flex;
-              justify-content: center;
-              align-items: baseline;
-              gap: 2.2rem;
-            "
-          >
+        <div class="update-deck__header">
+          <div class="update-deck__input">
             <igx-input-group>
               <input
                 igxInput
@@ -41,11 +39,10 @@
                 placeholder="insert name"
               />
             </igx-input-group>
-            <app-search (searchEvent)="search($event)"></app-search>
           </div>
         </div>
 
-        <div class="create-deck__cards-amount">
+        <div class="update-deck__cards-amount">
           <igx-chip [removeIcon]="mycardIcon" [removable]="true">
             0 - 60
           </igx-chip>
@@ -67,23 +64,23 @@
               <span igxTabHeaderLabel>Pokémon</span>
             </igx-tab-header>
             <igx-tab-content>
-              <div class="create-deck__drop-area">
+              <div class="update-deck__drop-area">
                 <div
-                  class="create-deck__choosen-cards"
+                  class="update-deck__choosen-cards"
                   cdkDropList
                   [cdkDropListData]="supertypePokemon"
                   #choosenCardsList="cdkDropList"
                   (cdkDropListDropped)="drop($event)"
                 >
                   @for (item of supertypePokemon; track item.card.name) {
-                  <div class="create-deck__choosen-card">
+                  <div class="update-deck__choosen-card">
                     <img
                       [src]="item.card.images.small"
                       [alt]="item.card.name"
                       width="200"
                     />
-                    <div class="create-deck__footer">
-                      <div class="create-deck__amount">
+                    <div class="update-deck__footer">
+                      <div class="update-deck__amount">
                         <strong>
                           {{ item.amount }}
                         </strong>
@@ -101,23 +98,23 @@
               <span igxTabHeaderLabel>Trainers</span>
             </igx-tab-header>
             <igx-tab-content>
-              <div class="create-deck__drop-area">
+              <div class="update-deck__drop-area">
                 <div
-                  class="create-deck__choosen-cards"
+                  class="update-deck__choosen-cards"
                   cdkDropList
                   [cdkDropListData]="supertypeTrainer"
                   #choosenCardsList="cdkDropList"
                   (cdkDropListDropped)="drop($event)"
                 >
                   @for (item of supertypeTrainer; track item.card.name) {
-                  <div class="create-deck__choosen-card">
+                  <div class="update-deck__choosen-card">
                     <img
                       [src]="item.card.images.small"
                       [alt]="item.card.name"
                       width="200"
                     />
-                    <div class="create-deck__footer">
-                      <div class="create-deck__amount">
+                    <div class="update-deck__footer">
+                      <div class="update-deck__amount">
                         <strong>
                           {{ item.amount }}
                         </strong>
@@ -135,23 +132,23 @@
               <span igxTabHeaderLabel>Energy</span>
             </igx-tab-header>
             <igx-tab-content>
-              <div class="create-deck__drop-area">
+              <div class="update-deck__drop-area">
                 <div
-                  class="create-deck__choosen-cards"
+                  class="update-deck__choosen-cards"
                   cdkDropList
                   [cdkDropListData]="supertypeEnergy"
                   #choosenCardsList="cdkDropList"
                   (cdkDropListDropped)="drop($event)"
                 >
                   @for (item of supertypeEnergy; track item.card.name) {
-                  <div class="create-deck__choosen-card">
+                  <div class="update-deck__choosen-card">
                     <img
                       [src]="item.card.images.small"
                       [alt]="item.card.name"
                       width="200"
                     />
-                    <div class="create-deck__footer">
-                      <div class="create-deck__amount">
+                    <div class="update-deck__footer">
+                      <div class="update-deck__amount">
                         <strong>
                           {{ item.amount }}
                         </strong>
