@@ -10,14 +10,22 @@
             "id": "ru1-2",
             "name": "Cherrim",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 1"],
+            "subtypes": [
+              "Stage 1"
+            ],
             "hp": "80",
-            "types": ["Grass"],
+            "types": [
+              "Grass"
+            ],
             "evolvesFrom": "Cherubi",
             "attacks": [
               {
                 "name": "Solarbeam",
-                "cost": ["Grass", "Colorless", "Colorless"],
+                "cost": [
+                  "Grass",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "60",
                 "text": ""
@@ -35,7 +43,9 @@
                 "value": "-20"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "ru1",
@@ -55,7 +65,9 @@
             },
             "number": "2",
             "artist": "Pokemon Rumble",
-            "nationalPokedexNumbers": [421],
+            "nationalPokedexNumbers": [
+              421
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -105,9 +117,13 @@
             "id": "ecard2-H2",
             "name": "Arcanine",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 1"],
+            "subtypes": [
+              "Stage 1"
+            ],
             "hp": "90",
-            "types": ["Fire"],
+            "types": [
+              "Fire"
+            ],
             "evolvesFrom": "Growlithe",
             "abilities": [
               {
@@ -119,7 +135,11 @@
             "attacks": [
               {
                 "name": "Fire Blow",
-                "cost": ["Colorless", "Colorless", "Colorless"],
+                "cost": [
+                  "Colorless",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "30+",
                 "text": "You may discard any number of Fire Energy cards attached to Arcanine when you use this attack. If you do, flip a number of coins equal to the number of Fire Energy cards you discarded. This attack does 30 damage plus 30 more damage for each heads."
@@ -131,7 +151,11 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 3,
             "set": {
               "id": "ecard2",
@@ -153,7 +177,9 @@
             "number": "H2",
             "artist": "Kyoko Umemoto",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [59],
+            "nationalPokedexNumbers": [
+              59
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -190,10 +216,14 @@
             "id": "base4-1",
             "name": "Alakazam",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 2"],
+            "subtypes": [
+              "Stage 2"
+            ],
             "level": "42",
             "hp": "80",
-            "types": ["Psychic"],
+            "types": [
+              "Psychic"
+            ],
             "evolvesFrom": "Kadabra",
             "abilities": [
               {
@@ -205,7 +235,11 @@
             "attacks": [
               {
                 "name": "Confuse Ray",
-                "cost": ["Psychic", "Psychic", "Psychic"],
+                "cost": [
+                  "Psychic",
+                  "Psychic",
+                  "Psychic"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "30",
                 "text": "Flip a coin. If heads, the Defending Pokémon is now Confused."
@@ -217,7 +251,11 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 3,
             "set": {
               "id": "base4",
@@ -240,7 +278,9 @@
             "artist": "Ken Sugimori",
             "rarity": "Rare Holo",
             "flavorText": "Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5000.",
-            "nationalPokedexNumbers": [65],
+            "nationalPokedexNumbers": [
+              65
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -290,9 +330,13 @@
             "id": "ex7-1",
             "name": "Azumarill",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 1"],
+            "subtypes": [
+              "Stage 1"
+            ],
             "hp": "80",
-            "types": ["Water"],
+            "types": [
+              "Water"
+            ],
             "evolvesFrom": "Marill",
             "abilities": [
               {
@@ -304,7 +348,10 @@
             "attacks": [
               {
                 "name": "Water Punch",
-                "cost": ["Water", "Colorless"],
+                "cost": [
+                  "Water",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 2,
                 "damage": "20+",
                 "text": "Flip a coin for each Water Energy attached to Azumarill. This attack does 20 damage plus 20 more damage for each heads."
@@ -316,7 +363,9 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "ex7",
@@ -338,7 +387,9 @@
             "number": "1",
             "artist": "Sumiyoshi Kizuki",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [184],
+            "nationalPokedexNumbers": [
+              184
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -395,20 +446,29 @@
             "id": "ex3-1",
             "name": "Absol",
             "supertype": "Pokémon",
-            "subtypes": ["Basic"],
+            "subtypes": [
+              "Basic"
+            ],
             "hp": "70",
-            "types": ["Darkness"],
+            "types": [
+              "Darkness"
+            ],
             "attacks": [
               {
                 "name": "Bad News",
-                "cost": ["Darkness"],
+                "cost": [
+                  "Darkness"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "If the number of cards in your opponent's hand is at least 6, choose a number of cards there, without looking, until your opponent has 5 cards left. Have your opponent discard the cards you chose."
               },
               {
                 "name": "Prize Count",
-                "cost": ["Darkness", "Colorless"],
+                "cost": [
+                  "Darkness",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 2,
                 "damage": "20+",
                 "text": "If you have more Prize cards left than your opponent, this attack does 20 damage plus 20 more damage."
@@ -426,7 +486,9 @@
                 "value": "-30"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "ex3",
@@ -448,7 +510,9 @@
             "number": "1",
             "artist": "Naoyo Kimura",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [359],
+            "nationalPokedexNumbers": [
+              359
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -505,21 +569,32 @@
             "id": "pl3-1",
             "name": "Absol G",
             "supertype": "Pokémon",
-            "subtypes": ["Basic", "SP"],
+            "subtypes": [
+              "Basic",
+              "SP"
+            ],
             "level": "59",
             "hp": "70",
-            "types": ["Darkness"],
+            "types": [
+              "Darkness"
+            ],
             "attacks": [
               {
                 "name": "Feint Attack",
-                "cost": ["Darkness"],
+                "cost": [
+                  "Darkness"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon."
               },
               {
                 "name": "Doom News",
-                "cost": ["Darkness", "Colorless", "Colorless"],
+                "cost": [
+                  "Darkness",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "",
                 "text": "Return all Energy cards attached to Absol G to your hand. The Defending Pokémon is Knocked Out at the end of your opponent's next turn."
@@ -537,7 +612,9 @@
                 "value": "-20"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "pl3",
@@ -559,7 +636,9 @@
             "number": "1",
             "artist": "Yusuke Ishikawa",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [359],
+            "nationalPokedexNumbers": [
+              359
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -616,14 +695,23 @@
             "id": "dv1-1",
             "name": "Dratini",
             "supertype": "Pokémon",
-            "subtypes": ["Basic"],
+            "subtypes": [
+              "Basic"
+            ],
             "hp": "40",
-            "types": ["Dragon"],
-            "evolvesTo": ["Dragonair"],
+            "types": [
+              "Dragon"
+            ],
+            "evolvesTo": [
+              "Dragonair"
+            ],
             "attacks": [
               {
                 "name": "Wrap",
-                "cost": ["Grass", "Lightning"],
+                "cost": [
+                  "Grass",
+                  "Lightning"
+                ],
                 "convertedEnergyCost": 2,
                 "damage": "20",
                 "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
@@ -635,7 +723,9 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "dv1",
@@ -659,7 +749,9 @@
             "artist": "Masakazu Fukuda",
             "rarity": "Rare Holo",
             "flavorText": "It is called the \"Mirage Pokémon\" because so few have seen it. Its shed skin has been found.",
-            "nationalPokedexNumbers": [147],
+            "nationalPokedexNumbers": [
+              147
+            ],
             "legalities": {
               "unlimited": "Legal",
               "expanded": "Legal"
@@ -710,14 +802,22 @@
             "id": "det1-1",
             "name": "Bulbasaur",
             "supertype": "Pokémon",
-            "subtypes": ["Basic"],
+            "subtypes": [
+              "Basic"
+            ],
             "hp": "60",
-            "types": ["Grass"],
-            "evolvesTo": ["Ivysaur"],
+            "types": [
+              "Grass"
+            ],
+            "evolvesTo": [
+              "Ivysaur"
+            ],
             "attacks": [
               {
                 "name": "Find a Friend",
-                "cost": ["Grass"],
+                "cost": [
+                  "Grass"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
@@ -729,7 +829,9 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "det1",
@@ -753,7 +855,9 @@
             "artist": "MPC Film",
             "rarity": "Common",
             "flavorText": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
-            "nationalPokedexNumbers": [1],
+            "nationalPokedexNumbers": [
+              1
+            ],
             "legalities": {
               "unlimited": "Legal",
               "expanded": "Legal"
@@ -804,10 +908,14 @@
             "id": "dp3-1",
             "name": "Ampharos",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 2"],
+            "subtypes": [
+              "Stage 2"
+            ],
             "level": "52",
             "hp": "130",
-            "types": ["Lightning"],
+            "types": [
+              "Lightning"
+            ],
             "evolvesFrom": "Flaaffy",
             "abilities": [
               {
@@ -819,7 +927,11 @@
             "attacks": [
               {
                 "name": "Cluster Bolt",
-                "cost": ["Lightning", "Colorless", "Colorless"],
+                "cost": [
+                  "Lightning",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "70",
                 "text": "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
@@ -837,7 +949,11 @@
                 "value": "-20"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 3,
             "set": {
               "id": "dp3",
@@ -860,7 +976,9 @@
             "artist": "Kouki Saitou",
             "rarity": "Rare Holo",
             "flavorText": "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
-            "nationalPokedexNumbers": [181],
+            "nationalPokedexNumbers": [
+              181
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -917,14 +1035,22 @@
             "id": "xy5-1",
             "name": "Weedle",
             "supertype": "Pokémon",
-            "subtypes": ["Basic"],
+            "subtypes": [
+              "Basic"
+            ],
             "hp": "50",
-            "types": ["Grass"],
-            "evolvesTo": ["Kakuna"],
+            "types": [
+              "Grass"
+            ],
+            "evolvesTo": [
+              "Kakuna"
+            ],
             "attacks": [
               {
                 "name": "Multiply",
-                "cost": ["Grass"],
+                "cost": [
+                  "Grass"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "Search your deck for Weedle and put it onto your Bench. Shuffle your deck afterward."
@@ -936,7 +1062,9 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "xy5",
@@ -960,7 +1088,9 @@
             "artist": "Midori Harada",
             "rarity": "Common",
             "flavorText": "Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.",
-            "nationalPokedexNumbers": [13],
+            "nationalPokedexNumbers": [
+              13
+            ],
             "legalities": {
               "unlimited": "Legal",
               "expanded": "Legal"
@@ -1018,21 +1148,34 @@
             "id": "hgss4-1",
             "name": "Aggron",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 2"],
+            "subtypes": [
+              "Stage 2"
+            ],
             "hp": "140",
-            "types": ["Metal"],
+            "types": [
+              "Metal"
+            ],
             "evolvesFrom": "Lairon",
             "attacks": [
               {
                 "name": "Second Strike",
-                "cost": ["Metal", "Metal", "Colorless"],
+                "cost": [
+                  "Metal",
+                  "Metal",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "40",
                 "text": "If the Defending Pokémon already has any damage counters on it, this attack does 40 damage plus 40 more damage."
               },
               {
                 "name": "Guard Claw",
-                "cost": ["Metal", "Metal", "Colorless", "Colorless"],
+                "cost": [
+                  "Metal",
+                  "Metal",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 4,
                 "damage": "60",
                 "text": "During your opponent's next turn, any damage done to Aggron by attacks is reduced by 20 (after applying Weakness and Resistance)."
@@ -1050,7 +1193,12 @@
                 "value": "-20"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 4,
             "set": {
               "id": "hgss4",
@@ -1073,7 +1221,9 @@
             "artist": "Kagemaru Himeno",
             "rarity": "Rare Holo",
             "flavorText": "You can tell its age by the length of its iron horns. It claims an entire mountain as its territory.",
-            "nationalPokedexNumbers": [306],
+            "nationalPokedexNumbers": [
+              306
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -1130,7 +1280,9 @@
             "id": "xy7-69",
             "name": "Ace Trainer",
             "supertype": "Trainer",
-            "subtypes": ["Supporter"],
+            "subtypes": [
+              "Supporter"
+            ],
             "rules": [
               "You can play this card only if you have more Prize cards left than your opponent.",
               "Each player shuffles his or her hand into his or her deck. Then, draw 6 cards. Your opponent draws 3 cards.",
@@ -1214,7 +1366,9 @@
             "id": "sm11-192",
             "name": "Coach Trainer",
             "supertype": "Trainer",
-            "subtypes": ["Supporter"],
+            "subtypes": [
+              "Supporter"
+            ],
             "rules": [
               "Draw 2 cards. If your Active Pokémon is a TAG TEAM Pokémon, draw 2 more cards.",
               "You may play only 1 Supporter card during your turn (before your attack)."
@@ -1297,7 +1451,9 @@
             "id": "sm11-233",
             "name": "Coach Trainer",
             "supertype": "Trainer",
-            "subtypes": ["Supporter"],
+            "subtypes": [
+              "Supporter"
+            ],
             "rules": [
               "Draw 2 cards. If your Active Pokémon is a TAG TEAM Pokémon, draw 2 more cards.",
               "You may play only 1 Supporter card during your turn (before your attack)."
@@ -1373,7 +1529,9 @@
             "id": "swsh45-59",
             "name": "Gym Trainer",
             "supertype": "Trainer",
-            "subtypes": ["Supporter"],
+            "subtypes": [
+              "Supporter"
+            ],
             "rules": [
               "Draw 2 cards. If any of your Pokémon were Knocked Out during your opponent's last turn, draw 2 more cards.",
               "You may play only 1 Supporter card during your turn."
@@ -1458,7 +1616,9 @@
             "id": "pop5-4",
             "name": "Double Rainbow Energy",
             "supertype": "Energy",
-            "subtypes": ["Special"],
+            "subtypes": [
+              "Special"
+            ],
             "rules": [
               "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
             ],
@@ -1530,7 +1690,9 @@
             "id": "pop4-8",
             "name": "Heal Energy",
             "supertype": "Energy",
-            "subtypes": ["Special"],
+            "subtypes": [
+              "Special"
+            ],
             "rules": [
               "Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
             ],
@@ -1602,7 +1764,9 @@
             "id": "pop4-10",
             "name": "Scramble Energy",
             "supertype": "Energy",
-            "subtypes": ["Special"],
+            "subtypes": [
+              "Special"
+            ],
             "rules": [
               "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
             ],
@@ -1674,7 +1838,9 @@
             "id": "pop5-8",
             "name": "Boost Energy",
             "supertype": "Energy",
-            "subtypes": ["Special"],
+            "subtypes": [
+              "Special"
+            ],
             "rules": [
               "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
             ],
@@ -1746,7 +1912,9 @@
             "id": "pop5-9",
             "name": "δ Rainbow Energy",
             "supertype": "Energy",
-            "subtypes": ["Special"],
+            "subtypes": [
+              "Special"
+            ],
             "rules": [
               "δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)"
             ],
@@ -1825,21 +1993,32 @@
             "id": "pl3-1",
             "name": "Absol G",
             "supertype": "Pokémon",
-            "subtypes": ["Basic", "SP"],
+            "subtypes": [
+              "Basic",
+              "SP"
+            ],
             "level": "59",
             "hp": "70",
-            "types": ["Darkness"],
+            "types": [
+              "Darkness"
+            ],
             "attacks": [
               {
                 "name": "Feint Attack",
-                "cost": ["Darkness"],
+                "cost": [
+                  "Darkness"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "Choose 1 of your opponent's Pokémon. This attack does 20 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon."
               },
               {
                 "name": "Doom News",
-                "cost": ["Darkness", "Colorless", "Colorless"],
+                "cost": [
+                  "Darkness",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "",
                 "text": "Return all Energy cards attached to Absol G to your hand. The Defending Pokémon is Knocked Out at the end of your opponent's next turn."
@@ -1857,7 +2036,9 @@
                 "value": "-20"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "pl3",
@@ -1879,7 +2060,9 @@
             "number": "1",
             "artist": "Yusuke Ishikawa",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [359],
+            "nationalPokedexNumbers": [
+              359
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -1936,14 +2119,22 @@
             "id": "xy5-1",
             "name": "Weedle",
             "supertype": "Pokémon",
-            "subtypes": ["Basic"],
+            "subtypes": [
+              "Basic"
+            ],
             "hp": "50",
-            "types": ["Grass"],
-            "evolvesTo": ["Kakuna"],
+            "types": [
+              "Grass"
+            ],
+            "evolvesTo": [
+              "Kakuna"
+            ],
             "attacks": [
               {
                 "name": "Multiply",
-                "cost": ["Grass"],
+                "cost": [
+                  "Grass"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "Search your deck for Weedle and put it onto your Bench. Shuffle your deck afterward."
@@ -1955,7 +2146,9 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "xy5",
@@ -1979,7 +2172,9 @@
             "artist": "Midori Harada",
             "rarity": "Common",
             "flavorText": "Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.",
-            "nationalPokedexNumbers": [13],
+            "nationalPokedexNumbers": [
+              13
+            ],
             "legalities": {
               "unlimited": "Legal",
               "expanded": "Legal"
@@ -2037,10 +2232,14 @@
             "id": "dp3-1",
             "name": "Ampharos",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 2"],
+            "subtypes": [
+              "Stage 2"
+            ],
             "level": "52",
             "hp": "130",
-            "types": ["Lightning"],
+            "types": [
+              "Lightning"
+            ],
             "evolvesFrom": "Flaaffy",
             "abilities": [
               {
@@ -2052,7 +2251,11 @@
             "attacks": [
               {
                 "name": "Cluster Bolt",
-                "cost": ["Lightning", "Colorless", "Colorless"],
+                "cost": [
+                  "Lightning",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "70",
                 "text": "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
@@ -2070,7 +2273,11 @@
                 "value": "-20"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 3,
             "set": {
               "id": "dp3",
@@ -2093,7 +2300,9 @@
             "artist": "Kouki Saitou",
             "rarity": "Rare Holo",
             "flavorText": "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
-            "nationalPokedexNumbers": [181],
+            "nationalPokedexNumbers": [
+              181
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -2157,9 +2366,13 @@
             "id": "ex12-1",
             "name": "Aerodactyl",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 1"],
+            "subtypes": [
+              "Stage 1"
+            ],
             "hp": "70",
-            "types": ["Colorless"],
+            "types": [
+              "Colorless"
+            ],
             "evolvesFrom": "Mysterious Fossil",
             "abilities": [
               {
@@ -2171,14 +2384,20 @@
             "attacks": [
               {
                 "name": "Power Blow",
-                "cost": ["Colorless"],
+                "cost": [
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "10+",
                 "text": "Does 10 damage plus 10 more damage for each Energy attached to Aerodactyl."
               },
               {
                 "name": "Speed Stroke",
-                "cost": ["Colorless", "Colorless", "Colorless"],
+                "cost": [
+                  "Colorless",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "40",
                 "text": "During your opponent's next turn, prevent all effects, including damage, done to Aerodactyl by attacks from your opponent's Pokémon-ex."
@@ -2216,7 +2435,9 @@
             "number": "1",
             "artist": "Hajime Kusajima",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [142],
+            "nationalPokedexNumbers": [
+              142
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -2273,14 +2494,22 @@
             "id": "det1-1",
             "name": "Bulbasaur",
             "supertype": "Pokémon",
-            "subtypes": ["Basic"],
+            "subtypes": [
+              "Basic"
+            ],
             "hp": "60",
-            "types": ["Grass"],
-            "evolvesTo": ["Ivysaur"],
+            "types": [
+              "Grass"
+            ],
+            "evolvesTo": [
+              "Ivysaur"
+            ],
             "attacks": [
               {
                 "name": "Find a Friend",
-                "cost": ["Grass"],
+                "cost": [
+                  "Grass"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "",
                 "text": "Search your deck for a Grass Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
@@ -2292,7 +2521,9 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless"],
+            "retreatCost": [
+              "Colorless"
+            ],
             "convertedRetreatCost": 1,
             "set": {
               "id": "det1",
@@ -2316,7 +2547,9 @@
             "artist": "MPC Film",
             "rarity": "Common",
             "flavorText": "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
-            "nationalPokedexNumbers": [1],
+            "nationalPokedexNumbers": [
+              1
+            ],
             "legalities": {
               "unlimited": "Legal",
               "expanded": "Legal"
@@ -2367,14 +2600,23 @@
             "id": "ru1-1",
             "name": "Venusaur",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 2"],
+            "subtypes": [
+              "Stage 2"
+            ],
             "hp": "140",
-            "types": ["Grass"],
+            "types": [
+              "Grass"
+            ],
             "evolvesFrom": "Ivysaur",
             "attacks": [
               {
                 "name": "Giga Drain",
-                "cost": ["Grass", "Grass", "Colorless", "Colorless"],
+                "cost": [
+                  "Grass",
+                  "Grass",
+                  "Colorless",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 4,
                 "damage": "50",
                 "text": "Remove from Venusaur the number of damage counters equal to the damage you did to the Defending Pokémon."
@@ -2386,7 +2628,12 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless", "Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 4,
             "set": {
               "id": "ru1",
@@ -2406,7 +2653,9 @@
             },
             "number": "1",
             "artist": "Pokemon Rumble",
-            "nationalPokedexNumbers": [3],
+            "nationalPokedexNumbers": [
+              3
+            ],
             "legalities": {
               "unlimited": "Legal"
             },
@@ -2456,21 +2705,31 @@
             "id": "ecard2-H1",
             "name": "Ampharos",
             "supertype": "Pokémon",
-            "subtypes": ["Stage 2"],
+            "subtypes": [
+              "Stage 2"
+            ],
             "hp": "100",
-            "types": ["Lightning"],
+            "types": [
+              "Lightning"
+            ],
             "evolvesFrom": "Flaaffy",
             "attacks": [
               {
                 "name": "Thundershock",
-                "cost": ["Lightning"],
+                "cost": [
+                  "Lightning"
+                ],
                 "convertedEnergyCost": 1,
                 "damage": "20",
                 "text": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
               },
               {
                 "name": "Reflect Energy",
-                "cost": ["Lightning", "Lightning", "Colorless"],
+                "cost": [
+                  "Lightning",
+                  "Lightning",
+                  "Colorless"
+                ],
                 "convertedEnergyCost": 3,
                 "damage": "50",
                 "text": "If you have any Benched Pokémon and if there are any basic Energy cards attached to Ampharos, take 1 of those Energy cards and attach it to 1 of those Pokémon."
@@ -2482,7 +2741,10 @@
                 "value": "×2"
               }
             ],
-            "retreatCost": ["Colorless", "Colorless"],
+            "retreatCost": [
+              "Colorless",
+              "Colorless"
+            ],
             "convertedRetreatCost": 2,
             "set": {
               "id": "ecard2",
@@ -2504,7 +2766,9 @@
             "number": "H1",
             "artist": "Shin-ichi Yoshida",
             "rarity": "Rare Holo",
-            "nationalPokedexNumbers": [181],
+            "nationalPokedexNumbers": [
+              181
+            ],
             "legalities": {
               "unlimited": "Legal"
             },

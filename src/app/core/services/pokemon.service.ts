@@ -14,8 +14,6 @@ export class PokemonService {
   constructor(private _http: HttpClient) { }
 
   public getAllPokemons(query: Query){
-    console.log('url >>>', `${this.URL}?page=${query.page}&pageSize=${query.pageSize}`);
-
     return this._http.get<any>(`${this.URL}?page=${query.page}&pageSize=${query.pageSize}`).pipe(
       map(response => response.data)
     ); 

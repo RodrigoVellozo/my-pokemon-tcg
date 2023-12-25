@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DeckService } from '../core/services/deck.service';
-import { tap } from 'rxjs';
 import { Deck } from '../core/models/deck';
+import { DeckService } from '../core/services/deck.service';
 
 @Component({
   selector: 'app-home',
