@@ -27,8 +27,8 @@ Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emu
 
 # Lista de Melhorias (TODO)
 
-- [ ] Paginação;
-- [ ] Utilizar o json-server (fake-api) para API de deck
+- [x] Scroll infinito;
+- [x] Utilizar o json-server (fake-api) para API de deck
 - [ ] Ajustar request;
 - [ ] refatoração de componentes
 - [x] Implementar componente de loading;
