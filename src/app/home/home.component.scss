@@ -79,6 +79,13 @@ main {
   flex-wrap: wrap;
   cursor: pointer;
 
+  igx-card{
+    background: linear-gradient(255deg, rgb(122, 122, 122) 49%, rgb(69, 69, 69) 100%, rgb(255, 255, 255) 100%);
+  }
+  h3{
+    color: whitesmoke;
+    text-shadow: 2px 3px black;
+  }
 }
 
 .deck-list-container::-webkit-scrollbar {
