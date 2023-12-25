@@ -28,9 +28,9 @@ import { SearchComponent } from './ui/components/search/search.component';
     HammerModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // ),
 
     DeckModule,
     SearchComponent,

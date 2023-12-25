@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IgxToastComponent } from 'igniteui-angular';
-import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, map, of, switchMap } from 'rxjs';
 import { Deck } from 'src/app/core/models/deck';
 import { Data } from 'src/app/core/models/pokemon-data';
 import { DeckService } from 'src/app/core/services/deck.service';
@@ -56,10 +56,10 @@ export class UpdateDeckComponent implements OnInit {
     private _pokemonService: PokemonService,
     private _formBuilder: FormBuilder
   ) {
-    this._pokemonService.getPokemons().then((res: any) =>{
-      this.cards = res.data;
-      this.isLoading = false;
-    });
+    // this._pokemonService.getPokemons().then((res: any) =>{
+    //   this.cards = res.data;
+    //   this.isLoading = false;
+    // });
 
   }
 
@@ -137,6 +137,19 @@ if (existingCard) {
   }
 
   private getPokemon(event: string): Observable<Array<any>>{
-    return this._pokemonService.getPokemon(event);
+    // return this._pokemonService.getPokemon(event);
+    return of([1]);
+  }
+
+  // scroll infinito
+  onScroll(){
+    this.query.page += 1;
+    this.pokemons = this._pokemonService
+    .getAllPokemons(this.query)
+    .subscribe({
+      next: (response) => (this.cards = [...this.cards, ...response]),
+      complete: () => this.isLoading = false,
+      error: (err) => console.error('Error: ', err),
+    });
   }
 }

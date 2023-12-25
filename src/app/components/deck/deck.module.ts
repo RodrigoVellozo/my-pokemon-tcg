@@ -10,6 +10,8 @@ import { LoadingComponent } from 'src/app/ui/components/loading/loading.componen
 import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { DeckShellComponent } from './deck-shell/deck-shell.component';
 import { RouterModule } from '@angular/router';
+import { PokemonsScrollComponent } from 'src/app/ui/components/pokemons-scroll/pokemons-scroll.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import { RouterModule } from '@angular/router';
     ErrorMessageContentComponent,
     SearchComponent,
     LoadingComponent,
+    PokemonsScrollComponent,
 
     CdkDropList,
     CdkDrag,
+    InfiniteScrollModule,
 
     IgxIconModule,
     IgxToastModule,

@@ -1,14 +1,20 @@
 <app-loading [isLoading]="isLoading">
   <main>
-  <section class="pokemons-list">
+  <section 
+    class="pokemons-list" infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    [scrollWindow]="false"
+    (scrolled)="onScroll()"
+    >
     <div
       style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem"
       cdkDropList
-      [cdkDropListData]="cards$"
+      [cdkDropListData]="cards"
       [cdkDropListConnectedTo]="choosenCardsList"
       #cardsList="cdkDropList"
     >
-      <ng-container *ngFor="let card of cards$">
+      <ng-container *ngFor="let card of cards">
         <div cdkDrag>
           <img [src]="card.images.small" [alt]="card.name" width="200" />
         </div>
@@ -105,8 +111,8 @@
 </ng-template>
 
 <!-- TODO : exibir mensagem caso nao encontre um pokemon -->
-<ng-template #emptyTemplate>
+<!-- <ng-template #emptyTemplate>
   <app-error-message-content
     [name]="(pokemonNotFound$ | async)!"
   ></app-error-message-content>
-</ng-template>
+</ng-template> -->
