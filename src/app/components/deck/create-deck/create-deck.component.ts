@@ -9,8 +9,8 @@ import { Query } from 'src/app/core/models/pokemon-query';
 import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 
-const defaultImage =
-  'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png';
+const defaultImage = 'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png';
+
 @Component({
   selector: 'app-create-deck',
   templateUrl: './create-deck.component.html',
@@ -19,7 +19,7 @@ const defaultImage =
 export class CreateDeckComponent {
   public query: Query = {
     page: 1,
-    pageSize: 10,
+    pageSize: 50,
   };
 
   public isLoading = true;
@@ -57,7 +57,8 @@ export class CreateDeckComponent {
     private _deckService: DeckService,
     private _pokemonService: PokemonService,
     private _router: Router
-  ) {}
+  ) {
+  }
 
   private _initForm(): FormGroup {
     return this._formBuilder.group({

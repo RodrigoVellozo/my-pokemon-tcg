@@ -1,6 +1,13 @@
 <app-loading [isLoading]="isLoading">
   <main>
-    <section class="pokemons-list">
+    <section 
+      class="pokemons-list"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="500"
+      [scrollWindow]="false"
+      (scrolled)="onScroll()"
+      >
       <div
         style="
           display: flex;

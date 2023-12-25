@@ -8,7 +8,8 @@ import { Deck } from '../models/deck';
 })
 export class DeckService {
 
-  private decksUrl = 'api/decks';
+  // private decksUrl = 'api/decks';
+  private decksUrl = 'http://localhost:3000/decks';
 
   constructor(private _http: HttpClient) { }
 

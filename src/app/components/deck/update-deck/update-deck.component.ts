@@ -6,6 +6,7 @@ import { IgxToastComponent } from 'igniteui-angular';
 import { BehaviorSubject, Observable, map, of, switchMap } from 'rxjs';
 import { Deck } from 'src/app/core/models/deck';
 import { Data } from 'src/app/core/models/pokemon-data';
+import { Query } from 'src/app/core/models/pokemon-query';
 import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 
@@ -17,6 +18,11 @@ import { PokemonService } from 'src/app/core/services/pokemon.service';
 export class UpdateDeckComponent implements OnInit {
   @ViewChild('toast', { read: IgxToastComponent }) 
   public toast!: IgxToastComponent;
+  
+  public query: Query = {
+    page: 1,
+    pageSize: 50,
+  };
 
   public isLoading = true;
   
@@ -27,6 +33,13 @@ export class UpdateDeckComponent implements OnInit {
   public deckId = this._route.snapshot.params['id'];
 
   public cards: Data[] = [];
+  public pokemons = this._pokemonService
+    .getAllPokemons(this.query)
+    .subscribe({
+      next: (response) => (this.cards = response),
+      complete: () => this.toggleLoading(),
+      error: (err) => console.error('Error: ', err),
+    });
   
   public choosenCards: { card: Data, amount: number }[]  = [];
   public supertypePokemon: { card: Data, amount: number }[]  = [];
@@ -66,6 +79,8 @@ export class UpdateDeckComponent implements OnInit {
   ngOnInit(): void {
     this.getADeck(this.deckId);
   }
+
+  toggleLoading = () => (this.isLoading = !this.isLoading);
 
   public getADeck(deckId: number) {
     this._deckService.getDeckById(deckId).subscribe({
