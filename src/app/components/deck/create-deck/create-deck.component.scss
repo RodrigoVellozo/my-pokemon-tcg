@@ -45,6 +45,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    h4{
+      font-family: 'Pokemon Solid', sans-serif;
+    }
   }
 
   &__cards-amount{

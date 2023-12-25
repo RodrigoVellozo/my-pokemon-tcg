@@ -42,6 +42,13 @@
       animation: spin 2s linear infinite;
     }
   }
+
+  .spinner::before{
+    content: 'Loading';
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: xx-large;
+    color: #2f4f4f;
+  }
 }
 
 @keyframes spin {

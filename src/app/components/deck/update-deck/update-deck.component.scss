@@ -55,6 +55,10 @@ igx-tabs {
   width: 34%;
   text-align: center;
 
+  h4{
+    font-family: 'Pokemon Solid', sans-serif;
+  }
+
   &__input {
     display: flex;
     justify-content: center;
