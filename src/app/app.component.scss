@@ -1,3 +1,14 @@
+@use "igniteui-angular/theming" as *;
+
+$custom-navbar-theme: navbar-theme(
+  $text-color: #151515,
+  $background: radial-gradient(ellipse at 0% 0%, rgba(0, 147, 255, 1) 0%, rgba(129, 225, 237, 1) 50%, rgba(91, 130, 230, 1) 100%),
+  $idle-icon-color: #151515,
+  $hover-icon-color: #8c8c8c
+  );
+
+@include css-vars($custom-navbar-theme);
+
 .outer-wrapper {
   height: 100%;
 }

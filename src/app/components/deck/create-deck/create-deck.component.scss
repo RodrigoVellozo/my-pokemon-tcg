@@ -37,7 +37,7 @@ main {
 
 
 .create-deck {
-  background: #f8f9fa;
+  background: linear-gradient(to bottom, rgb(171, 186, 171), rgb(255, 255, 255));
   border-radius: 2rem;
   box-shadow: 9px 10px 44px 20px rgba(0,0,0,0.1);
 
@@ -47,6 +47,9 @@ main {
     align-items: center;
     h4{
       font-family: 'Pokemon Solid', sans-serif;
+      text-shadow: 4px 4px whitesmoke;
+      padding: 8px 0 16px 0;
+      margin: 0;
     }
   }
 

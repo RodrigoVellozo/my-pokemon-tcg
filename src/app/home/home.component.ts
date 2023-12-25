@@ -8,6 +8,8 @@ import { DeckService } from '../core/services/deck.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public isLoading = true;
+
   public decks: Deck[] = [];
 
   public deckDetails: Deck | undefined;
@@ -18,8 +20,14 @@ export class HomeComponent implements OnInit {
     this.getAllDecks();
   }
 
+  public toggleLoading = () => (this.isLoading = !this.isLoading);
+
   public getAllDecks(): void {
-    this._deckService.getDecks().subscribe((data) => (this.decks = data));
+    this._deckService.getDecks().subscribe({
+      next: response => this.decks = response,
+      complete: () => this.toggleLoading(),
+      error: (err) => console.error('Error: ', err),
+    });
   }
 
   public previewDeck(deck: Deck): void {
@@ -30,6 +38,4 @@ export class HomeComponent implements OnInit {
     this.deckDetails = undefined;
     this._deckService.deleteDeck(deck).subscribe((x) => this.getAllDecks());
   }
-
- 
 }

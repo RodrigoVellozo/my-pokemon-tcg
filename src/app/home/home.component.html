@@ -1,7 +1,8 @@
-<main>
-  <section class="deck-list-container">
+<app-loading [isLoading]="isLoading">
+  <main>
+    <section class="deck-list-container">
       <button
-        style="height: 12.938rem;"
+        style="height: 12.938rem"
         igxButton="raised"
         igxRipple="white"
         [igxRippleCentered]="true"
@@ -11,62 +12,70 @@
         Create a deck
       </button>
 
-    <!-- card -->
-    <div *ngFor="let deck of decks">
-      <div class="sample-column card-wrapper" (click)="previewDeck(deck)">
-        <igx-card elevated>
-          <igx-card-media height="150px">
-            <img [src]="deck.imgUrl" />
-          </igx-card-media>
+      <!-- card -->
+      <div *ngFor="let deck of decks">
+        <div class="sample-column card-wrapper" (click)="previewDeck(deck)">
+          <igx-card elevated>
+            <igx-card-media height="150px">
+              <img [src]="deck.imgUrl" />
+            </igx-card-media>
 
-          <igx-card-header>
-            <h3 igxCardHeaderTitle>{{ deck.name }}</h3>
-          </igx-card-header>
-        </igx-card>
+            <igx-card-header>
+              <h3 igxCardHeaderTitle>{{ deck.name }}</h3>
+            </igx-card-header>
+          </igx-card>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <aside class="deck-preview" *ngIf="deckDetails">
-    <div class="deck-preview__header">
-      <h4 style="margin-top: 1rem;">
-        {{ deckDetails.name }}
-      </h4>
-      <div class="deck-preview__header__info">
-        <img [src]="deckDetails.imgUrl" [alt]="deckDetails.name" width="100">
+    <aside class="deck-preview" *ngIf="deckDetails">
+      <div class="deck-preview__header">
+        <h4 style="margin-top: 1rem">
+          {{ deckDetails.name }}
+        </h4>
+        <div class="deck-preview__header__info">
+          <img
+            [src]="deckDetails.imgUrl"
+            [alt]="deckDetails.name"
+            width="100"
+          />
 
           <igx-chip [removeIcon]="mycardIcon" [removable]="true">
-            {{deckDetails.pokemons.length}} - 60
+            {{ deckDetails.pokemons.length }} - 60
           </igx-chip>
+        </div>
       </div>
-    </div>
 
-    <div class="deck-preview__actions">
-      <button 
-        igxRipple
-        igxButton="outlined"
-        igxButtonBackground="#fdffb6" 
-        igxButtonColor="black" 
-        [routerLink]="['/update-deck/', deckDetails.id]">Edit</button>
-      <button 
-        igxRipple
-        igxButton="outlined"
-        igxButtonColor="black" 
-        igxButtonBackground="#f28482"
-        (click)="deleteDeck(deckDetails)">
-        Delete
-      </button>
-    </div>
+      <div class="deck-preview__actions">
+        <button
+          igxRipple
+          igxButton="outlined"
+          igxButtonBackground="#fdffb6"
+          igxButtonColor="black"
+          [routerLink]="['/update-deck/', deckDetails.id]"
+        >
+          Edit
+        </button>
+        <button
+          igxRipple
+          igxButton="outlined"
+          igxButtonColor="black"
+          igxButtonBackground="#f28482"
+          (click)="deleteDeck(deckDetails)"
+        >
+          Delete
+        </button>
+      </div>
 
-    <div class="deck-preview__cards">
-      <ng-container *ngFor="let item of deckDetails.pokemons">
-        <img [src]="item.card.images.small" [alt]="item.card.name" />
-      </ng-container>
-    </div>
-  </aside>
-</main>
+      <div class="deck-preview__cards">
+        <ng-container *ngFor="let item of deckDetails.pokemons">
+          <img [src]="item.card.images.small" [alt]="item.card.name" />
+        </ng-container>
+      </div>
+    </aside>
+  </main>
+</app-loading>
 
 <ng-template #mycardIcon>
   <igx-icon>styles</igx-icon>
 </ng-template>
-

@@ -80,7 +80,7 @@ export class UpdateDeckComponent implements OnInit {
     this.getADeck(this.deckId);
   }
 
-  toggleLoading = () => (this.isLoading = !this.isLoading);
+  public toggleLoading = () => (this.isLoading = !this.isLoading);
 
   public getADeck(deckId: number) {
     this._deckService.getDeckById(deckId).subscribe({
