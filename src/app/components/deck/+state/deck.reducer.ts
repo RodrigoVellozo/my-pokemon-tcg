@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Action, createReducer, on } from '@ngrx/store';
 import { Query } from 'src/app/core/models/pokemon-query';
 import * as action from './deck.actions';
+import { Deck } from 'src/app/core/models/deck';
+import { Pokemons } from 'src/app/core/models/pokemon-model';
 
 export const DECK_FEATURE_KEY = 'deckReducer';
 export interface DeckState {
@@ -9,9 +11,9 @@ export interface DeckState {
 
   query: Query;
 
-  pokemonsResponse: any[];
+  pokemonsResponse: Pokemons;
 
-  decksResponse: any[];
+  decksResponse: Deck[];
 
   error?: HttpErrorResponse;
 }

@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props, union } from '@ngrx/store';
 import { Deck } from 'src/app/core/models/deck';
+import { Pokemons } from 'src/app/core/models/pokemon-model';
 import { Query } from 'src/app/core/models/pokemon-query';
 
 export enum DeckActionsEnum {
@@ -34,7 +35,7 @@ export const loadPokemons = createAction(
 
 export const loadPokemonsSuccess = createAction(
     DeckActionsEnum.LOAD_POKEMONS_SUCCESS,
-    props<{pokemonsResponse: any[]}>()
+    props<{pokemonsResponse: Pokemons}>()
 );
 
 export const loadPokemonsFailure = createAction(

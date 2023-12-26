@@ -68,12 +68,12 @@
 
         <igx-dialog
           #deleteDialog
-          title="Confirmation"
+          title="Delete"
           leftButtonLabel="Cancel"
           (leftButtonSelect)="deleteDialog.close()"
-          rightButtonLabel="OK"
+          rightButtonLabel="Delete"
           (rightButtonSelect)="deleteDeck(deckDetails)"
-          message="`Are you sure you want to delete this deck?`"
+          message="You are about to delete the {{ deckDetails.name }}."
         >
         </igx-dialog>
       </div>
