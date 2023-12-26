@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Deck } from '../core/models/deck';
 import { DeckService } from '../core/services/deck.service';
+import { DeckFacade } from '../components/deck/+state/deck.facade';
+import { Query } from '../core/models/pokemon-query';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,26 +11,17 @@ import { DeckService } from '../core/services/deck.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public isLoading = true;
+  
+  public decks$ = this._deckFacade.decks$;
 
-  public decks: Deck[] = [];
+  public isLoading$ = this._deckFacade.isLoading$;
 
   public deckDetails: Deck | undefined;
 
-  constructor(private _deckService: DeckService) {}
+  constructor(private _deckFacade: DeckFacade) {}
 
   ngOnInit(): void {
-    this.getAllDecks();
-  }
-
-  public toggleLoading = () => (this.isLoading = !this.isLoading);
-
-  public getAllDecks(): void {
-    this._deckService.getDecks().subscribe({
-      next: response => this.decks = response,
-      complete: () => this.toggleLoading(),
-      error: (err) => console.error('Error: ', err),
-    });
+    this._deckFacade.loadDecks();
   }
 
   public previewDeck(deck: Deck): void {
@@ -35,7 +29,6 @@ export class HomeComponent implements OnInit {
   }
   
   public deleteDeck(deck: Deck): void {
-    this.deckDetails = undefined;
-    this._deckService.deleteDeck(deck).subscribe((x) => this.getAllDecks());
+    this._deckFacade.deleteDeck(deck);
   }
 }

@@ -1,4 +1,4 @@
-<app-loading [isLoading]="isLoading">
+<app-loading [isLoading]="(isLoading$ | async)!">
   <main>
     <section class="deck-list-container">
       <button
@@ -13,7 +13,7 @@
       </button>
 
       <!-- card -->
-      <div *ngFor="let deck of decks">
+      <div *ngFor="let deck of decks$ | async">
         <div class="sample-column card-wrapper" (click)="previewDeck(deck)">
           <igx-card elevated>
             <igx-card-media height="150px">
@@ -61,10 +61,21 @@
           igxButton="outlined"
           igxButtonColor="black"
           igxButtonBackground="#f28482"
-          (click)="deleteDeck(deckDetails)"
+          (click)="deleteDialog.open()"
         >
           Delete
         </button>
+
+        <igx-dialog
+          #deleteDialog
+          title="Confirmation"
+          leftButtonLabel="Cancel"
+          (leftButtonSelect)="deleteDialog.close()"
+          rightButtonLabel="OK"
+          (rightButtonSelect)="deleteDeck(deckDetails)"
+          message="`Are you sure you want to delete this deck?`"
+        >
+        </igx-dialog>
       </div>
 
       <div class="deck-preview__cards">

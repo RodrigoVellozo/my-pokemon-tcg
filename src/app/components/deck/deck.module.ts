@@ -11,6 +11,10 @@ import { CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
 import { DeckShellComponent } from './deck-shell/deck-shell.component';
 import { RouterModule } from '@angular/router';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { DECK_FEATURE_KEY, deckReducer } from './+state/deck.reducer';
+import { DeckEffects } from './+state/deck.effects';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
+    StoreModule.forFeature(DECK_FEATURE_KEY, deckReducer),
+    EffectsModule.forFeature([DeckEffects]),
 
     ErrorMessageContentComponent,
     SearchComponent,

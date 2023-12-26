@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { ErrorMessageContentComponent } from './ui/components/error-message-content/error-message-content.component';
 import { LoadingComponent } from './ui/components/loading/loading.component';
 import { SearchComponent } from './ui/components/search/search.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -28,9 +31,14 @@ import { SearchComponent } from './ui/components/search/search.component';
     HammerModule,
     AppRoutingModule,
     HttpClientModule,
+
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
     // ),
+
+    StoreModule.forRoot(),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({}),
 
     DeckModule,
     SearchComponent,
