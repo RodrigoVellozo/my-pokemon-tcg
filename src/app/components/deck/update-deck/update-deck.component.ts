@@ -9,6 +9,7 @@ import { Data } from 'src/app/core/models/pokemon-data';
 import { Query } from 'src/app/core/models/pokemon-query';
 import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
+import { DeckFacade } from '../+state/deck.facade';
 
 @Component({
   selector: 'app-update-deck',
@@ -67,7 +68,8 @@ export class UpdateDeckComponent implements OnInit {
     private _router: Router,
     private _deckService: DeckService,
     private _pokemonService: PokemonService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private _deckFacade: DeckFacade
   ) {
     // this._pokemonService.getPokemons().then((res: any) =>{
     //   this.cards = res.data;
@@ -119,7 +121,7 @@ export class UpdateDeckComponent implements OnInit {
       pokemons: this.choosenCards
     } as Deck;
     
-    this._deckService.updateDeck(dataToSend).subscribe();
+    this._deckFacade.updateDeck(dataToSend);
 
     this._router.navigateByUrl(`/home`);
   }
@@ -158,7 +160,7 @@ if (existingCard) {
 
   // scroll infinito
   onScroll(){
-    this.query.page += 1;
+    this.query.page! += 1;
     this.pokemons = this._pokemonService
     .getAllPokemons(this.query)
     .subscribe({

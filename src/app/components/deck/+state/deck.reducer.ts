@@ -19,26 +19,29 @@ export interface DeckState {
 }
 
 export const initialState = {
-  isLoading: false,
   query: {
+    name: '',
     page: 0,
     pageSize: 100,
-    name: '',
   },
 };
 
 const _deckReducer = createReducer(
   initialState,
-  on(action.loadPokemons, (state, action) => ({
+  on(action.loadPokemons, ({query, ...state}, action) => ({
     ...state,
+    query:{
+      ...query,
+      ...(action.query ?? {})
+    },
     isLoading: true,
     error: undefined,
   })),
 
-  on(action.loadPokemonsSuccess, (state, { pokemonsResponse }) => ({
+  on(action.loadPokemonsSuccess, (state, { pokemonsResponse, query }) => ({
     ...state,
-    isLoading: false,
     pokemonsResponse,
+    isLoading: false,
     error: undefined,
   })),
 
@@ -66,12 +69,30 @@ const _deckReducer = createReducer(
     error,
   })),
 
-  on(action.deleteDeck, (state, action)=>({
+  on(action.createDeck,(state)=>({
     ...state,
     isLoading: true,
     error: undefined,
   })),
-  on(action.deleteDeckSuccess, (state, action)=>({
+
+  on(action.createDeckSuccess, (state)=>({
+    ...state,
+    isLoading: false,
+    error: undefined
+  })),
+
+  on(action.createDeckFailure, (state,{error})=>({
+    ...state,
+    isLoading: false,
+    error
+  })),
+
+  on(action.deleteDeck, (state)=>({
+    ...state,
+    isLoading: true,
+    error: undefined,
+  })),
+  on(action.deleteDeckSuccess, (state)=>({
     ...state,
     isLoading: false,
     error: undefined

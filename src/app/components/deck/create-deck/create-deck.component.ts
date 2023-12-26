@@ -8,6 +8,7 @@ import { Data } from 'src/app/core/models/pokemon-data';
 import { Query } from 'src/app/core/models/pokemon-query';
 import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
+import { DeckFacade } from '../+state/deck.facade';
 
 const defaultImage = 'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png';
 
@@ -56,7 +57,8 @@ export class CreateDeckComponent {
     private _formBuilder: FormBuilder,
     private _deckService: DeckService,
     private _pokemonService: PokemonService,
-    private _router: Router
+    private _router: Router,
+    private _deckFacade: DeckFacade
   ) {
   }
 
@@ -77,7 +79,7 @@ export class CreateDeckComponent {
         this.form.value.imgUrl === null ? defaultImage : this.form.value.imgUrl,
       pokemons: this.choosenCards,
     };
-    this._deckService.postDeck(dataToSend).subscribe();
+    this._deckFacade.createDeck(dataToSend);
     this._router.navigateByUrl(`/home`);
   }
 
@@ -125,7 +127,7 @@ export class CreateDeckComponent {
 
   // scroll infinito
   onScroll(){
-    this.query.page += 1;
+    this.query.page! += 1;
     this.pokemons = this._pokemonService
     .getAllPokemons(this.query)
     .subscribe({

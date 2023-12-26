@@ -5,88 +5,118 @@ import { Pokemons } from 'src/app/core/models/pokemon-model';
 import { Query } from 'src/app/core/models/pokemon-query';
 
 export enum DeckActionsEnum {
-    LOAD_POKEMONS = '[Decks] Load Pokemons',
-    LOAD_POKEMONS_SUCCESS = '[Decks] Load Pokemons success',
-    LOAD_POKEMONS_FAILURE = '[Decks] Load Pokemons failure',
+  LOAD_POKEMONS = '[Decks] Load Pokemons',
+  LOAD_POKEMONS_SUCCESS = '[Decks] Load Pokemons success',
+  LOAD_POKEMONS_FAILURE = '[Decks] Load Pokemons failure',
 
-    LOAD_DECKS = '[Decks] Load decks',
-    LOAD_DECKS_SUCCESS = '[Decks] Load decks success',
-    LOAD_DECKS_FAILURE = '[Decks] Load decks failure',
+  LOAD_DECKS = '[Decks] Load decks',
+  LOAD_DECKS_SUCCESS = '[Decks] Load decks success',
+  LOAD_DECKS_FAILURE = '[Decks] Load decks failure',
 
-    CREATE_DECK = '[Deck] Create Deck',
-    CREATE_DECK_SUCCESS = '[Deck] Create Deck Success',
-    CREATE_DECK_FAILURE = '[Deck] Create Deck Failure',
+  CREATE_DECK = '[Deck] Create Deck',
+  CREATE_DECK_SUCCESS = '[Deck] Create Deck Success',
+  CREATE_DECK_FAILURE = '[Deck] Create Deck Failure',
 
-    UPDATE_DECK = '[Deck] Update Deck',
-    UPDATE_DECK_SUCCESS = '[Deck] Update Deck Success',
-    UPDATE_DECK_FAILURE = '[Deck] Update Deck Failure',
+  UPDATE_DECK = '[Deck] Update Deck',
+  UPDATE_DECK_SUCCESS = '[Deck] Update Deck Success',
+  UPDATE_DECK_FAILURE = '[Deck] Update Deck Failure',
 
-    DELETE_DECK = '[Deck] Delete Deck',
-    DELETE_DECK_SUCCESS = '[Deck] Delete Deck Success',
-    DELETE_DECK_FAILURE = '[Deck] Delete Deck Failure',
+  DELETE_DECK = '[Deck] Delete Deck',
+  DELETE_DECK_SUCCESS = '[Deck] Delete Deck Success',
+  DELETE_DECK_FAILURE = '[Deck] Delete Deck Failure',
 
-    RESET_STATE = '[Decks] Reset State',
+  RESET_STATE = '[Decks] Reset State',
 }
 
 export const loadPokemons = createAction(
-    DeckActionsEnum.LOAD_POKEMONS,
-    props<{query: Query}>()
+  DeckActionsEnum.LOAD_POKEMONS,
+  props<{ query: Query }>()
 );
 
 export const loadPokemonsSuccess = createAction(
-    DeckActionsEnum.LOAD_POKEMONS_SUCCESS,
-    props<{pokemonsResponse: Pokemons}>()
+  DeckActionsEnum.LOAD_POKEMONS_SUCCESS,
+  props<{ pokemonsResponse: Pokemons, query: Query }>()
 );
 
 export const loadPokemonsFailure = createAction(
-    DeckActionsEnum.LOAD_POKEMONS_FAILURE,
-    props<{error: HttpErrorResponse}>()
+  DeckActionsEnum.LOAD_POKEMONS_FAILURE,
+  props<{ error: HttpErrorResponse }>()
 );
 
-export const loadDecks = createAction(
-    DeckActionsEnum.LOAD_DECKS
-);
+export const loadDecks = createAction(DeckActionsEnum.LOAD_DECKS);
 
 export const loadDecksSuccess = createAction(
-    DeckActionsEnum.LOAD_DECKS_SUCCESS,
-    props<{decksResponse: Deck[]}>()
+  DeckActionsEnum.LOAD_DECKS_SUCCESS,
+  props<{ decksResponse: Deck[] }>()
 );
 
 export const loadDecksFailure = createAction(
-    DeckActionsEnum.LOAD_DECKS_FAILURE,
-    props<{error: HttpErrorResponse}>()
+  DeckActionsEnum.LOAD_DECKS_FAILURE,
+  props<{ error: HttpErrorResponse }>()
+);
+
+export const createDeck = createAction(
+  DeckActionsEnum.CREATE_DECK,
+  props<{ deck: Deck }>()
+);
+
+export const createDeckSuccess = createAction(
+  DeckActionsEnum.CREATE_DECK_SUCCESS
+);
+
+export const createDeckFailure = createAction(
+  DeckActionsEnum.CREATE_DECK_FAILURE,
+  props<{ error: HttpErrorResponse }>()
 );
 
 export const deleteDeck = createAction(
-    DeckActionsEnum.DELETE_DECK,
-    props<{deck: Deck}>()
+  DeckActionsEnum.DELETE_DECK,
+  props<{ deck: Deck }>()
+);
+
+export const updateDeck = createAction(
+  DeckActionsEnum.UPDATE_DECK,
+  props<{ deck: Deck }>()
+);
+
+export const updateDeckSuccess = createAction(
+  DeckActionsEnum.UPDATE_DECK_SUCCESS
+);
+
+export const updateDeckFailure = createAction(
+  DeckActionsEnum.UPDATE_DECK_FAILURE,
+  props<{ error: HttpErrorResponse }>()
 );
 
 export const deleteDeckSuccess = createAction(
-    DeckActionsEnum.DELETE_DECK_SUCCESS,
+  DeckActionsEnum.DELETE_DECK_SUCCESS
 );
 
 export const deleteDeckFailure = createAction(
-    DeckActionsEnum.DELETE_DECK_FAILURE,
-    props<{error: HttpErrorResponse}>()
+  DeckActionsEnum.DELETE_DECK_FAILURE,
+  props<{ error: HttpErrorResponse }>()
 );
 
 export const resetState = createAction(DeckActionsEnum.RESET_STATE);
 
 const _managePokemonsActionsUnion = union({
-    loadPokemons,
-    loadPokemonsSuccess,
-    loadPokemonsFailure,
+  loadPokemons,
+  loadPokemonsSuccess,
+  loadPokemonsFailure,
 
-    loadDecks,
-    loadDecksSuccess,
-    loadDecksFailure,
+  loadDecks,
+  loadDecksSuccess,
+  loadDecksFailure,
 
-    deleteDeck,
-    deleteDeckSuccess,
-    deleteDeckFailure,
+  createDeck,
+  createDeckSuccess,
+  createDeckFailure,
 
-    resetState
+  deleteDeck,
+  deleteDeckSuccess,
+  deleteDeckFailure,
+
+  resetState,
 });
 
 export type ManagePokemonsActionsUnion = typeof _managePokemonsActionsUnion;

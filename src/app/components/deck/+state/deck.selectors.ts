@@ -17,3 +17,8 @@ export const selectDecks = createSelector(
   selectDeckState,
   ({ decksResponse }) => decksResponse
 );
+
+export const selectPokemons = createSelector(
+  selectDeckState,
+  ({ pokemonsResponse }) => pokemonsResponse
+);

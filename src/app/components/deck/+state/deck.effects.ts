@@ -4,6 +4,8 @@ import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 import {
   DeckActionsEnum,
+  createDeckFailure,
+  createDeckSuccess,
   deleteDeckFailure,
   deleteDeckSuccess,
   loadDecks,
@@ -11,6 +13,8 @@ import {
   loadDecksSuccess,
   loadPokemonsFailure,
   loadPokemonsSuccess,
+  updateDeckFailure,
+  updateDeckSuccess,
 } from './deck.actions';
 import { catchError, map, of, switchMap, tap, withLatestFrom } from 'rxjs';
 import { DeckFacade } from './deck.facade';
@@ -24,7 +28,9 @@ export class DeckEffects {
       map(([{ query }, oldQuery]) => ({ ...oldQuery, ...(query || {}) })),
       switchMap((query) => {
         return this._pokemonService.getAllPokemons(query).pipe(
-          map((pokemonsResponse) => loadPokemonsSuccess(pokemonsResponse)),
+          map((pokemonsResponse) =>
+            loadPokemonsSuccess({ pokemonsResponse, query })
+          ),
           catchError((error) => of(loadPokemonsFailure(error)))
         );
       })
@@ -40,6 +46,30 @@ export class DeckEffects {
           catchError((error) => of(loadDecksFailure({ error })))
         );
       })
+    )
+  );
+
+  public readonly createDeck$ = createEffect(() =>
+    this._actions$.pipe(
+      ofType(DeckActionsEnum.CREATE_DECK),
+      switchMap(({ deck }) =>
+        this._deckService.postDeck(deck).pipe(
+          map(() => createDeckSuccess()),
+          catchError((error) => of(createDeckFailure({ error })))
+        )
+      )
+    )
+  );
+
+  public readonly updateDeck = createEffect(() =>
+    this._actions$.pipe(
+      ofType(DeckActionsEnum.UPDATE_DECK),
+      switchMap(({ deck }) =>
+        this._deckService.updateDeck(deck).pipe(
+          map(() => updateDeckSuccess()),
+          catchError((error) => of(updateDeckFailure({ error })))
+        )
+      )
     )
   );
 
