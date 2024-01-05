@@ -4,6 +4,7 @@ import { Query } from 'src/app/core/models/pokemon-query';
 import * as action from './deck.actions';
 import { Deck } from 'src/app/core/models/deck';
 import { Pokemons } from 'src/app/core/models/pokemon-model';
+import { Data } from 'src/app/core/models/pokemon-data';
 
 export const DECK_FEATURE_KEY = 'deckReducer';
 export interface DeckState {
@@ -11,7 +12,7 @@ export interface DeckState {
 
   query: Query;
 
-  pokemonsResponse: Pokemons;
+  pokemonsResponse: Data[];
 
   decksResponse: Deck[];
 
@@ -21,8 +22,8 @@ export interface DeckState {
 export const initialState = {
   query: {
     name: '',
-    page: 0,
-    pageSize: 100,
+    page: 1,
+    pageSize: 50,
   },
 };
 

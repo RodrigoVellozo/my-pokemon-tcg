@@ -12,6 +12,8 @@ export class DeckFacade {
 
   public readonly query$ = this._store.select(DeckSelectors.selectDecksQuery);
 
+  public readonly queryPage$ = this._store.select(DeckSelectors.selectDecksQueryPage);
+
   public readonly decks$ = this._store.select(DeckSelectors.selectDecks);
 
   public readonly pokemons$ = this._store.select(DeckSelectors.selectPokemons);

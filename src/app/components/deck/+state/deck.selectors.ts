@@ -13,6 +13,12 @@ export const selectDecksQuery = createSelector(
   ({ query }) => query
 );
 
+export const selectDecksQueryPage = createSelector(
+  selectDeckState,
+  ({ query }) => query.page
+);
+
+
 export const selectDecks = createSelector(
   selectDeckState,
   ({ decksResponse }) => decksResponse

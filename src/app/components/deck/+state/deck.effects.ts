@@ -25,7 +25,9 @@ export class DeckEffects {
     this._actions$.pipe(
       ofType(DeckActionsEnum.LOAD_POKEMONS),
       withLatestFrom(this._deckFacade.query$),
-      map(([{ query }, oldQuery]) => ({ ...oldQuery, ...(query || {}) })),
+      map(([{ query }, oldQuery]) => {
+        return ({ ...oldQuery, ...(query || {}) })}
+        ),
       switchMap((query) => {
         return this._pokemonService.getAllPokemons(query).pipe(
           map((pokemonsResponse) =>
