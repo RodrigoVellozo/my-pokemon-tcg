@@ -1,39 +1,33 @@
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IgxToastComponent } from 'igniteui-angular';
-import { BehaviorSubject, Observable, map, of, switchMap } from 'rxjs';
+import {
+  BehaviorSubject,
+  Observable,
+  of,
+  withLatestFrom
+} from 'rxjs';
 import { Data } from 'src/app/core/models/pokemon-data';
-import { Query } from 'src/app/core/models/pokemon-query';
-import { DeckService } from 'src/app/core/services/deck.service';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
 import { DeckFacade } from '../+state/deck.facade';
 
-const defaultImage = 'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png';
+const defaultImage =
+  'https://tcg.pokemon.com/assets/img/tcgl/logos/en-us/logo.png';
 
 @Component({
   selector: 'app-create-deck',
   templateUrl: './create-deck.component.html',
   styleUrl: './create-deck.component.scss',
 })
-export class CreateDeckComponent {
-  public query: Query = {
-    page: 1,
-    pageSize: 50,
-  };
+export class CreateDeckComponent implements OnInit {
+  @ViewChild('toast', { read: IgxToastComponent })
+  public toast!: IgxToastComponent;
 
-  public isLoading = true;
+  public isLoading$ = this._deckFacade.isLoading$;
 
   public cards!: Data[];
-
-  public pokemons = this._pokemonService
-    .getAllPokemons(this.query)
-    .subscribe({
-      next: (response) => (this.cards = response),
-      complete: () => this.toggleLoading(),
-      error: (err) => console.error('Error: ', err),
-    });
 
   readonly search$ = new BehaviorSubject<string>('');
 
@@ -43,8 +37,7 @@ export class CreateDeckComponent {
 
   public totalCards: any;
 
-  @ViewChild('toast', { read: IgxToastComponent })
-  public toast!: IgxToastComponent;
+  public page = 1;
 
   // readonly pokemons$ = this.search$.pipe(
   //   switchMap((event) => this.getPokemon(event))
@@ -55,11 +48,13 @@ export class CreateDeckComponent {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _deckService: DeckService,
-    private _pokemonService: PokemonService,
     private _router: Router,
     private _deckFacade: DeckFacade
-  ) {
+  ) {}
+
+  ngOnInit(): void {
+    this.loadData();
+    this._deckFacade.pokemons$.subscribe(data => (this.cards = data));
   }
 
   private _initForm(): FormGroup {
@@ -70,7 +65,9 @@ export class CreateDeckComponent {
     });
   }
 
-  toggleLoading = () => (this.isLoading = !this.isLoading);
+  public loadData(): void {
+    this._deckFacade.loadPokemons({ page: this.page, pageSize: 50 });
+  }
 
   public createDeck() {
     const dataToSend = {
@@ -126,14 +123,9 @@ export class CreateDeckComponent {
   }
 
   // scroll infinito
-  onScroll(){
-    this.query.page! += 1;
-    this.pokemons = this._pokemonService
-    .getAllPokemons(this.query)
-    .subscribe({
-      next: (response) => (this.cards = [...this.cards, ...response]),
-      complete: () => this.isLoading = false,
-      error: (err) => console.error('Error: ', err),
-    });
+  onScroll() {
+    
+    this._deckFacade.loadPokemons({ page: this.page + 1, pageSize: 50 });
+  
   }
 }

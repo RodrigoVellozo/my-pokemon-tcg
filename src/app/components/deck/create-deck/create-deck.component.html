@@ -1,4 +1,4 @@
-<app-loading [isLoading]="isLoading">
+<app-loading [isLoading]="(isLoading$|async)!">
   <main>
   <section 
     class="pokemons-list" 
