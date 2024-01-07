@@ -106,10 +106,6 @@ export class CreateDeckComponent implements OnInit {
     }
   }
 
-  search(search: string) {
-    this._deckFacade.loadPokemons({q: `name:${search}`, page: 1, pageSize: 50});
-  }
-
   onScroll() {
     this._deckFacade.loadPokemons({ page: this.page + 1, pageSize: 50 });
   }

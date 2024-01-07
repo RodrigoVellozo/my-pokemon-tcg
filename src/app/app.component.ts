@@ -3,6 +3,8 @@ import { NavigationStart, Router } from '@angular/router';
 import { IgxNavigationDrawerComponent } from 'igniteui-angular';
 import { filter } from 'rxjs/operators';
 import { routes } from './app-routing.module';
+import { DeckFacade } from './components/deck/+state/deck.facade';
+import { RightClipper } from 'igniteui-angular-core';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,7 @@ export class AppComponent implements OnInit {
   @ViewChild(IgxNavigationDrawerComponent, { static: true })
   public navdrawer!: IgxNavigationDrawerComponent;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private _deckFacade: DeckFacade) {
     for (const route of routes) {
       if (route.path && route.data && route.path.indexOf('*') === -1) {
         this.topNavLinks.push({
@@ -40,5 +42,12 @@ export class AppComponent implements OnInit {
           this.navdrawer.close();
         }
       });
+  }
+
+  public onSearch(name: string): void{
+    if(name.length === 0){
+      this._deckFacade.resetState();
+    }
+    this._deckFacade.loadPokemons({q:`name:${name}`, page:1, pageSize: 0})
   }
 }

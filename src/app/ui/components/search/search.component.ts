@@ -4,12 +4,14 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { IgxIconModule, IgxInputGroupModule } from 'igniteui-angular';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-search',
   standalone: true,
   imports: [
     ReactiveFormsModule,
+    BrowserModule,
     IgxIconModule,
     IgxInputGroupModule
   ],
