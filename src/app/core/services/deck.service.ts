@@ -30,7 +30,7 @@ export class DeckService {
   }
 
   public updateDeck(deck: Deck){
-    return this._http.put<Deck>(`${this.decksUrl}/${deck.id}`, deck).pipe(
+    return this._http.patch<Deck>(`${this.decksUrl}/${deck.id}`, deck).pipe(
       catchError(this.handleError)
     );
   }

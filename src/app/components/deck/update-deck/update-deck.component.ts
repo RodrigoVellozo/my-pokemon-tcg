@@ -17,35 +17,30 @@ import { DeckFacade } from '../+state/deck.facade';
   styleUrl: './update-deck.component.scss',
 })
 export class UpdateDeckComponent implements OnInit {
-  @ViewChild('toast', { read: IgxToastComponent }) 
+  @ViewChild('toast', { read: IgxToastComponent })
   public toast!: IgxToastComponent;
-  
+
   public query: Query = {
     page: 1,
     pageSize: 50,
   };
 
-  public isLoading = true;
-  
-  readonly search$ = new BehaviorSubject<string>('');
-  
+  public page = 1;
+
+  public isLoading$ = this._deckFacade.isLoading$;
+
   public form = this._initForm();
 
   public deckId = this._route.snapshot.params['id'];
 
   public cards: Data[] = [];
-  public pokemons = this._pokemonService
-    .getAllPokemons(this.query)
-    .subscribe({
-      next: (response) => (this.cards = response),
-      complete: () => this.toggleLoading(),
-      error: (err) => console.error('Error: ', err),
-    });
-  
-  public choosenCards: { card: Data, amount: number }[]  = [];
-  public supertypePokemon: { card: Data, amount: number }[]  = [];
-  public supertypeTrainer: { card: Data, amount: number }[]  = [];
-  public supertypeEnergy: { card: Data, amount: number }[]  = [];
+
+  public totalCards: any;
+
+  public choosenCards: { card: Data; amount: number }[] = [];
+  public supertypePokemon: { card: Data; amount: number }[] = [];
+  public supertypeTrainer: { card: Data; amount: number }[] = [];
+  public supertypeEnergy: { card: Data; amount: number }[] = [];
 
   get name() {
     return this.form.get('name')?.value;
@@ -55,14 +50,6 @@ export class UpdateDeckComponent implements OnInit {
     return this.form.get('imgUrl')?.value;
   }
 
-  readonly pokemons$ = this.search$.pipe(
-    switchMap((event) => this.getPokemon(event))
-  );
-
-  readonly pokemonNotFound$ = this.pokemons$.pipe(
-    map((pokemons) => (pokemons ? '' : this.search$.value))
-  );
-
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
@@ -70,19 +57,16 @@ export class UpdateDeckComponent implements OnInit {
     private _pokemonService: PokemonService,
     private _formBuilder: FormBuilder,
     private _deckFacade: DeckFacade
-  ) {
-    // this._pokemonService.getPokemons().then((res: any) =>{
-    //   this.cards = res.data;
-    //   this.isLoading = false;
-    // });
-
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.getADeck(this.deckId);
-  }
+    this._deckFacade.loadPokemons(this.query);
 
-  public toggleLoading = () => (this.isLoading = !this.isLoading);
+    this.getADeck(this.deckId);
+    this._deckFacade.pokemons$.subscribe({
+      next: (res) => (this.cards = res),
+    });
+  }
 
   public getADeck(deckId: number) {
     this._deckService.getDeckById(deckId).subscribe({
@@ -100,11 +84,17 @@ export class UpdateDeckComponent implements OnInit {
     });
   }
 
-   private _patchForm(deck: Deck) {
+  private _patchForm(deck: Deck) {
     this.choosenCards = deck.pokemons;
-    this.supertypePokemon = deck.pokemons.filter(p=> p.card.supertype === 'Pokémon');
-    this.supertypeTrainer = deck.pokemons.filter(p=> p.card.supertype === 'Trainer');
-    this.supertypeEnergy = deck.pokemons.filter(p=> p.card.supertype === 'Energy');
+    this.supertypePokemon = deck.pokemons.filter(
+      (p) => p.card.supertype === 'Pokémon'
+    );
+    this.supertypeTrainer = deck.pokemons.filter(
+      (p) => p.card.supertype === 'Trainer'
+    );
+    this.supertypeEnergy = deck.pokemons.filter(
+      (p) => p.card.supertype === 'Energy'
+    );
 
     this.form.patchValue({
       id: this.deckId,
@@ -118,55 +108,49 @@ export class UpdateDeckComponent implements OnInit {
       id: Number(this.deckId),
       name: this.name,
       imgUrl: this.imgUrl,
-      pokemons: this.choosenCards
+      pokemons: this.choosenCards,
     } as Deck;
-    
+
     this._deckFacade.updateDeck(dataToSend);
 
     this._router.navigateByUrl(`/home`);
   }
 
-  drop(event: CdkDragDrop<{ card: Data, amount: number }[], Data[]>) {
+  drop(event: CdkDragDrop<{ card: Data; amount: number }[], Data[]>) {
     const item = event.previousContainer.data[event.previousIndex];
     const data = event.container.data;
     const existingCard = data.find((d) => d.card.name === item.name);
-    
-if (existingCard) {
+
+    if (existingCard) {
       if (existingCard.amount < 4) {
         existingCard.amount++;
-      }
-      else {
-        this.toast.open('Você só pode ter quatro unidades da mesma carta.')
+      } else {
+        this.toast.open('Você só pode ter quatro unidades da mesma carta.');
       }
       this.choosenCards = [...data];
       return;
-    }    
+    }
     data.unshift({
       card: item,
-      amount: 1
+      amount: 1,
     });
-  
+
     this.choosenCards = [...data];
-  }
 
-  search(search: string){
-    this.search$.next(search);
-  }
+    const sum = this.choosenCards.reduce((accumulador, object) => {
+      return accumulador + object.amount;
+    }, 0);
 
-  private getPokemon(event: string): Observable<Array<any>>{
-    // return this._pokemonService.getPokemon(event);
-    return of([1]);
+    this.totalCards = sum;
+
+    if (sum > 60) {
+      this.toast.open('Só podem haver 60 cartas em cada deck.');
+      return;
+    }
   }
 
   // scroll infinito
-  onScroll(){
-    this.query.page! += 1;
-    this.pokemons = this._pokemonService
-    .getAllPokemons(this.query)
-    .subscribe({
-      next: (response) => (this.cards = [...this.cards, ...response]),
-      complete: () => this.isLoading = false,
-      error: (err) => console.error('Error: ', err),
-    });
+  onScroll() {
+    this._deckFacade.loadPokemons({ page: this.page + 1, pageSize: 50 });
   }
 }

@@ -28,5 +28,6 @@ export class HomeComponent implements OnInit {
   public deleteDeck(event: any, deck: Deck): void {
     this._deckFacade.deleteDeck(deck);
     event.dialog.close();
+    location.reload();
   }
 }
