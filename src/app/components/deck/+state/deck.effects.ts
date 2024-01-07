@@ -26,8 +26,8 @@ export class DeckEffects {
       ofType(DeckActionsEnum.LOAD_POKEMONS),
       withLatestFrom(this._deckFacade.query$),
       map(([{ query }, oldQuery]) => {
-        return ({ ...oldQuery, ...(query || {}) })}
-        ),
+        return { ...oldQuery, ...(query || {}) };
+      }),
       switchMap((query) => {
         return this._pokemonService.getAllPokemons(query).pipe(
           map((pokemonsResponse) =>
@@ -88,13 +88,13 @@ export class DeckEffects {
   );
 
   public readonly deleteDeckSuccess$ = createEffect(() =>
-    this._actions$.pipe(
-      ofType(DeckActionsEnum.DELETE_DECK_SUCCESS),
-      tap(() => {
-        console.log('exibir toast: apagou com sucesso');
-      }),
-      map(() => loadDecks())
-    )
+      this._actions$.pipe(
+        ofType(DeckActionsEnum.DELETE_DECK_SUCCESS),
+        tap(() => {
+          console.log('exibir toast: apagou com sucesso');
+        }),
+        map(() => loadDecks())
+      )
   );
 
   public readonly deleteDeckFailure$ = createEffect(

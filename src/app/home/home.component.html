@@ -72,7 +72,7 @@
           leftButtonLabel="Cancel"
           (leftButtonSelect)="deleteDialog.close()"
           rightButtonLabel="Delete"
-          (rightButtonSelect)="deleteDeck(deckDetails)"
+          (rightButtonSelect)="deleteDeck($event, deckDetails)"
           message="You are about to delete the {{ deckDetails.name }}."
         >
         </igx-dialog>

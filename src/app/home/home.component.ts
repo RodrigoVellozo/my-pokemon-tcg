@@ -1,9 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Deck } from '../core/models/deck';
-import { DeckService } from '../core/services/deck.service';
+import { Component, OnInit } from '@angular/core';
 import { DeckFacade } from '../components/deck/+state/deck.facade';
-import { Query } from '../core/models/pokemon-query';
-import { tap } from 'rxjs';
+import { Deck } from '../core/models/deck';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +25,8 @@ export class HomeComponent implements OnInit {
     this.deckDetails = deck;
   }
   
-  public deleteDeck(deck: Deck): void {
+  public deleteDeck(event: any, deck: Deck): void {
     this._deckFacade.deleteDeck(deck);
+    event.dialog.close();
   }
 }
