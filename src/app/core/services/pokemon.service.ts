@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, tap, throwError } from 'rxjs';
 import { Pokemons } from '../models/pokemon-model';
@@ -14,7 +14,7 @@ export class PokemonService {
   constructor(private _http: HttpClient) { }
 
   public getAllPokemons(query: Query){
-    return this._http.get<any>(`${this.URL}?page=${query.page}&pageSize=${query.pageSize}`).pipe(
+    return this._http.get<any>(`${this.URL}`, {params: query as HttpParams}).pipe(
       map(response => response.data)
     ); 
   }

@@ -39,13 +39,6 @@ export class CreateDeckComponent implements OnInit {
 
   public page = 1;
 
-  // readonly pokemons$ = this.search$.pipe(
-  //   switchMap((event) => this.getPokemon(event))
-  // );
-  // readonly pokemonNotFound$ = this.pokemons$.pipe(
-  //   map((pokemons) => (pokemons ? '' : this.search$.value))
-  // );
-
   constructor(
     private _formBuilder: FormBuilder,
     private _router: Router,
@@ -114,18 +107,10 @@ export class CreateDeckComponent implements OnInit {
   }
 
   search(search: string) {
-    this.search$.next(search);
+    this._deckFacade.loadPokemons({q: `name:${search}`, page: 1, pageSize: 50});
   }
 
-  private getPokemon(event: string): Observable<Array<any>> {
-    // return this._pokemonService.getPokemon(event);
-    return of([1, 2, 3]);
-  }
-
-  // scroll infinito
   onScroll() {
-    
     this._deckFacade.loadPokemons({ page: this.page + 1, pageSize: 50 });
-  
   }
 }

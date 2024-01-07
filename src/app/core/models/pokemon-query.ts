@@ -1,5 +1,5 @@
 export interface Query {
-    name?: string;
+    q?: string;
     page?:  number;
     pageSize?: number;
 }

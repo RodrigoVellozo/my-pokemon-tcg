@@ -24,6 +24,7 @@
   </section>
 
   <aside class="create-deck" style="width: 34%">
+    <app-search (searchEvent)="search($event)"></app-search>
     <form [formGroup]="form">
       <div class="create-deck__header">
         <h4>Create a deck</h4>
@@ -43,8 +44,6 @@
               placeholder="insert name"
             />
           </igx-input-group>
-
-          <app-search (searchEvent)="search($event)"></app-search>
         </div>
       </div>
 

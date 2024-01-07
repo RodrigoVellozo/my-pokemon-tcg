@@ -128,7 +128,7 @@ export const initialState = {
     },
   ],
   query: {
-    name: '',
+    q: '',
     page: 1,
     pageSize: 50,
   },
@@ -147,15 +147,11 @@ const _deckReducer = createReducer(
   })),
 
   on(action.loadPokemonsSuccess, (state, action) => {
-    console.log('misto', [
-      ...state.pokemonsResponse,
-      ...action.pokemonsResponse,
-    ]);
     return {
       ...state,
       pokemonsResponse: [
-        ...state.pokemonsResponse,
         ...action.pokemonsResponse,
+        ...state.pokemonsResponse,
       ] as any[],
       isLoading: false,
       error: undefined,
