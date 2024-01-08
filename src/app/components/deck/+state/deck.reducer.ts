@@ -150,8 +150,8 @@ const _deckReducer = createReducer(
     return {
       ...state,
       pokemonsResponse: [
-        ...action.pokemonsResponse,
         ...state.pokemonsResponse,
+        ...action.pokemonsResponse,
       ] as any[],
       isLoading: false,
       error: undefined,
@@ -159,6 +159,33 @@ const _deckReducer = createReducer(
   }),
 
   on(action.loadPokemonsFailure, (state, { error }) => ({
+    ...state,
+    isLoading: false,
+    error,
+  })),
+
+  on(action.loadMorePokemons, ({ query, ...state }, action) => ({
+    ...state,
+    query: {
+      ...query,
+      ...(action.query ?? {}),
+    },
+    isLoading: true,
+    error: undefined,
+  })),
+
+  on(action.loadMorePokemonsSuccess, (state, {pokemonsResponse}) => {
+    return {
+      ...state,
+      pokemonsResponse: [
+        ...pokemonsResponse,
+      ] as any[],
+      isLoading: false,
+      error: undefined,
+    };
+  }),
+  
+  on(action.loadMorePokemonsFailure, (state, { error }) => ({
     ...state,
     isLoading: false,
     error,

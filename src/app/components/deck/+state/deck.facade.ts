@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { DeckState } from './deck.reducer';
-import { createDeck, deleteDeck, loadDecks, loadPokemons, resetState, updateDeck } from './deck.actions';
+import { createDeck, deleteDeck, loadDecks, loadMorePokemons, loadPokemons, resetState, updateDeck } from './deck.actions';
 import { Query } from 'src/app/core/models/pokemon-query';
 import * as DeckSelectors from './deck.selectors';
 import { Deck } from 'src/app/core/models/deck';
@@ -22,6 +22,10 @@ export class DeckFacade {
 
   public loadPokemons(query: Query): void {
     this._store.dispatch(loadPokemons({ query }));
+  }
+
+  public loadMorePokemons(query: Query): void {
+    this._store.dispatch(loadMorePokemons({ query }));
   }
 
   public loadDecks(): void {

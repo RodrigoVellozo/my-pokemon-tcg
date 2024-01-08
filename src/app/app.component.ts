@@ -10,12 +10,12 @@ import { RightClipper } from 'igniteui-angular-core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
   public topNavLinks: {
-    path: string,
-    name: string
+    path: string;
+    name: string;
   }[] = [];
 
   @ViewChild(IgxNavigationDrawerComponent, { static: true })
@@ -26,16 +26,15 @@ export class AppComponent implements OnInit {
       if (route.path && route.data && route.path.indexOf('*') === -1) {
         this.topNavLinks.push({
           name: route.data.text,
-          path: '/' + route.path
+          path: '/' + route.path,
         });
       }
     }
   }
 
   public ngOnInit(): void {
-    this.router.events.pipe(
-      filter((x): x is NavigationStart => x instanceof NavigationStart)
-    )
+    this.router.events
+      .pipe(filter((x): x is NavigationStart => x instanceof NavigationStart))
       .subscribe((event: NavigationStart) => {
         if (event.url !== '/' && !this.navdrawer.pin) {
           // Close drawer when selecting a view on mobile (unpinned)
@@ -44,10 +43,16 @@ export class AppComponent implements OnInit {
       });
   }
 
-  public onSearch(name: string): void{
-    if(name.length === 0){
+  public onSearch(name: string): void {
+    if (name.length === 0) {
       this._deckFacade.resetState();
+      this._deckFacade.loadPokemons({ page: 1, pageSize: 50 });
+    } else {
+      this._deckFacade.loadMorePokemons({
+        q: `name:${name}`,
+        page: 1,
+        pageSize: 0,
+      });
     }
-    this._deckFacade.loadPokemons({q:`name:${name}`, page:1, pageSize: 0})
   }
 }

@@ -9,6 +9,10 @@ export enum DeckActionsEnum {
   LOAD_POKEMONS = '[Decks] Load Pokemons',
   LOAD_POKEMONS_SUCCESS = '[Decks] Load Pokemons success',
   LOAD_POKEMONS_FAILURE = '[Decks] Load Pokemons failure',
+  
+  LOAD_MORE_POKEMONS = '[Decks] Load More Pokemons',
+  LOAD_MORE_POKEMONS_SUCCESS = '[Decks] Load More Pokemons success',
+  LOAD_MORE_POKEMONS_FAILURE = '[Decks] Load More Pokemons failure',
 
   LOAD_DECKS = '[Decks] Load decks',
   LOAD_DECKS_SUCCESS = '[Decks] Load decks success',
@@ -41,6 +45,21 @@ export const loadPokemonsSuccess = createAction(
 
 export const loadPokemonsFailure = createAction(
   DeckActionsEnum.LOAD_POKEMONS_FAILURE,
+  props<{ error: HttpErrorResponse }>()
+);
+
+export const loadMorePokemons = createAction(
+  DeckActionsEnum.LOAD_MORE_POKEMONS,
+  props<{ query: Query }>()
+);
+
+export const loadMorePokemonsSuccess = createAction(
+  DeckActionsEnum.LOAD_MORE_POKEMONS_SUCCESS,
+  props<{ pokemonsResponse: Data[], query: Query }>()
+);
+
+export const loadMorePokemonsFailure = createAction(
+  DeckActionsEnum.LOAD_MORE_POKEMONS_FAILURE,
   props<{ error: HttpErrorResponse }>()
 );
 
@@ -104,6 +123,10 @@ const _managePokemonsActionsUnion = union({
   loadPokemons,
   loadPokemonsSuccess,
   loadPokemonsFailure,
+
+  loadMorePokemons,
+  loadMorePokemonsSuccess,
+  loadMorePokemonsFailure,
 
   loadDecks,
   loadDecksSuccess,

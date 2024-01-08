@@ -11,6 +11,8 @@ import {
   loadDecks,
   loadDecksFailure,
   loadDecksSuccess,
+  loadMorePokemonsFailure,
+  loadMorePokemonsSuccess,
   loadPokemonsFailure,
   loadPokemonsSuccess,
   updateDeckFailure,
@@ -37,6 +39,24 @@ export class DeckEffects {
         );
       })
     )
+  );
+
+  public readonly loadMorePokemons$ = createEffect(()=>
+      this._actions$.pipe(
+        ofType(DeckActionsEnum.LOAD_MORE_POKEMONS),
+        withLatestFrom(this._deckFacade.query$),
+        map(([{ query }, oldQuery]) => {
+          return { ...oldQuery, ...(query || {}) };
+        }),
+        switchMap((query) => {
+          return this._pokemonService.getAllPokemons(query).pipe(
+            map((pokemonsResponse) =>
+              loadMorePokemonsSuccess({ pokemonsResponse, query })
+            ),
+            catchError((error) => of(loadMorePokemonsFailure(error)))
+          );
+        })
+      )
   );
 
   public readonly loadDecks$ = createEffect(() =>
