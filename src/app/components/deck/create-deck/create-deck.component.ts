@@ -6,8 +6,10 @@ import { IgxToastComponent } from 'igniteui-angular';
 import {
   BehaviorSubject,
   Observable,
+  combineLatest,
+  map,
   of,
-  withLatestFrom
+  withLatestFrom,
 } from 'rxjs';
 import { Data } from 'src/app/core/models/pokemon-data';
 import { PokemonService } from 'src/app/core/services/pokemon.service';
@@ -27,9 +29,15 @@ export class CreateDeckComponent implements OnInit {
 
   public isLoading$ = this._deckFacade.isLoading$;
 
-  public cards!: Data[];
+  public pokemons$ = this._deckFacade.pokemons$;
 
-  readonly search$ = new BehaviorSubject<string>('');
+  public isEmpty$ = combineLatest([this.pokemons$, this.isLoading$]).pipe(
+    map(
+      ([pokemons, loading]) => (!pokemons || pokemons.length === 0) && !loading
+    )
+  );
+
+  public cards!: Data[];
 
   public form = this._initForm();
 
@@ -47,7 +55,7 @@ export class CreateDeckComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
-    this._deckFacade.pokemons$.subscribe(data => (this.cards = data));
+    this._deckFacade.pokemons$.subscribe((data) => (this.cards = data));
   }
 
   private _initForm(): FormGroup {
