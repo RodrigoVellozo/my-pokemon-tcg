@@ -151,6 +151,6 @@ export class UpdateDeckComponent implements OnInit {
 
   // scroll infinito
   onScroll() {
-    this._deckFacade.loadPokemons({ page: this.page + 1, pageSize: 50 });
+    this._deckFacade.loadPokemons({ page: ++this.page, pageSize: 50 });
   }
 }
