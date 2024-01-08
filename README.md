@@ -15,7 +15,7 @@ Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emu
 - [Ignite UI](https://www.npmjs.com/package/igniteui-angular "npm")
 - [json-server](https://www.npmjs.com/package/json-server "npm")
 - [concurrently](https://www.npmjs.com/package/concurrently "npm")
-- [ngrx](https://ngrx.io/ "ngrx")  => Obs. disponivel na proxima feature
+- [ngrx](https://ngrx.io/ "ngrx")
 
 ### Instalação e Execução
 
@@ -29,9 +29,9 @@ Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emu
 
 - [x] Scroll infinito;
 - [x] Utilizar o json-server (fake-api) para API de deck
-- [ ] refatoração de componentes
 - [x] Implementar componente de loading;
-- [ ] Implementar o NGRX para gerenciar o estado global da aplicação
+- [x] Implementar o NGRX para gerenciar o estado global da aplicação
+- [ ] refatoração de componentes
 - [ ] Responsividade do layout
 
-...entre outras coisas que forem aparecendo. 
+...entre outras coisas que forem aparecendo. :grin:
