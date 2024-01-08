@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
       this._deckFacade.loadMorePokemons({
         q: `name:${name}`,
         page: 1,
-        pageSize: 0,
+        pageSize: 50,
       });
     }
   }
