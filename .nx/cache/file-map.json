@@ -75,7 +75,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "4654237211542783635"
+        "hash": "10511801915483362472"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -111,11 +111,11 @@
       },
       {
         "file": "package-lock.json",
-        "hash": "3845542154286575032"
+        "hash": "8162402005342288078"
       },
       {
         "file": "package.json",
-        "hash": "11324800223562526168"
+        "hash": "542636767901979652"
       },
       {
         "file": "src/app/app-routing.module.ts",
@@ -338,51 +338,51 @@
         "hash": "2328823125908824888"
       },
       {
-        "file": "src/app/ui/components/error-message-content/error-message-content.component.html",
+        "file": "src/app/ui/ui/error-message-content/error-message-content.component.html",
         "hash": "11250781874899548373"
       },
       {
-        "file": "src/app/ui/components/error-message-content/error-message-content.component.scss",
+        "file": "src/app/ui/ui/error-message-content/error-message-content.component.scss",
         "hash": "16568105572806018275"
       },
       {
-        "file": "src/app/ui/components/error-message-content/error-message-content.component.spec.ts",
+        "file": "src/app/ui/ui/error-message-content/error-message-content.component.spec.ts",
         "hash": "3286798288783231447"
       },
       {
-        "file": "src/app/ui/components/error-message-content/error-message-content.component.ts",
+        "file": "src/app/ui/ui/error-message-content/error-message-content.component.ts",
         "hash": "6612217038264450877"
       },
       {
-        "file": "src/app/ui/components/loading/loading.component.html",
+        "file": "src/app/ui/ui/loading/loading.component.html",
         "hash": "11690828507552477488"
       },
       {
-        "file": "src/app/ui/components/loading/loading.component.scss",
+        "file": "src/app/ui/ui/loading/loading.component.scss",
         "hash": "13490374937859361326"
       },
       {
-        "file": "src/app/ui/components/loading/loading.component.spec.ts",
+        "file": "src/app/ui/ui/loading/loading.component.spec.ts",
         "hash": "4040558727835653992"
       },
       {
-        "file": "src/app/ui/components/loading/loading.component.ts",
+        "file": "src/app/ui/ui/loading/loading.component.ts",
         "hash": "15003048450948521893"
       },
       {
-        "file": "src/app/ui/components/search/search.component.html",
+        "file": "src/app/ui/ui/search/search.component.html",
         "hash": "7612331561945868065"
       },
       {
-        "file": "src/app/ui/components/search/search.component.scss",
+        "file": "src/app/ui/ui/search/search.component.scss",
         "hash": "17870221744161299760"
       },
       {
-        "file": "src/app/ui/components/search/search.component.spec.ts",
+        "file": "src/app/ui/ui/search/search.component.spec.ts",
         "hash": "10430724476424878367"
       },
       {
-        "file": "src/app/ui/components/search/search.component.ts",
+        "file": "src/app/ui/ui/search/search.component.ts",
         "hash": "7992288914583205646"
       },
       {
@@ -447,11 +447,15 @@
       },
       {
         "file": "src/styles.scss",
-        "hash": "16422411316870529761"
+        "hash": "11200212575597706399"
       },
       {
         "file": "src/test.ts",
         "hash": "5024643410227328892"
+      },
+      {
+        "file": "tailwind.config.js",
+        "hash": "7601031578553540284"
       },
       {
         "file": "tsconfig.app.json",

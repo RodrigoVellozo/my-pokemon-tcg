@@ -1,4 +1,7 @@
 <app-loading [isLoading]="(isLoading$ | async)!">
+
+  <app-search (searchEvent)="onSearch($event)" placeholder="Search your pokemon"></app-search>
+  
   <main>
     <section
       class="pokemons-list"

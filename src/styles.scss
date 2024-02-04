@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 // Standard CSS normalize, comment out if not required or using a different module
 @use "minireset.css/minireset";
@@ -21,6 +18,10 @@ $app-palette: palette($primary, $secondary, $surface);
 @include core();
 @include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
 @include theme($app-palette);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body {
   height: 100%;

@@ -1,10 +1,10 @@
-import { Component, DestroyRef, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { Component, DestroyRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 
-import { IgxIconModule, IgxInputGroupModule } from 'igniteui-angular';
 import { BrowserModule } from '@angular/platform-browser';
+import { IgxIconModule, IgxInputGroupModule } from 'igniteui-angular';
 
 @Component({
   selector: 'app-search',
@@ -18,12 +18,14 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
 
   readonly searchForm = new FormControl();
 
   initialString: string ='';
   @Output() searchEvent = new EventEmitter<string>();
+
+  @Input() placeholder: string = '';
 
   constructor(private readonly _destroyRef: DestroyRef) {}
 

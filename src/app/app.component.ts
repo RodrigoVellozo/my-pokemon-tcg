@@ -43,16 +43,4 @@ export class AppComponent implements OnInit {
       });
   }
 
-  public onSearch(name: string): void {
-    if (name.length === 0) {
-      this._deckFacade.resetState();
-      this._deckFacade.loadPokemons({ page: 1, pageSize: 50 });
-    } else {
-      this._deckFacade.loadMorePokemons({
-        q: `name:${name}`,
-        page: 1,
-        pageSize: 50,
-      });
-    }
-  }
 }

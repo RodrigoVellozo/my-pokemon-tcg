@@ -1,0 +1,84 @@
+<nav id="header" class="fixed w-full">
+  <!--Nav-->
+  <div
+    class="relative w-full z-10 fixed top-0 bg-gray-200 border-b border-grey-light"
+  >
+    <div
+      class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4"
+    >
+      <!-- LINKS -->
+      <div
+        class="w-full flex-grow lg:flex lg:flex-1 lg:content-center lg:justify-start lg:w-auto hidden lg:block mt-2 lg:mt-0 z-20"
+        id="nav-content"
+      >
+        <ul class="list-reset lg:flex justify-start items-center">
+          <li class="mr-3 py-2 lg:py-0">
+            <a
+              class="inline-block py-2 px-4 text-black font-bold no-underline"
+              href="#"
+              >Show valid only
+            </a>
+          </li>
+          <li class="mr-3 py-2 lg:py-0">
+            <a
+              class="inline-block text-grey-dark no-underline hover:text-black hover:no-underline py-2 px-4"
+              href="#"
+              >Recents</a
+            >
+          </li>
+          <li class="mr-3 py-2 lg:py-0">
+            <a
+              class="inline-block text-grey-dark no-underline hover:text-black hover:no-underline py-2 px-4"
+              href="#"
+              >Favorites</a
+            >
+          </li>
+          <li class="mr-3 py-2 lg:py-0">
+            <a
+              class="inline-block text-grey-dark no-underline hover:text-black hover:no-underline py-2 px-4"
+              href="#"
+              >All</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- SEARCH FIELD -->
+      <div class="pl-4 flex items-center">
+       
+        <igx-input-group type="search">
+
+          <input igxInput [placeholder]="placeholder" [formControl]="searchForm"  #input1 />
+          
+          <igx-prefix>
+            <igx-icon>search</igx-icon>
+          </igx-prefix>
+          
+          <igx-suffix *ngIf="searchForm.value.length > 0" (click)="searchForm.setValue('')">
+            <igx-icon>clear</igx-icon>
+          </igx-suffix>
+        
+        </igx-input-group>
+       
+        <!--  remover  -->
+      </div>
+
+      <!-- HAMBURGUER MENU -->
+      <div class="pr-4">
+        <button
+          id="nav-toggle"
+          class="block lg:hidden flex items-center px-3 py-2 border rounded text-grey border-grey-dark hover:text-black hover:border-purple appearance-none focus:outline-none"
+        >
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
