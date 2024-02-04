@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // Standard CSS normalize, comment out if not required or using a different module
 @use "minireset.css/minireset";
 
@@ -10,7 +14,6 @@
 $primary: #09f !default;
 $secondary: #4db8ff !default;
 $surface: #fff !default;
-
 $app-palette: palette($primary, $secondary, $surface);
 
 /* autoprefixer grid: on */
