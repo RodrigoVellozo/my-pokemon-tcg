@@ -8,6 +8,8 @@ import {
   createDeckSuccess,
   deleteDeckFailure,
   deleteDeckSuccess,
+  loadDeckByIdFailure,
+  loadDeckByIdSuccess,
   loadDecks,
   loadDecksFailure,
   loadDecksSuccess,
@@ -41,22 +43,22 @@ export class DeckEffects {
     )
   );
 
-  public readonly loadMorePokemons$ = createEffect(()=>
-      this._actions$.pipe(
-        ofType(DeckActionsEnum.LOAD_MORE_POKEMONS),
-        withLatestFrom(this._deckFacade.query$),
-        map(([{ query }, oldQuery]) => {
-          return { ...oldQuery, ...(query || {}) };
-        }),
-        switchMap((query) => {
-          return this._pokemonService.getAllPokemons(query).pipe(
-            map((pokemonsResponse) =>
-              loadMorePokemonsSuccess({ pokemonsResponse, query })
-            ),
-            catchError((error) => of(loadMorePokemonsFailure(error)))
-          );
-        })
-      )
+  public readonly loadMorePokemons$ = createEffect(() =>
+    this._actions$.pipe(
+      ofType(DeckActionsEnum.LOAD_MORE_POKEMONS),
+      withLatestFrom(this._deckFacade.query$),
+      map(([{ query }, oldQuery]) => {
+        return { ...oldQuery, ...(query || {}) };
+      }),
+      switchMap((query) => {
+        return this._pokemonService.getAllPokemons(query).pipe(
+          map((pokemonsResponse) =>
+            loadMorePokemonsSuccess({ pokemonsResponse, query })
+          ),
+          catchError((error) => of(loadMorePokemonsFailure(error)))
+        );
+      })
+    )
   );
 
   public readonly loadDecks$ = createEffect(() =>
@@ -68,6 +70,18 @@ export class DeckEffects {
           catchError((error) => of(loadDecksFailure({ error })))
         );
       })
+    )
+  );
+
+  public readonly loadDeckById = createEffect(() =>
+    this._actions$.pipe(
+      ofType(DeckActionsEnum.LOAD_DECK_BY_ID),
+      switchMap(({ deckId }) =>
+        this._deckService.getDeckById(deckId).pipe(
+          map((deckResponse) => loadDeckByIdSuccess({ deckResponse })),
+          catchError((error) => of(loadDeckByIdFailure({ error })))
+        )
+      )
     )
   );
 
@@ -108,13 +122,13 @@ export class DeckEffects {
   );
 
   public readonly deleteDeckSuccess$ = createEffect(() =>
-      this._actions$.pipe(
-        ofType(DeckActionsEnum.DELETE_DECK_SUCCESS),
-        tap(() => {
-          console.log('exibir toast: apagou com sucesso');
-        }),
-        map(() => loadDecks())
-      )
+    this._actions$.pipe(
+      ofType(DeckActionsEnum.DELETE_DECK_SUCCESS),
+      tap(() => {
+        console.log('exibir toast: apagou com sucesso');
+      }),
+      map(() => loadDecks())
+    )
   );
 
   public readonly deleteDeckFailure$ = createEffect(

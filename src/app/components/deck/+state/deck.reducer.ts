@@ -209,6 +209,24 @@ const _deckReducer = createReducer(
     error,
   })),
 
+    on(action.loadDeckById, (state) => ({
+    ...state,
+    isLoading: true,
+    error: undefined,
+  })),
+  on(action.loadDeckByIdSuccess, (state, { deckResponse }) => ({
+    ...state,
+    isLoading: false,
+    deckResponse,
+    error: undefined,
+  })),
+
+  on(action.loadDeckByIdFailure, (state, { error }) => ({
+    ...state,
+    isLoading: false,
+    error,
+  })),
+
   on(action.createDeck, (state) => ({
     ...state,
     isLoading: true,

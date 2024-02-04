@@ -20,7 +20,7 @@ export class DeckService {
   }
 
   public getDeckById(deckId: number){
-    return this._http.get(`${this.decksUrl}/${deckId}`).pipe(
+    return this._http.get<Deck>(`${this.decksUrl}/${deckId}`).pipe(
       catchError(this.handleError)
     );
   }

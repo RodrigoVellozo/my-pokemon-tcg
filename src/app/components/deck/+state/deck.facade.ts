@@ -1,18 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { DeckState } from './deck.reducer';
-import { createDeck, deleteDeck, loadDecks, loadMorePokemons, loadPokemons, resetState, updateDeck } from './deck.actions';
+import {
+  createDeck,
+  deleteDeck,
+  loadDeckById,
+  loadDecks,
+  loadMorePokemons,
+  loadPokemons,
+  resetState,
+  updateDeck,
+} from './deck.actions';
 import { Query } from 'src/app/core/models/pokemon-query';
 import * as DeckSelectors from './deck.selectors';
 import { Deck } from 'src/app/core/models/deck';
 
 @Injectable({ providedIn: 'root' })
 export class DeckFacade {
-  public readonly isLoading$ = this._store.select(DeckSelectors.selectIsLoading);
+  public readonly isLoading$ = this._store.select(
+    DeckSelectors.selectIsLoading
+  );
 
   public readonly query$ = this._store.select(DeckSelectors.selectDecksQuery);
 
-  public readonly queryPage$ = this._store.select(DeckSelectors.selectDecksQueryPage);
+  public readonly queryPage$ = this._store.select(
+    DeckSelectors.selectDecksQueryPage
+  );
 
   public readonly decks$ = this._store.select(DeckSelectors.selectDecks);
 
@@ -32,19 +45,23 @@ export class DeckFacade {
     this._store.dispatch(loadDecks());
   }
 
-  public createDeck(deck: Deck):void {
-    this._store.dispatch(createDeck({deck}));
+  public loadDeck(id: number): void {
+    this._store.dispatch(loadDeckById({ id }));
   }
 
-  public updateDeck(deck: Deck):void {
-    this._store.dispatch(updateDeck({deck}));
+  public createDeck(deck: Deck): void {
+    this._store.dispatch(createDeck({ deck }));
+  }
+
+  public updateDeck(deck: Deck): void {
+    this._store.dispatch(updateDeck({ deck }));
   }
 
   public deleteDeck(deck: Deck): void {
-    this._store.dispatch(deleteDeck({deck}));
+    this._store.dispatch(deleteDeck({ deck }));
   }
 
-  public resetState(){
+  public resetState() {
     this._store.dispatch(resetState());
   }
 }

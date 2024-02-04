@@ -8,13 +8,7 @@
       [scrollWindow]="false"
       (scrolled)="onScroll()"
       >
-      <div
-        style="
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 1rem;
-        "
+      <div class="pokemons-list__card-container"
         cdkDropList
         [cdkDropListData]="cards"
         [cdkDropListConnectedTo]="choosenCardsList"
@@ -110,7 +104,7 @@
             <igx-tab-content>
               <div class="update-deck__drop-area">
                 <div
-                  class="update-deck__choosen-cards"
+                  class="update-deck__choosen-cards 1"
                   cdkDropList
                   [cdkDropListData]="supertypeTrainer"
                   #choosenCardsList="cdkDropList"

@@ -9,7 +9,7 @@ export enum DeckActionsEnum {
   LOAD_POKEMONS = '[Decks] Load Pokemons',
   LOAD_POKEMONS_SUCCESS = '[Decks] Load Pokemons success',
   LOAD_POKEMONS_FAILURE = '[Decks] Load Pokemons failure',
-  
+
   LOAD_MORE_POKEMONS = '[Decks] Load More Pokemons',
   LOAD_MORE_POKEMONS_SUCCESS = '[Decks] Load More Pokemons success',
   LOAD_MORE_POKEMONS_FAILURE = '[Decks] Load More Pokemons failure',
@@ -17,6 +17,10 @@ export enum DeckActionsEnum {
   LOAD_DECKS = '[Decks] Load decks',
   LOAD_DECKS_SUCCESS = '[Decks] Load decks success',
   LOAD_DECKS_FAILURE = '[Decks] Load decks failure',
+
+  LOAD_DECK_BY_ID = '[Decks] Load deck by ID',
+  LOAD_DECK_BY_ID_SUCCESS = '[Decks] Load deck by ID success',
+  LOAD_DECK_BY_ID_FAILURE = '[Decks] Load deck by ID failure',
 
   CREATE_DECK = '[Deck] Create Deck',
   CREATE_DECK_SUCCESS = '[Deck] Create Deck Success',
@@ -40,7 +44,7 @@ export const loadPokemons = createAction(
 
 export const loadPokemonsSuccess = createAction(
   DeckActionsEnum.LOAD_POKEMONS_SUCCESS,
-  props<{ pokemonsResponse: Data[], query: Query }>()
+  props<{ pokemonsResponse: Data[]; query: Query }>()
 );
 
 export const loadPokemonsFailure = createAction(
@@ -55,7 +59,7 @@ export const loadMorePokemons = createAction(
 
 export const loadMorePokemonsSuccess = createAction(
   DeckActionsEnum.LOAD_MORE_POKEMONS_SUCCESS,
-  props<{ pokemonsResponse: Data[], query: Query }>()
+  props<{ pokemonsResponse: Data[]; query: Query }>()
 );
 
 export const loadMorePokemonsFailure = createAction(
@@ -72,6 +76,21 @@ export const loadDecksSuccess = createAction(
 
 export const loadDecksFailure = createAction(
   DeckActionsEnum.LOAD_DECKS_FAILURE,
+  props<{ error: HttpErrorResponse }>()
+);
+
+export const loadDeckById = createAction(
+  DeckActionsEnum.LOAD_DECK_BY_ID,
+  props<{ id: number }>()
+);
+
+export const loadDeckByIdSuccess = createAction(
+  DeckActionsEnum.LOAD_DECK_BY_ID_SUCCESS,
+  props<{ deckResponse: Deck }>()
+);
+
+export const loadDeckByIdFailure = createAction(
+  DeckActionsEnum.LOAD_DECK_BY_ID_FAILURE,
   props<{ error: HttpErrorResponse }>()
 );
 
@@ -131,6 +150,10 @@ const _managePokemonsActionsUnion = union({
   loadDecks,
   loadDecksSuccess,
   loadDecksFailure,
+
+  loadDeckById,
+  loadDeckByIdSuccess,
+  loadDeckByIdFailure,
 
   createDeck,
   createDeckSuccess,

@@ -62,6 +62,8 @@ export class UpdateDeckComponent implements OnInit {
   ngOnInit(): void {
     this._deckFacade.loadPokemons(this.query);
 
+    this._deckFacade.loadDeck(5);
+
     this.getADeck(this.deckId);
     this._deckFacade.pokemons$.subscribe({
       next: (res) => (this.cards = res),
@@ -117,6 +119,7 @@ export class UpdateDeckComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<{ card: Data; amount: number }[], Data[]>) {
+    console.log('event', event)
     const item = event.previousContainer.data[event.previousIndex];
     const data = event.container.data;
     const existingCard = data.find((d) => d.card.name === item.name);
