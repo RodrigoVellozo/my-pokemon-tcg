@@ -12,9 +12,11 @@ Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emu
 
 ## Demo
 
-<video autoplay muted loop>
-    <source src=".src/assets/mp4/primeiro.mp4" type="video/mp4">
-</video>
+
+
+https://github.com/RodrigoVellozo/my-pokemon-tcg/assets/13935125/b64a11e1-cb82-45ca-acf5-6a129362f559
+
+
 
 #### Libs:
 - [InMemoryDbService](https://www.npmjs.com/package/angular-in-memory-web-api "npm")
