@@ -10,6 +10,12 @@ O objetivo consiste basicamente em consumir a API `https://api.pokemontcg.io` pa
 
 Atualmente estes deks estão sendo armazenados em uma 'API em memória', que emula operações CRUD em uma API REST, mas em breve estes recursos serão armazenados em uma 'API FAke'.
 
+## Demo
+
+<video autoplay muted loop>
+    <source src=".src/assets/mp4/primeiro.mp4" type="video/mp4">
+</video>
+
 #### Libs:
 - [InMemoryDbService](https://www.npmjs.com/package/angular-in-memory-web-api "npm")
 - [Ignite UI](https://www.npmjs.com/package/igniteui-angular "npm")

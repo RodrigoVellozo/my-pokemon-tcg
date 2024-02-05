@@ -2,36 +2,37 @@
 
   <app-search (searchEvent)="onSearch($event)" placeholder="Search your pokemon"></app-search>
   
-  <main>
+  <div class="rud mt-20 grid grid-cols-3 gap-4">
+    
     <section
-      class="pokemons-list"
-      infiniteScroll
-      [infiniteScrollDistance]="2"
-      [infiniteScrollThrottle]="500"
-      [scrollWindow]="false"
-      (scrolled)="onScroll()"
+    class="col-span-2 overflow-y-scroll h-[80vh] "
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="500"
+    [scrollWindow]="false"
+    (scrolled)="onScroll()"
+  >
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      "
+      cdkDropList
+      [cdkDropListData]="cards"
+      [cdkDropListConnectedTo]="choosenCardsList"
+      #cardsList="cdkDropList"
     >
-      <div
-        style="
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 1rem;
-        "
-        cdkDropList
-        [cdkDropListData]="cards"
-        [cdkDropListConnectedTo]="choosenCardsList"
-        #cardsList="cdkDropList"
-      >
-        <ng-container *ngFor="let card of cards">
-          <div cdkDrag>
-            <img [src]="card.images.small" [alt]="card.name" width="200" />
-          </div>
-        </ng-container>
-      </div>
-    </section>
-
-    <aside class="create-deck" style="width: 34%">
+      <ng-container *ngFor="let card of cards">
+        <div cdkDrag>
+          <img [src]="card.images.small" [alt]="card.name" width="200" />
+        </div>
+      </ng-container>
+    </div>
+  </section>
+    
+    <aside class="h-[80vh] bg-gradient-to-b from-stone-400 to-white">
       <form [formGroup]="form">
         <div class="create-deck__header">
           <h4>Create a deck</h4>
@@ -106,8 +107,10 @@
         </div>
       </form>
     </aside>
-  </main>
+    
+  </div>
 </app-loading>
+
 
 <!-- por as mensagens de validacoes nas cartas -->
 <igx-toast #toast></igx-toast>

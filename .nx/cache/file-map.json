@@ -75,23 +75,23 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "10511801915483362472"
+        "hash": "7300569341576789917"
       },
       {
         "file": ".nx/cache/lockfile.hash",
-        "hash": "17101255881723566852"
+        "hash": "15876789922576593210"
       },
       {
         "file": ".nx/cache/parsed-lock-file.json",
-        "hash": "11689559930975618736"
+        "hash": "16264463791220198027"
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "1259198275285379482"
+        "hash": "14011072534316938466"
       },
       {
         "file": "README.md",
-        "hash": "237564189066905468"
+        "hash": "1419407949784153366"
       },
       {
         "file": "angular.json",
@@ -99,7 +99,7 @@
       },
       {
         "file": "database.json",
-        "hash": "5206519802818486867"
+        "hash": "17303112341182039613"
       },
       {
         "file": "ignite-ui-cli.json",
@@ -123,7 +123,7 @@
       },
       {
         "file": "src/app/app.component.html",
-        "hash": "15999824465189005343"
+        "hash": "16301487900941417626"
       },
       {
         "file": "src/app/app.component.scss",
@@ -135,11 +135,11 @@
       },
       {
         "file": "src/app/app.component.ts",
-        "hash": "12931190676644285617"
+        "hash": "1131005232297055978"
       },
       {
         "file": "src/app/app.module.ts",
-        "hash": "10374956044472573457"
+        "hash": "14036037930624943282"
       },
       {
         "file": "src/app/components/deck/+state/deck.actions.ts",
@@ -163,7 +163,7 @@
       },
       {
         "file": "src/app/components/deck/create-deck/create-deck.component.html",
-        "hash": "17670825554263794425"
+        "hash": "2601501604795184384"
       },
       {
         "file": "src/app/components/deck/create-deck/create-deck.component.scss",
@@ -171,7 +171,7 @@
       },
       {
         "file": "src/app/components/deck/create-deck/create-deck.component.ts",
-        "hash": "8885073911420859726"
+        "hash": "265200792452778408"
       },
       {
         "file": "src/app/components/deck/deck-routing.module.ts",
@@ -195,19 +195,19 @@
       },
       {
         "file": "src/app/components/deck/deck.module.ts",
-        "hash": "17030983819957486559"
+        "hash": "3397505392147086056"
       },
       {
         "file": "src/app/components/deck/update-deck/update-deck.component.html",
-        "hash": "17115891134572042980"
+        "hash": "2270549428339070356"
       },
       {
         "file": "src/app/components/deck/update-deck/update-deck.component.scss",
-        "hash": "3755376370649224099"
+        "hash": "17282245966344765298"
       },
       {
         "file": "src/app/components/deck/update-deck/update-deck.component.ts",
-        "hash": "12129896971340335131"
+        "hash": "6267739684412328936"
       },
       {
         "file": "src/app/core/models/deck.ts",
@@ -338,60 +338,76 @@
         "hash": "2328823125908824888"
       },
       {
-        "file": "src/app/ui/ui/error-message-content/error-message-content.component.html",
+        "file": "src/app/shared/ui/error-message-content/error-message-content.component.html",
         "hash": "11250781874899548373"
       },
       {
-        "file": "src/app/ui/ui/error-message-content/error-message-content.component.scss",
+        "file": "src/app/shared/ui/error-message-content/error-message-content.component.scss",
         "hash": "16568105572806018275"
       },
       {
-        "file": "src/app/ui/ui/error-message-content/error-message-content.component.spec.ts",
+        "file": "src/app/shared/ui/error-message-content/error-message-content.component.spec.ts",
         "hash": "3286798288783231447"
       },
       {
-        "file": "src/app/ui/ui/error-message-content/error-message-content.component.ts",
+        "file": "src/app/shared/ui/error-message-content/error-message-content.component.ts",
         "hash": "6612217038264450877"
       },
       {
-        "file": "src/app/ui/ui/loading/loading.component.html",
+        "file": "src/app/shared/ui/loading/loading.component.html",
         "hash": "11690828507552477488"
       },
       {
-        "file": "src/app/ui/ui/loading/loading.component.scss",
+        "file": "src/app/shared/ui/loading/loading.component.scss",
         "hash": "13490374937859361326"
       },
       {
-        "file": "src/app/ui/ui/loading/loading.component.spec.ts",
+        "file": "src/app/shared/ui/loading/loading.component.spec.ts",
         "hash": "4040558727835653992"
       },
       {
-        "file": "src/app/ui/ui/loading/loading.component.ts",
+        "file": "src/app/shared/ui/loading/loading.component.ts",
         "hash": "15003048450948521893"
       },
       {
-        "file": "src/app/ui/ui/search/search.component.html",
-        "hash": "7612331561945868065"
+        "file": "src/app/shared/ui/search/search.component.html",
+        "hash": "11902332323217492788"
       },
       {
-        "file": "src/app/ui/ui/search/search.component.scss",
+        "file": "src/app/shared/ui/search/search.component.scss",
         "hash": "17870221744161299760"
       },
       {
-        "file": "src/app/ui/ui/search/search.component.spec.ts",
+        "file": "src/app/shared/ui/search/search.component.spec.ts",
         "hash": "10430724476424878367"
       },
       {
-        "file": "src/app/ui/ui/search/search.component.ts",
-        "hash": "7992288914583205646"
+        "file": "src/app/shared/ui/search/search.component.ts",
+        "hash": "9908419960101492752"
       },
       {
         "file": "src/assets/.gitkeep",
         "hash": "3244421341483603138"
       },
       {
+        "file": "src/assets/images/background-gray - Copia.png",
+        "hash": "12898381557180998811"
+      },
+      {
+        "file": "src/assets/images/background-gray.png",
+        "hash": "2083706133301155422"
+      },
+      {
+        "file": "src/assets/images/background-red.png",
+        "hash": "3470755730004008173"
+      },
+      {
         "file": "src/assets/images/pokeball.png",
         "hash": "5729766495139926094"
+      },
+      {
+        "file": "src/assets/mp4/demo.mp4",
+        "hash": "1194638928866137805"
       },
       {
         "file": "src/assets/mp4/primeiro.mp4",
@@ -435,7 +451,7 @@
       },
       {
         "file": "src/index.html",
-        "hash": "12376865804823718236"
+        "hash": "13442895884566530027"
       },
       {
         "file": "src/main.ts",
@@ -447,7 +463,7 @@
       },
       {
         "file": "src/styles.scss",
-        "hash": "11200212575597706399"
+        "hash": "8021388751571204090"
       },
       {
         "file": "src/test.ts",

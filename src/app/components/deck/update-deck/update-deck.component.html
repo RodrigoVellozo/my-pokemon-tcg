@@ -2,9 +2,9 @@
 
   <app-search (searchEvent)="onSearch($event)" placeholder="Search your pokemon"></app-search>
   
-  <main>
+  <div class="rud mt-20 grid grid-cols-3 gap-4">
     <section 
-      class="pokemons-list"
+      class="col-span-2 overflow-y-scroll h-[80vh] "
       infiniteScroll
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="500"
@@ -170,7 +170,7 @@
         </igx-tabs>
       </form>
     </aside>
-  </main>
+  </div>
 </app-loading>
 
 <!-- por as mensagens de validacoes nas cartas -->

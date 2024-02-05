@@ -26,6 +26,7 @@ $app-palette: palette($primary, $secondary, $surface);
 html, body {
   height: 100%;
   overflow: hidden;
+  background: url('./assets/images/background-gray.png');
 }
 
 video {
